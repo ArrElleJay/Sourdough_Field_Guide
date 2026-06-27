@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Sourdough Field Guide | Calculators</title>
+  <meta name="description" content="Practical sourdough calculators for starter feeding, recipe scaling, dough hydration, baker's percentage, and volume-to-gram conversions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .calc-hub-intro{max-width:860px}
+    .tool-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .tool-tabs a{display:inline-flex;align-items:center;text-decoration:none;color:var(--navy);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:9px 13px;font-weight:750;font-size:.92rem}
+    .tool-tabs a:hover{border-color:#cfbf9f;background:#fbf7ee}
+    .calculator-stack{display:grid;gap:28px}
+    .tool-panel{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:var(--shadow)}
+    .tool-panel-header{display:grid;gap:6px;margin-bottom:18px}
+    .tool-panel-header h2{font-size:clamp(1.65rem,3vw,2.35rem);margin:0}
+    .tool-panel-header p{margin:0;color:var(--muted);max-width:760px}
+    .calc-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.8fr);gap:22px;align-items:start}
+    .calc-form{display:grid;gap:14px}
+    .calc-form label{display:grid;gap:7px;font-weight:750;color:var(--navy)}
+    .calc-form input,.calc-form select{width:100%;border:1px solid var(--line);border-radius:14px;background:#fff;padding:12px 13px;font:inherit;color:var(--navy)}
+    .calc-form small{font-weight:500;color:var(--muted);line-height:1.35}
+    .calc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .result-card{background:#fbf7ee;border:1px solid var(--line);border-radius:20px;padding:18px;display:grid;gap:12px}
+    .result-card h3{margin:0;font-size:1.25rem}
+    .result-list{display:grid;gap:9px}
+    .result-line{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid #e7dcc7;padding-bottom:8px}
+    .result-line span{color:var(--muted)}
+    .result-line strong{white-space:nowrap;color:var(--navy)}
+    .plain-note{margin:0;color:var(--muted);font-size:.94rem;line-height:1.5}
+    .ingredient-table-mini{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+    .ingredient-table-mini th,.ingredient-table-mini td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+    .ingredient-table-mini th{background:#fbf7ee;color:var(--navy);font-size:.9rem}
+    .ingredient-table-mini tr:last-child td{border-bottom:0}
+    .ingredient-table-mini input{width:100%;border:1px solid var(--line);border-radius:10px;padding:9px;font:inherit;color:var(--navy)}
+    .source-note{margin-top:18px;background:#fff;border:1px dashed #d8c6a4;border-radius:16px;padding:14px;color:var(--muted);font-size:.94rem;line-height:1.5}
+    .source-note strong{color:var(--navy)}
+    @media (max-width:850px){.calc-grid{grid-template-columns:1fr}.calc-row{grid-template-columns:1fr}.tool-panel{padding:20px}.tool-tabs a{font-size:.88rem}}
+  </style>
+</head>
+<body class="page-calculator">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-wrap">
+      <a class="brand" href="index.html" aria-label="The Sourdough Field Guide home">
+        <img class="brand-mark-image" src="assets/logo-mark-sfg.png" alt="SFG monogram logo">
+        <span class="brand-text">The Sourdough Field Guide</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="basics.html">Get Startered</a>
+        <a href="schedule.html">Schedules</a>
+        <a href="calculator.html" class="active">Calculators</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="submit.html">Submit Recipe</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section page-hero">
+      <div class="wrap narrow page-intro calc-hub-intro">
+        <p class="eyebrow">Calculators</p>
+        <h1 class="page-title">Bread math without the spreadsheet spiral.</h1>
+        <p>Use these for starter feedings, recipe scaling, hydration, baker's percentages, and turning vague cup measurements into grams.</p>
+        <div class="tool-tabs" aria-label="Calculator shortcuts">
+          <a href="#starter-calculator">Starter feeding</a>
+          <a href="#recipe-scaling">Recipe scaling</a>
+          <a href="#hydration-calculator">Hydration</a>
+          <a href="#bakers-percentage">Baker's percentage</a>
+          <a href="#measurement-converter">Measurement converter</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section first-section">
+      <div class="wrap calculator-stack">
+
+        <article class="tool-panel" id="starter-calculator">
+          <div class="tool-panel-header">
+            <p class="eyebrow">Tool 01</p>
+            <h2>Starter Feeding Calculator</h2>
+            <p>Tell it how much active starter you need and how much you want left in the jar. It gives you the seed starter, flour, and water to feed.</p>
+          </div>
+          <div class="calc-grid">
+            <form class="calc-form" id="starterCalcForm">
+              <div class="calc-row">
+                <label>Starter needed for recipe
+                  <input id="starterNeeded" type="number" min="1" step="1" value="100">
+                </label>
+                <label>Leftover to keep
+                  <input id="leftoverAmount" type="number" min="0" step="1" value="25">
+                </label>
+              </div>
+              <label>Feeding ratio
+                <select id="starterRatio">
+                  <option value="1">1:1:1, faster, milder</option>
+                  <option value="2">1:2:2, moderate</option>
+                  <option value="3" selected>1:3:3, slower, more flexible</option>
+                  <option value="5">1:5:5, longest runway</option>
+                </select>
+                <small>Ratios are starter:flour:water by weight.</small>
+              </label>
+            </form>
+            <aside class="result-card" aria-live="polite">
+              <h3>Feed this</h3>
+              <div class="result-list">
+                <div class="result-line"><span>Seed starter</span><strong id="starterSeedOut">18g</strong></div>
+                <div class="result-line"><span>Flour</span><strong id="starterFlourOut">54g</strong></div>
+                <div class="result-line"><span>Water</span><strong id="starterWaterOut">54g</strong></div>
+                <div class="result-line"><span>Makes about</span><strong id="starterTotalOut">126g</strong></div>
+              </div>
+              <p class="plain-note" id="starterNote">A 1:3:3 feed gives the starter more food and usually a longer window before peak.</p>
+            </aside>
+          </div>
+        </article>
+
+        <article class="tool-panel" id="recipe-scaling">
+          <div class="tool-panel-header">
+            <p class="eyebrow">Tool 02</p>
+            <h2>Recipe Scaling Calculator</h2>
+            <p>Use this when you want to make a bigger batch, a smaller batch, or scale a recipe around the flour you actually have.</p>
+          </div>
+          <div class="calc-grid">
+            <form class="calc-form" id="scaleCalcForm">
+              <div class="calc-row">
+                <label>Original flour
+                  <input id="scaleOriginalFlour" type="number" min="1" step="1" value="500">
+                </label>
+                <label>Target flour
+                  <input id="scaleTargetFlour" type="number" min="1" step="1" value="750">
+                </label>
+              </div>
+              <table class="ingredient-table-mini" aria-label="Recipe ingredients to scale">
+                <thead><tr><th>Ingredient</th><th>Original grams</th><th>Scaled grams</th></tr></thead>
+                <tbody>
+                  <tr><td>Water</td><td><input id="scaleWater" type="number" min="0" step="1" value="350"></td><td id="scaleWaterOut">525g</td></tr>
+                  <tr><td>Starter</td><td><input id="scaleStarter" type="number" min="0" step="1" value="100"></td><td id="scaleStarterOut">150g</td></tr>
+                  <tr><td>Salt</td><td><input id="scaleSalt" type="number" min="0" step=".1" value="10"></td><td id="scaleSaltOut">15g</td></tr>
+                  <tr><td>Other</td><td><input id="scaleOther" type="number" min="0" step="1" value="0"></td><td id="scaleOtherOut">0g</td></tr>
+                </tbody>
+              </table>
+            </form>
+            <aside class="result-card" aria-live="polite">
+              <h3>Scaled recipe</h3>
+              <div class="result-list">
+                <div class="result-line"><span>Multiplier</span><strong id="scaleMultiplierOut">1.5x</strong></div>
+                <div class="result-line"><span>Target flour</span><strong id="scaleFlourOut">750g</strong></div>
+                <div class="result-line"><span>Total dough, approx.</span><strong id="scaleTotalOut">1440g</strong></div>
+              </div>
+              <p class="plain-note">This keeps the recipe proportions the same. It does not magically fix a bad recipe, deeply rude, but fair.</p>
+            </aside>
+          </div>
+        </article>
+
+        <article class="tool-panel" id="hydration-calculator">
+          <div class="tool-panel-header">
+            <p class="eyebrow">Tool 03</p>
+            <h2>Hydration Calculator</h2>
+            <p>Hydration is the water compared to the flour. This includes the flour and water inside your starter, because starter is not imaginary.</p>
+          </div>
+          <div class="calc-grid">
+            <form class="calc-form" id="hydrationCalcForm">
+              <div class="calc-row">
+                <label>Flour in dough
+                  <input id="hydrationFlour" type="number" min="0" step="1" value="475">
+                </label>
+                <label>Water in dough
+                  <input id="hydrationWater" type="number" min="0" step="1" value="325">
+                </label>
+              </div>
+              <div class="calc-row">
+                <label>Starter added
+                  <input id="hydrationStarter" type="number" min="0" step="1" value="100">
+                </label>
+                <label>Starter hydration
+                  <input id="hydrationStarterPercent" type="number" min="1" step="1" value="100">
+                </label>
+              </div>
+            </form>
+            <aside class="result-card" aria-live="polite">
+              <h3>Dough hydration</h3>
+              <div class="result-list">
+                <div class="result-line"><span>Total flour</span><strong id="hydrationTotalFlourOut">525g</strong></div>
+                <div class="result-line"><span>Total water</span><strong id="hydrationTotalWaterOut">375g</strong></div>
+                <div class="result-line"><span>Hydration</span><strong id="hydrationPercentOut">71%</strong></div>
+              </div>
+              <p class="plain-note" id="hydrationNote">This is a moderately wet dough. Manageable, but it will still try to humble you if you rush it.</p>
+            </aside>
+          </div>
+        </article>
+
+        <article class="tool-panel" id="bakers-percentage">
+          <div class="tool-panel-header">
+            <p class="eyebrow">Tool 04</p>
+            <h2>Baker's Percentage Calculator</h2>
+            <p>Flour is always 100%. Everything else is measured against flour. This is mostly useful when you want to compare recipes or see what a dough is really doing.</p>
+          </div>
+          <div class="calc-grid">
+            <form class="calc-form" id="bakersCalcForm">
+              <label>Total flour
+                <input id="bakersFlour" type="number" min="1" step="1" value="500">
+              </label>
+              <table class="ingredient-table-mini" aria-label="Baker's percentage ingredients">
+                <thead><tr><th>Ingredient</th><th>Grams</th><th>Percent</th></tr></thead>
+                <tbody>
+                  <tr><td>Water</td><td><input id="bakersWater" type="number" min="0" step="1" value="350"></td><td id="bakersWaterOut">70%</td></tr>
+                  <tr><td>Starter</td><td><input id="bakersStarter" type="number" min="0" step="1" value="100"></td><td id="bakersStarterOut">20%</td></tr>
+                  <tr><td>Salt</td><td><input id="bakersSalt" type="number" min="0" step=".1" value="10"></td><td id="bakersSaltOut">2%</td></tr>
+                  <tr><td>Sugar/honey</td><td><input id="bakersSugar" type="number" min="0" step="1" value="0"></td><td id="bakersSugarOut">0%</td></tr>
+                  <tr><td>Fat/oil</td><td><input id="bakersFat" type="number" min="0" step="1" value="0"></td><td id="bakersFatOut">0%</td></tr>
+                </tbody>
+              </table>
+            </form>
+            <aside class="result-card">
+              <h3>Quick read</h3>
+              <p class="plain-note" id="bakersNote">70% water, 20% starter, and 2% salt is normal sourdough territory.</p>
+            </aside>
+          </div>
+        </article>
+
+        <article class="tool-panel" id="measurement-converter">
+          <div class="tool-panel-header">
+            <p class="eyebrow">Tool 05</p>
+            <h2>Measurement Converter</h2>
+            <p>For recipes that still say things like “1 1/2 cups flour,” because apparently we have not suffered enough.</p>
+          </div>
+          <div class="calc-grid">
+            <form class="calc-form" id="measureCalcForm">
+              <div class="calc-row">
+                <label>Amount
+                  <input id="measureAmount" type="number" min="0" step=".01" value="1">
+                </label>
+                <label>Unit
+                  <select id="measureUnit">
+                    <option value="1">cup</option>
+                    <option value="0.5">1/2 cup</option>
+                    <option value="0.3333333333">1/3 cup</option>
+                    <option value="0.25">1/4 cup</option>
+                    <option value="0.0625">tablespoon</option>
+                    <option value="0.0208333333">teaspoon</option>
+                  </select>
+                </label>
+              </div>
+              <label>Ingredient
+                <select id="measureIngredient"></select>
+                <small>Different ingredients have different weights by volume. Flour is especially dramatic.</small>
+              </label>
+            </form>
+            <aside class="result-card" aria-live="polite">
+              <h3>Approximate grams</h3>
+              <div class="result-list">
+                <div class="result-line"><span>Result</span><strong id="measureOut">120g</strong></div>
+                <div class="result-line"><span>Based on</span><strong id="measureBaseOut">120g per cup</strong></div>
+              </div>
+              <p class="plain-note" id="measureNote">Use this to translate a recipe, then weigh the ingredient. Do not use it as an excuse to avoid buying a scale.</p>
+            </aside>
+          </div>
+          <div class="source-note">
+            <strong>About the converter:</strong> cup-to-gram values are approximate and ingredient-specific. The flour baseline follows King Arthur Baking's 120g per cup standard for all-purpose flour. When a recipe gives its own gram weights, use the recipe's weights.
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-wrap">
+      <p>The Sourdough Field Guide, a practical sourdough project.</p>
+      <p>No ads. No novellas.</p>
+    </div>
+  </footer>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const n = (id) => Number($(id)?.value || 0);
+    const grams = (value) => `${Math.round(value)}g`;
+    const oneDecimal = (value) => Number.isFinite(value) ? `${Math.round(value * 10) / 10}` : '0';
+    const percent = (value) => Number.isFinite(value) ? `${Math.round(value * 10) / 10}%` : '0%';
+
+    function updateStarterCalc(){
+      const needed = n('starterNeeded');
+      const leftover = n('leftoverAmount');
+      const ratio = n('starterRatio');
+      const total = Math.max(0, needed + leftover);
+      const seed = total / (1 + ratio + ratio);
+      const flour = seed * ratio;
+      const water = seed * ratio;
+      $('starterSeedOut').textContent = grams(seed);
+      $('starterFlourOut').textContent = grams(flour);
+      $('starterWaterOut').textContent = grams(water);
+      $('starterTotalOut').textContent = grams(seed + flour + water);
+      const notes = {
+        1:'A 1:1:1 feed is fast and useful when you want starter sooner.',
+        2:'A 1:2:2 feed is a good middle-ground feed for normal baking days.',
+        3:'A 1:3:3 feed gives the starter more food and usually a longer window before peak.',
+        5:'A 1:5:5 feed gives the longest runway. Useful overnight or when the kitchen is warm.'
+      };
+      $('starterNote').textContent = notes[ratio] || notes[3];
+    }
+
+    function updateScaleCalc(){
+      const originalFlour = Math.max(1, n('scaleOriginalFlour'));
+      const targetFlour = Math.max(0, n('scaleTargetFlour'));
+      const multiplier = targetFlour / originalFlour;
+      const water = n('scaleWater') * multiplier;
+      const starter = n('scaleStarter') * multiplier;
+      const salt = n('scaleSalt') * multiplier;
+      const other = n('scaleOther') * multiplier;
+      $('scaleMultiplierOut').textContent = `${oneDecimal(multiplier)}x`;
+      $('scaleFlourOut').textContent = grams(targetFlour);
+      $('scaleWaterOut').textContent = grams(water);
+      $('scaleStarterOut').textContent = grams(starter);
+      $('scaleSaltOut').textContent = `${Math.round(salt * 10) / 10}g`;
+      $('scaleOtherOut').textContent = grams(other);
+      $('scaleTotalOut').textContent = grams(targetFlour + water + starter + salt + other);
+    }
+
+    function updateHydrationCalc(){
+      const flour = n('hydrationFlour');
+      const water = n('hydrationWater');
+      const starter = n('hydrationStarter');
+      const starterHydration = Math.max(1, n('hydrationStarterPercent'));
+      const starterFlour = starter * (100 / (100 + starterHydration));
+      const starterWater = starter * (starterHydration / (100 + starterHydration));
+      const totalFlour = flour + starterFlour;
+      const totalWater = water + starterWater;
+      const hydration = totalFlour > 0 ? (totalWater / totalFlour) * 100 : 0;
+      $('hydrationTotalFlourOut').textContent = grams(totalFlour);
+      $('hydrationTotalWaterOut').textContent = grams(totalWater);
+      $('hydrationPercentOut').textContent = percent(hydration);
+      let note = 'This is moderate sourdough territory.';
+      if (hydration < 62) note = 'This is a firmer dough. Think bagels, pretzels, or easier shaping.';
+      else if (hydration < 70) note = 'This is a manageable dough for most loaves and rolls.';
+      else if (hydration < 78) note = 'This is a wetter dough. Expect stickiness and use wet hands instead of panic flour.';
+      else note = 'This is a very wet dough. Do not start here unless you enjoy chaos with gluten.';
+      $('hydrationNote').textContent = note;
+    }
+
+    function updateBakersCalc(){
+      const flour = Math.max(1, n('bakersFlour'));
+      const values = [
+        ['bakersWater','bakersWaterOut'],
+        ['bakersStarter','bakersStarterOut'],
+        ['bakersSalt','bakersSaltOut'],
+        ['bakersSugar','bakersSugarOut'],
+        ['bakersFat','bakersFatOut']
+      ];
+      values.forEach(([input,out]) => { $(out).textContent = percent((n(input) / flour) * 100); });
+      const waterPct = (n('bakersWater') / flour) * 100;
+      const starterPct = (n('bakersStarter') / flour) * 100;
+      const saltPct = (n('bakersSalt') / flour) * 100;
+      $('bakersNote').textContent = `${percent(waterPct)} water, ${percent(starterPct)} starter, and ${percent(saltPct)} salt. That is the recipe structure without the story time.`;
+    }
+
+    const ingredientWeights = [
+      ['all-purpose-flour','All-purpose flour',120],
+      ['bread-flour','Bread flour',120],
+      ['whole-wheat-flour','Whole wheat flour',113],
+      ['rye-flour','Rye flour',106],
+      ['pumpernickel-flour','Pumpernickel flour',106],
+      ['almond-flour','Almond flour',96],
+      ['granulated-sugar','Granulated sugar',198],
+      ['brown-sugar','Brown sugar, packed',213],
+      ['powdered-sugar','Powdered sugar',113],
+      ['cocoa-powder','Cocoa powder',85],
+      ['rolled-oats','Rolled oats',89],
+      ['butter','Butter',227],
+      ['milk','Milk',227],
+      ['water','Water',227],
+      ['vegetable-oil','Vegetable oil',198],
+      ['honey','Honey',340],
+      ['molasses','Molasses / treacle',340],
+      ['sourdough-starter','100% hydration starter',227],
+      ['chocolate-chips','Chocolate chips',170],
+      ['fine-salt','Fine salt',288],
+      ['active-dry-yeast','Yeast',149]
+    ];
+
+    function setupIngredientDropdown(){
+      const select = $('measureIngredient');
+      if (!select) return;
+      select.innerHTML = ingredientWeights.map(([id,label,weight]) => `<option value="${id}" data-weight="${weight}">${label}</option>`).join('');
+    }
+
+    function updateMeasureCalc(){
+      const amount = n('measureAmount');
+      const unitCups = n('measureUnit');
+      const selected = $('measureIngredient').selectedOptions[0];
+      const gramsPerCup = Number(selected?.dataset.weight || 0);
+      const result = amount * unitCups * gramsPerCup;
+      $('measureOut').textContent = grams(result);
+      $('measureBaseOut').textContent = `${gramsPerCup}g per cup`;
+    }
+
+    function attachCalculatorListeners(){
+      document.querySelectorAll('input,select').forEach((el) => {
+        el.addEventListener('input', () => {
+          updateStarterCalc();
+          updateScaleCalc();
+          updateHydrationCalc();
+          updateBakersCalc();
+          updateMeasureCalc();
+        });
+        el.addEventListener('change', () => {
+          updateStarterCalc();
+          updateScaleCalc();
+          updateHydrationCalc();
+          updateBakersCalc();
+          updateMeasureCalc();
+        });
+      });
+    }
+
+    setupIngredientDropdown();
+    attachCalculatorListeners();
+    updateStarterCalc();
+    updateScaleCalc();
+    updateHydrationCalc();
+    updateBakersCalc();
+    updateMeasureCalc();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
