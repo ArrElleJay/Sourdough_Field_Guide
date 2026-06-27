@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Sourdough Field Guide | Schedules</title>
+  <meta name="description" content="Build a practical sourdough bake day timeline with printable checkboxes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .schedule-tool{background:var(--paper);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:24px;margin-bottom:28px}
+    .schedule-tool h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:8px}
+    .scheduler-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
+    .scheduler-grid label{display:grid;gap:7px;font-weight:750;color:var(--navy)}
+    .scheduler-grid input,.scheduler-grid select{width:100%;border:1px solid var(--line);background:#fff;border-radius:14px;padding:12px 13px;font:inherit;color:var(--navy)}
+    .schedule-help{background:#f6efe1;border:1px solid var(--line);border-radius:18px;padding:16px 18px;margin-top:18px;color:var(--navy-2)}
+    .scheduler-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+    .schedule-output{background:var(--paper);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:24px;margin-top:22px}
+    .schedule-output.hidden{display:none}
+    .schedule-summary{display:grid;gap:5px;margin:0 0 18px;color:var(--navy-2)}
+    .schedule-summary strong{color:var(--navy)}
+    .check-timeline{display:grid;gap:10px;margin:18px 0 0}
+    .check-row{display:grid;grid-template-columns:34px 190px 1fr;gap:12px;align-items:start;background:#fbf7ee;border:1px solid var(--line);border-radius:16px;padding:14px}
+    .check-row input{width:20px;height:20px;margin-top:2px;accent-color:var(--navy)}
+    .check-time{font-weight:750;color:var(--navy)}
+    .check-task strong{display:block;color:var(--navy);margin-bottom:2px}
+    .check-task span{display:block;color:var(--muted)}
+    .schedule-warning{margin-top:16px;color:var(--navy-2);background:#f6efe1;border-left:4px solid var(--gold);border-radius:14px;padding:14px 16px}
+    .preset-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:24px}
+    .mini-note{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow)}
+    .mini-note h3{font-size:1.35rem;margin-bottom:8px}
+    .mini-note p{margin:0;color:var(--muted)}
+    @media (max-width:900px){.scheduler-grid{grid-template-columns:1fr}.check-row{grid-template-columns:30px 1fr}.check-time{grid-column:2}.check-task{grid-column:2}.preset-grid{grid-template-columns:1fr}}
+    @media print{
+      body{background:#fff;color:#000;font-size:11pt}.site-header,.page-hero,.schedule-tool,.preset-grid,.site-footer,.nav-toggle,.site-nav,.scheduler-actions .secondary,.schedule-warning.no-print{display:none!important}
+      .section{padding:0}.wrap{width:100%;margin:0}.schedule-output{display:block!important;box-shadow:none;border:0;padding:0;margin:0}.schedule-output.hidden{display:none!important}
+      .schedule-output h2{font-size:22pt;color:#000;margin-bottom:8px}.schedule-summary{font-size:10.5pt;color:#000;margin-bottom:12px}.check-timeline{gap:6px}
+      .check-row{break-inside:avoid;grid-template-columns:28px 155px 1fr;background:#fff;border:1px solid #999;border-radius:0;padding:8px}.check-row input{appearance:none;width:16px;height:16px;border:1px solid #000;margin:2px 0 0}.check-time,.check-task strong{color:#000}.check-task span{color:#000}.schedule-warning{border:1px solid #999;background:#fff;color:#000;border-radius:0}
+    }
+  </style>
+</head>
+<body class="page-schedule">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-wrap">
+      <a class="brand" href="index.html" aria-label="The Sourdough Field Guide home">
+        <img class="brand-mark-image" src="assets/logo-mark-sfg.png" alt="SFG monogram logo">
+        <span class="brand-text">The Sourdough Field Guide</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="basics.html">Get Startered</a>
+        <a href="schedule.html" class="active">Schedules</a>
+        <a href="calculator.html">Calculators</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="submit.html">Submit Recipe</a>
+        <a href="troubleshooting.html">Troubleshooting</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="section page-hero">
+      <div class="wrap narrow page-intro">
+        <p class="eyebrow">Schedules</p>
+        <h1 class="page-title">Build a bake day that does not require psychic powers.</h1>
+        <p>Pick a recipe, choose the recipe default or a sourness level, enter oven time, and get a printable checklist that starts where the recipe actually starts.</p>
+      </div>
+    </section>
+
+    <section class="section panel-section first-section">
+      <div class="wrap">
+        <div class="schedule-tool" id="bake-scheduler">
+          <p class="eyebrow">Bake Day Scheduler</p>
+          <h2>Build a timeline from starter to oven</h2>
+          <p class="small-note">This works backward from the time you want to bake. Recipe default uses the timing the recipe calls for; sourness options adjust the plan when that makes sense.</p>
+
+          <div class="scheduler-grid">
+            <label>Recipe
+              <select id="scheduleRecipe">
+                <option value="classic-loaf">Classic Rustic Sourdough Bread</option>
+                <option value="hamburger-buns">Sourdough Hamburger Buns</option>
+                <option value="cinnamon-rolls">Sourdough Cinnamon Rolls</option>
+                <option value="bagels">Sourdough Bagels</option>
+                <option value="black-russian-bagels">Black Russian Bagels</option>
+                <option value="bread-bowls">Sourdough Bread Bowls</option>
+                <option value="english-muffins">Sourdough English Muffins</option>
+                <option value="pretzel-bites">Pretzel Bites with Sourdough Discard</option>
+                <option value="cheezit-crackers">Sourdough Cheez-It Crackers</option>
+                <option value="discard-pancakes">Sourdough Discard Pancakes</option>
+              </select>
+            </label>
+            <label>Schedule style
+              <select id="sournessLevel">
+                <option value="default" selected>Recipe default</option>
+                <option value="mild">Mild, shorter where possible</option>
+                <option value="balanced">Balanced</option>
+                <option value="extra">Extra sour, longer/cooler fermentation</option>
+              </select>
+            </label>
+            <label>Dough goes into oven
+              <input id="bakeTime" type="datetime-local">
+            </label>
+          </div>
+
+          <div class="schedule-help">
+            <strong>Common sense clause:</strong> this scheduler assumes normal room temperature, recipe-default timing, and dough that is behaving reasonably. If your dough is not ready, wait. If it is sprinting, move faster or use the fridge.
+          </div>
+
+          <div class="scheduler-actions">
+            <button class="button primary" type="button" id="buildSchedule">Build my timeline</button>
+            <button class="button secondary" type="button" id="printSchedule">Print checklist</button>
+          </div>
+        </div>
+
+        <div class="schedule-output hidden" id="scheduleOutput" aria-live="polite">
+          <p class="eyebrow">Printable Timeline</p>
+          <h2 id="outputTitle">Bake Day Timeline</h2>
+          <div class="schedule-summary" id="scheduleSummary"></div>
+          <div class="check-timeline" id="timelineRows"></div>
+          <div class="schedule-warning">
+            <strong>Reality check:</strong> use this as a guide, not a court order. Starter strength, dough temperature, flour, and kitchen temperature can move the schedule. The printed boxes are there because brains are expensive and paper is cheaper.
+          </div>
+        </div>
+
+        <div class="preset-grid">
+          <div class="mini-note">
+            <h3>Same-day bake</h3>
+            <p>Use this when you want the loaf baked today. It is usually milder and depends on a warm enough kitchen and a starter that is actually ready.</p>
+          </div>
+          <div class="mini-note">
+            <h3>Fridge bake</h3>
+            <p>Use this when you shape the dough, refrigerate it, and bake later. Bake straight from cold. Cleaner scoring, easier timing, less drama.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-wrap">
+      <p>The Sourdough Field Guide, a practical sourdough project.</p>
+      <p>No ads. No novellas.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    const recipePlans = {
+      "classic-loaf": {
+        name: "Classic Rustic Sourdough Bread",
+        kind: "Active starter dough",
+        defaultStyle: "balanced",
+        bakeNote: "Bake covered at 500°F for 25 minutes, then uncovered at 450°F until browned and 200 to 210°F inside.",
+        plans: {
+          mild: {feed: 8, mix: 1.25, bulk: 4.5, shape: .25, proof: 1.5, cold: 0, preheat: .75},
+          balanced: {feed: 10, mix: 1.25, bulk: 5.5, shape: .25, proof: 1.5, cold: 0, preheat: .75},
+          extra: {feed: 12, mix: 1.25, bulk: 5.5, shape: .25, proof: .25, cold: 12, preheat: .75}
+        }
+      },
+      "hamburger-buns": {
+        name: "Sourdough Hamburger Buns",
+        kind: "Active starter dough",
+        defaultStyle: "balanced",
+        bakeNote: "Bake around 375°F for about 25 minutes, or until browned and baked through.",
+        plans: {
+          mild: {feed: 8, mix: .5, bulk: 5, shape: .35, proof: 1.25, cold: 0, preheat: .35},
+          balanced: {feed: 10, mix: .5, bulk: 6, shape: .35, proof: 1.5, cold: 0, preheat: .35},
+          extra: {feed: 12, mix: .5, bulk: 6, shape: .35, proof: .25, cold: 10, preheat: .35}
+        }
+      },
+      "cinnamon-rolls": {
+        name: "Sourdough Cinnamon Rolls",
+        kind: "Active starter dough",
+        defaultStyle: "balanced",
+        bakeNote: "Bake at 350°F for about 35 to 40 minutes, or until puffed, set, and lightly browned.",
+        plans: {
+          mild: {feed: 8, mix: .5, bulk: 6, shape: .75, proof: 1.5, cold: 0, preheat: .35},
+          balanced: {feed: 10, mix: .5, bulk: 8, shape: .75, proof: 1.5, cold: 0, preheat: .35},
+          extra: {feed: 12, mix: .5, bulk: 8, shape: .75, proof: .25, cold: 10, preheat: .35}
+        }
+      },
+      "bagels": {
+        name: "Sourdough Bagels",
+        kind: "Active starter dough",
+        defaultStyle: "balanced",
+        bakeNote: "Boil about 2 minutes per side, then bake at 425°F for 25 to 28 minutes.",
+        plans: {
+          mild: {feed: 8, mix: .75, bulk: 8, shape: .5, proof: .75, cold: 0, boil: .6, preheat: .45},
+          balanced: {feed: 10, mix: .75, bulk: 10, shape: .5, proof: .75, cold: 0, boil: .6, preheat: .45},
+          extra: {feed: 12, mix: .75, bulk: 10, shape: .5, proof: .25, cold: 10, boil: .6, preheat: .45}
+        }
+      },
+      "black-russian-bagels": {
+        name: "Black Russian Bagels",
+        kind: "Yeasted dough",
+        defaultStyle: "balanced",
+        bakeNote: "Boil 1 minute per side, then bake at 425°F for about 20 to 22 minutes.",
+        plans: {
+          mild: {feed: 0, mix: .5, bulk: 1, shape: .35, proof: .35, cold: 0, boil: .5, preheat: .45},
+          balanced: {feed: 0, mix: .5, bulk: 1.25, shape: .35, proof: .35, cold: 0, boil: .5, preheat: .45},
+          extra: {feed: 0, mix: .5, bulk: 1.25, shape: .35, proof: .25, cold: 8, boil: .5, preheat: .45}
+        }
+      },
+      "bread-bowls": {
+        name: "Sourdough Bread Bowls",
+        kind: "Active starter dough",
+        defaultStyle: "extra",
+        bakeNote: "Bake at 450°F for 25 to 30 minutes, or until well browned and roughly 200 to 210°F inside.",
+        plans: {
+          mild: {feed: 8, mix: .75, bulk: 4.5, shape: .5, proof: 1.25, cold: 0, preheat: .75},
+          balanced: {feed: 10, mix: .75, bulk: 5.5, shape: .5, proof: 1.25, cold: 0, preheat: .75},
+          extra: {feed: 12, mix: .75, bulk: 5.5, shape: .5, proof: .25, cold: 10, preheat: .75}
+        }
+      },
+      "english-muffins": {
+        name: "Sourdough English Muffins",
+        kind: "Active starter dough",
+        defaultStyle: "balanced",
+        bakeNote: "Cook low and covered, about 4 minutes per side, until cooked through.",
+        plans: {
+          mild: {feed: 8, mix: .5, bulk: 8, shape: .5, proof: 1, cold: 0, preheat: .25},
+          balanced: {feed: 10, mix: .5, bulk: 10, shape: .5, proof: 1, cold: 0, preheat: .25},
+          extra: {feed: 12, mix: .5, bulk: 10, shape: .5, proof: .25, cold: 8, preheat: .25}
+        }
+      },
+      "pretzel-bites": {
+        name: "Pretzel Bites with Sourdough Discard",
+        kind: "Discard dough",
+        defaultStyle: "balanced",
+        bakeNote: "Bake at 500°F for 8 to 10 minutes after the baking-soda bath.",
+        plans: {
+          mild: {feed: 0, mix: .5, bulk: 1, shape: .5, proof: .25, cold: 0, boil: .35, preheat: .45},
+          balanced: {feed: 0, mix: .5, bulk: 1.25, shape: .5, proof: .25, cold: 0, boil: .35, preheat: .45},
+          extra: {feed: 0, mix: .5, bulk: 1.25, shape: .5, proof: .25, cold: 0, boil: .35, preheat: .45}
+        }
+      },
+      "cheezit-crackers": {
+        name: "Sourdough Cheez-It Crackers",
+        kind: "Discard recipe",
+        defaultStyle: "balanced",
+        bakeNote: "Bake at 350°F for 15 to 18 minutes, watching closely near the end.",
+        plans: {
+          mild: {feed: 0, mix: .25, bulk: 0, shape: .25, proof: 0, cold: .35, preheat: .25},
+          balanced: {feed: 0, mix: .25, bulk: 0, shape: .25, proof: 0, cold: .35, preheat: .25},
+          extra: {feed: 0, mix: .25, bulk: 0, shape: .25, proof: 0, cold: .35, preheat: .25}
+        }
+      },
+      "discard-pancakes": {
+        name: "Sourdough Discard Pancakes",
+        kind: "Discard recipe",
+        defaultStyle: "balanced",
+        bakeNote: "Cook on medium-low, about 2 to 3 minutes on the first side and 1 to 2 minutes on the second.",
+        plans: {
+          mild: {feed: 0, mix: .25, bulk: 0, shape: 0, proof: 0, cold: 0, preheat: .15},
+          balanced: {feed: 0, mix: .25, bulk: 0, shape: 0, proof: 0, cold: 0, preheat: .15},
+          extra: {feed: 0, mix: .25, bulk: 0, shape: 0, proof: 0, cold: 0, preheat: .15}
+        }
+      }
+    };
+
+    function pad(n){ return String(n).padStart(2,"0"); }
+    function toInputValue(date){ return `${date.getFullYear()}-${pad(date.getMonth()+1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`; }
+    function addHours(date, hours){ return new Date(date.getTime() + hours * 60 * 60 * 1000); }
+    function fmt(date){ return date.toLocaleString([], {weekday:"short", month:"short", day:"numeric", hour:"numeric", minute:"2-digit"}); }
+    function niceStyle(value, recipe){
+      if(value === "default") return `Recipe default (${niceStyle(recipe.defaultStyle, recipe)})`;
+      if(value === "mild") return "Mild";
+      if(value === "extra") return "Extra sour";
+      return "Balanced";
+    }
+
+    function row(time, title, detail){ return [time, title, detail]; }
+
+    function buildTimeline(scroll=true){
+      const recipeKey = document.getElementById("scheduleRecipe").value;
+      const selectedStyle = document.getElementById("sournessLevel").value;
+      const bakeInput = document.getElementById("bakeTime").value;
+      if(!bakeInput){ alert("Pick the time the dough should go into the oven first."); return; }
+
+      const recipe = recipePlans[recipeKey];
+      const actualStyle = selectedStyle === "default" ? recipe.defaultStyle : selectedStyle;
+      const plan = recipe.plans[actualStyle];
+      const bake = new Date(bakeInput);
+
+      const preheat = addHours(bake, -(plan.preheat || .5));
+      const boilStart = plan.boil ? addHours(bake, -plan.boil) : null;
+      const readyForBake = boilStart || bake;
+      const coldStart = plan.cold ? addHours(readyForBake, -plan.cold) : null;
+      const proofStart = plan.proof ? addHours(coldStart || readyForBake, -plan.proof) : (coldStart || readyForBake);
+      const shapeStart = plan.shape ? addHours(proofStart, -plan.shape) : proofStart;
+      const bulkStart = plan.bulk ? addHours(shapeStart, -plan.bulk) : shapeStart;
+      const mixStart = addHours(bulkStart, -plan.mix);
+      const starterFeed = plan.feed ? addHours(mixStart, -plan.feed) : null;
+
+      const rows = [];
+      if(starterFeed){
+        rows.push(row(starterFeed, "Feed starter", "Build the active starter/levain the recipe needs. If the schedule is overnight, 1:3:3 is usually a sane place to start."));
+        rows.push(row(mixStart, "Check starter and mix dough", "Use it when it has risen predictably and is active. Mix the dough according to the recipe."));
+      } else if(recipe.kind.includes("Discard")){
+        rows.push(row(mixStart, "Confirm discard is ready", "This recipe uses discard, not a fresh active starter build. If you do not have discard, feed your starter earlier and save the discard."));
+        rows.push(row(mixStart, "Mix", "Mix according to the recipe."));
+      } else {
+        rows.push(row(mixStart, "Gather ingredients and mix", "This recipe is currently yeast-based in the catalog, so the schedule starts at mixing."));
+      }
+
+      if(plan.mix >= .5){ rows.push(row(addHours(mixStart, .5), "Rest or early dough work", "Do the rest, kneading, stretch-and-folds, or first handling step the recipe calls for.")); }
+      if(plan.bulk){ rows.push(row(bulkStart, "Begin bulk rise / main ferment", "Keep the dough warm enough to move. Watch the dough more than the clock.")); }
+      if(plan.shape){ rows.push(row(shapeStart, "Shape", "Shape the dough and move it into its basket, pan, tray, or bagel/roll form.")); }
+      if(plan.cold){ rows.push(row(coldStart, "Cold proof / fridge hold", "Refrigerate the shaped dough. Bake straight from cold unless the recipe says otherwise.")); }
+      else if(plan.proof){ rows.push(row(proofStart, "Final proof", "Let the shaped dough proof until it looks ready for the oven or cooking surface.")); }
+      rows.push(row(preheat, recipeKey === "discard-pancakes" ? "Preheat pan" : "Preheat", recipeKey === "discard-pancakes" ? "Heat the pan or griddle on medium-low." : "Preheat the oven. For Dutch oven loaves, preheat the Dutch oven too."));
+      if(boilStart){ rows.push(row(boilStart, recipeKey.includes("bagels") ? "Boil" : "Baking soda bath", recipeKey.includes("bagels") ? "Boil according to the recipe, then move directly to baking." : "Bath/boil according to the recipe, then move directly to baking.")); }
+      rows.push(row(bake, recipeKey === "discard-pancakes" || recipeKey === "english-muffins" ? "Cook" : "Bake", recipe.bakeNote));
+
+      rows.sort((a,b) => a[0] - b[0]);
+
+      document.getElementById("outputTitle").textContent = `${recipe.name} Timeline`;
+      document.getElementById("scheduleSummary").innerHTML = `
+        <div><strong>Recipe:</strong> ${recipe.name}</div>
+        <div><strong>Schedule style:</strong> ${niceStyle(selectedStyle, recipe)}</div>
+        <div><strong>Recipe type:</strong> ${recipe.kind}</div>
+        <div><strong>Oven/cook time starts:</strong> ${fmt(bake)}</div>
+      `;
+      document.getElementById("timelineRows").innerHTML = rows.map((r) => `
+        <label class="check-row">
+          <input type="checkbox" aria-label="Mark ${r[1]} complete">
+          <span class="check-time">${fmt(r[0])}</span>
+          <span class="check-task"><strong>${r[1]}</strong><span>${r[2]}</span></span>
+        </label>
+      `).join("");
+      document.getElementById("scheduleOutput").classList.remove("hidden");
+      if(scroll){ document.getElementById("scheduleOutput").scrollIntoView({behavior:"smooth", block:"start"}); }
+    }
+
+    document.getElementById("buildSchedule").addEventListener("click", () => buildTimeline(true));
+    document.getElementById("printSchedule").addEventListener("click", () => {
+      if(document.getElementById("scheduleOutput").classList.contains("hidden")){ buildTimeline(false); }
+      setTimeout(() => window.print(), 150);
+    });
+    document.getElementById("scheduleRecipe").addEventListener("change", () => buildTimeline(false));
+    document.getElementById("sournessLevel").addEventListener("change", () => buildTimeline(false));
+    document.getElementById("bakeTime").addEventListener("change", () => buildTimeline(false));
+
+    const defaultBake = new Date();
+    defaultBake.setDate(defaultBake.getDate() + 1);
+    defaultBake.setHours(9,0,0,0);
+    document.getElementById("bakeTime").value = toInputValue(defaultBake);
+    buildTimeline(false);
+  </script>
+</body>
+</html>
