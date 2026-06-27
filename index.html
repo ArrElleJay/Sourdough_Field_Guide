@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Sourdough Field Guide | Practical Sourdough Tools</title>
+  <meta name="description" content="A practical sourdough guide with starter calculators, schedules, recipes, and troubleshooting for home bakers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-wrap">
+      <a class="brand" href="#home" aria-label="The Sourdough Field Guide home">
+        <img class="brand-mark-image" src="assets/logo-mark-sfg.png" alt="SFG monogram logo">
+        <span class="brand-text">The Sourdough Field Guide</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#calculator">Calculator</a>
+        <a href="#basics">Basics</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero section">
+      <div class="wrap hero-grid">
+        <div class="hero-main">
+          <img class="hero-lockup" src="assets/logo-lockup-transparent.png" alt="The Sourdough Field Guide logo">
+          <h1>Useful starter math.<br>Sane schedules.<br>Recipes that get to the point.</h1>
+          <p class="hero-copy">A practical sourdough hub for people who like bread, not twelve-paragraph stories about someone’s farmhouse childhood.</p>
+          <div class="button-row">
+            <a class="button primary" href="#calculator">Use the starter calculator</a>
+            <a class="button secondary" href="#recipes">Browse recipes</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Quick rule</h2>
+          <p>Starter ratios control both sourness and timing. More food means a slower peak and a milder loaf. Less food means a faster peak and more tang.</p>
+          <a href="#basics" class="text-link">Read the ratio guide</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="section panel-section">
+      <div class="wrap two-col">
+        <div>
+          <h2>Starter Feed Calculator</h2>
+          <p>Enter how much active starter your recipe needs, choose the sourness level, and the calculator will tell you what to feed so you still have starter left for next time.</p>
+        </div>
+        <form class="calculator-card" id="starterForm">
+          <label for="starterNeeded">Starter needed for recipe</label>
+          <div class="input-row"><input id="starterNeeded" type="number" min="1" step="1" value="100"><span>g</span></div>
+
+          <label for="leftoverAmount">Leftover to keep</label>
+          <div class="input-row"><input id="leftoverAmount" type="number" min="0" step="1" value="25"><span>g</span></div>
+
+          <label for="sournessLevel">Sourness level</label>
+          <select id="sournessLevel"></select>
+
+          <div class="calc-results" aria-live="polite">
+            <div><span>Seed starter</span><strong id="seedStarter">0g</strong></div>
+            <div><span>Flour</span><strong id="feedFlour">0g</strong></div>
+            <div><span>Water</span><strong id="feedWater">0g</strong></div>
+            <div><span>Makes about</span><strong id="totalMade">0g</strong></div>
+          </div>
+          <p class="ratio-line"><span id="ratioLabel">Ratio</span> <span id="peakWindow">Peak window</span></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="basics" class="section">
+      <div class="wrap">
+        <p class="eyebrow">Starter basics</p>
+        <h2 class="basics-title"><span>Sourdough is science.</span><span>Annoying, delicious science.</span></h2>
+        <div class="card-grid">
+          <article class="info-card"><h3>Temperature changes everything</h3><p>Warm starter and dough ferment faster. Cool starter and dough take longer. Use time as a guide, not a personality test.</p></article>
+          <article class="info-card"><h3>Ratios set timing</h3><p>A 1:1:1 feed peaks faster and tastes sharper. A 1:10:10 feed peaks slower and tastes much milder.</p></article>
+          <article class="info-card"><h3>Add-ins are not neutral</h3><p>Sugar, honey, and fruit can speed things up. Cinnamon, garlic, fat, and eggs can slow things down. Rye, cocoa, whole grains, and seeds absorb water.</p></article>
+          <article class="info-card"><h3>Bulk ferment is the hard part</h3><p>Times are estimates. A shot glass sample can help you see when the dough has risen enough without guessing like a kitchen goblin.</p></article>
+        </div>
+        <div class="ratio-table-wrap">
+          <h3>Ratio guide</h3>
+          <table class="clean-table"><thead><tr><th>Level</th><th>Ratio</th><th>Peak estimate</th><th>Flavor</th></tr></thead><tbody id="ratioTable"></tbody></table>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="section panel-section">
+      <div class="wrap">
+        <p class="eyebrow">Sample schedule</p>
+        <h2>Basic loaf schedule</h2>
+        <div class="timeline">
+          <div><strong>Night before, 9:00 PM</strong><span>Feed starter if using 1:3:3 or greater. Leave covered at room temp.</span></div>
+          <div><strong>8:00 AM</strong><span>Mix dough with active starter.</span></div>
+          <div><strong>8:00 to 8:30 AM</strong><span>Rest 30 minutes.</span></div>
+          <div><strong>8:30 to 9:15 AM</strong><span>Do 4 stretch and folds, 15 minutes apart.</span></div>
+          <div><strong>9:15 AM to 1:00 PM-ish</strong><span>Bulk ferment until puffier, smoother, and increased about 75 to 100%.</span></div>
+          <div><strong>1:00 PM-ish</strong><span>Shape loaf.</span></div>
+          <div><strong>Same-day bake</strong><span>Proof 1 to 2 hours, preheat Dutch oven to 500°F, bake covered 25 minutes, reduce to 450°F and uncover about 15 minutes, until 200 to 210°F inside.</span></div>
+          <div><strong>Fridge bake</strong><span>Refrigerate after shaping. Bake straight from the fridge. Do not bring to room temp.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recipes" class="section">
+      <div class="wrap">
+        <p class="eyebrow">Recipes</p>
+        <h2>Recipes, printable without the scroll of shame</h2>
+        <p>Choose a recipe for the full kitchen version. Use the card toggle when you just need the short version.</p>
+        <div class="recipe-layout">
+          <div class="recipe-list" id="recipeList"></div>
+          <article class="recipe-detail" id="recipeDetail"></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="troubleshooting" class="section panel-section">
+      <div class="wrap">
+        <p class="eyebrow">Troubleshooting</p>
+        <h2>When bread acts like bread</h2>
+        <div class="accordion" id="troubleshootingList"></div>
+      </div>
+    </section>
+
+    <section id="factcheck" class="section">
+      <div class="wrap narrow">
+        <p class="eyebrow">Build notes</p>
+        <h2>Items to fact-check before sharing widely</h2>
+        <ul class="check-list">
+          <li>Ratio sourness labels are taken from your current handbook and workbook logic. Confirm that this is the public version you want.</li>
+          <li>Peak windows are estimates and assume a room around 72°F. Add your own house-specific notes later.</li>
+          <li>Black Russian bagel hydration and knead notes reflect your adaptation after the dry/chewy batch. Test again before calling it final.</li>
+          <li>Recipe photos are intentionally left out of Phase 1. We can add optional photo blocks later.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+    <section class="section brand-signoff">
+      <div class="wrap narrow signoff-wrap">
+        <img class="signoff-logo" src="assets/logo-full-sfg.png" alt="The Sourdough Field Guide logo">
+      </div>
+    </section>
+
+  <footer class="site-footer">
+    <div class="wrap footer-wrap">
+      <p>The Sourdough Field Guide, a practical sourdough project.</p>
+      <p>No ads. No novella before the recipe. Revolutionary stuff.</p>
+    </div>
+  </footer>
+
+  <script src="recipes.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
