@@ -332,3 +332,74 @@ summary{
   .site-header{background:#fff!important;border-bottom:1px solid #ccc!important;box-shadow:none!important}
   h1,h2,h3,.brand-text{color:#000!important}
 }
+/* Light cards need dark readable text */
+.card,
+.panel,
+.content-card,
+.field-card,
+.recipe-card,
+.catalog-card,
+.accordion-card,
+.quick-recipe,
+.baking-plan,
+.form-card,
+details,
+summary {
+  color: #142033;
+}
+
+.card h1,
+.card h2,
+.card h3,
+.panel h1,
+.panel h2,
+.panel h3,
+.content-card h1,
+.content-card h2,
+.content-card h3,
+.field-card h1,
+.field-card h2,
+.field-card h3,
+.recipe-card h1,
+.recipe-card h2,
+.recipe-card h3,
+.catalog-card h1,
+.catalog-card h2,
+.catalog-card h3,
+.accordion-card h1,
+.accordion-card h2,
+.accordion-card h3,
+details summary {
+  color: #0B1F33;
+}
+
+.card p,
+.card li,
+.panel p,
+.panel li,
+.content-card p,
+.content-card li,
+.field-card p,
+.field-card li,
+.recipe-card p,
+.recipe-card li,
+.catalog-card p,
+.catalog-card li,
+.accordion-card p,
+.accordion-card li,
+.quick-recipe p,
+.quick-recipe li,
+.baking-plan p,
+.baking-plan li,
+.form-card p,
+.form-card li {
+  color: #1F2933;
+}
+
+.eyebrow,
+.kicker,
+.tag,
+.meta,
+.small-note {
+  color: #0B1F33;
+}
