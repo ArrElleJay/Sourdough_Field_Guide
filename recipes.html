@@ -1,149 +1,124 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Sourdough Field Guide | Recipes</title>
-  <meta name="description" content="A field-guide style catalog of sourdough recipes.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Page-only adjustment: keep recipe catalog cards smaller and consistently sized on desktop. */
-    .page-recipes .category-jump-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-    .page-recipes .category-jump-list a{text-decoration:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:8px 12px;font-weight:750;color:var(--navy);font-size:.9rem}
-    .page-recipes .category-jump-list a:hover{border-color:#cfbf9f;background:#f6efe1}
-    .page-recipes .recipe-catalog-grid,.page-recipes .two-card-grid,.page-recipes .three-card-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-    .page-recipes .recipe-catalog-card{border-radius:18px;box-shadow:0 10px 28px rgba(13,34,56,.10)}
-    .page-recipes .catalog-image{height:155px;overflow:hidden}
-    .page-recipes .catalog-image img{height:100%;width:100%;aspect-ratio:auto;object-fit:cover}
-    .page-recipes .recipe-card-placeholder{height:155px;aspect-ratio:auto}
-    .page-recipes .recipe-card-placeholder span{width:82px;height:82px;font-size:.68rem}
-    .page-recipes .catalog-copy{padding:14px 15px 16px;gap:6px}
-    .page-recipes .catalog-copy h3{font-size:1.22rem;line-height:1.08}
-    .page-recipes .catalog-copy p{font-size:.88rem}
-    .page-recipes .catalog-group{scroll-margin-top:100px}
-    @media (max-width:620px){
-      .page-recipes .recipe-catalog-grid,.page-recipes .two-card-grid,.page-recipes .three-card-grid{grid-template-columns:1fr}
-      .page-recipes .catalog-image,.page-recipes .recipe-card-placeholder{height:180px}
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>The Sourdough Field Guide | Recipes</title>
+<meta content="A field-guide style catalog of sourdough recipes." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+
 </head>
 <body class="page-recipes">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap header-wrap">
-      <a class="brand" href="index.html" aria-label="The Sourdough Field Guide home">
-        <img class="brand-mark-image" src="assets/logo-mark-sfg.png" alt="SFG monogram logo">
-        <span class="brand-text">The Sourdough Field Guide</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="index.html" class="">Home</a>
-        <a href="basics.html" class="">Get Startered</a>
-        <a href="schedule.html" class="">Timing</a>
-        <a href="calculator.html" class="">Calculators</a>
-        <a href="recipes.html" class="active">Recipes</a>
-        <a href="submit.html" class="">Submit Recipe</a>
-        <a href="troubleshooting.html" class="">What Had Happened Was...</a>
-      </nav>
-    </div>
-  </header>
-  <main id="main">
-    <section class="section page-hero">
-      <div class="wrap narrow page-intro">
-        <p class="eyebrow">Recipes</p>
-        <h1 class="page-title">Field plates from the kitchen</h1>
-        <p>Browse the catalog, open the long-form field guide entry, or switch to the quick recipe when it is time to actually bake.</p>
-        <div class="button-row page-button-row"><a class="button secondary" href="submit.html">Submit a recipe</a></div>
-        <nav class="category-jump-list" aria-label="Recipe categories">
-          <a href="#loaves">Loaves</a>
-          <a href="#bagels">Bagels</a>
-          <a href="#buns-rolls">Buns &amp; Rolls</a>
-          <a href="#breakfast">Breakfast</a>
-          <a href="#sweet-treats">Sweet Treats</a>
-          <a href="#salty-snacks">Salty Snacks</a>
-          <a href="#discard">Discard</a>
-        </nav>
-      </div>
-    </section>
-
-    <section class="section first-section">
-      <div class="wrap recipe-catalog-sections">
-        <section class="catalog-group" id="loaves">
-          <div class="catalog-group-heading"><p class="eyebrow">Loaves</p><h2>Bread structure, steam, and crust.</h2></div>
-          <div class="recipe-catalog-grid two-card-grid">
-            <a class="recipe-catalog-card has-plate" href="recipes/classic-rustic-sourdough-bread.html">
-              <div class="catalog-image"><img src="assets/illustrations/loaf-plate.png" alt="Field guide style illustration of a rustic sourdough loaf"></div>
-              <div class="catalog-copy"><span class="catalog-tag">Loaves</span><h3>Classic Rustic Sourdough Bread</h3><p>Makes 1 loaf | Bake 500°F covered, then 450°F uncovered</p><div class="tag-row"><span>Active starter</span></div><span class="catalog-link">Open recipe</span></div>
-            </a>
-            <a class="recipe-catalog-card text-only-card" href="recipes/sourdough-bread-bowls.html">
-              <div class="catalog-image"><div class="recipe-card-placeholder"><span>Bowls</span></div></div>
-              <div class="catalog-copy"><span class="catalog-tag">Loaves</span><h3>Sourdough Bread Bowls</h3><p>Makes 5 to 6 bowls | Bake 450°F for 25 to 30 minutes</p><div class="tag-row"><span>Active starter</span></div><span class="catalog-link">Open recipe</span></div>
-            </a>
-          </div>
-        </section>
-
-        <section class="catalog-group" id="bagels">
-          <div class="catalog-group-heading"><p class="eyebrow">Bagels</p><h2>Boiled, baked, chewy.</h2></div>
-          <div class="recipe-catalog-grid two-card-grid">
-            <a class="recipe-catalog-card text-only-card" href="recipes/sourdough-bagels.html">
-              <div class="catalog-image"><div class="recipe-card-placeholder"><span>Bagels</span></div></div>
-              <div class="catalog-copy"><span class="catalog-tag">Bagels</span><h3>Sourdough Bagels</h3><p>Makes 8 | Bake 425°F for 25 to 28 minutes</p><div class="tag-row"><span>Active starter</span></div><span class="catalog-link">Open recipe</span></div>
-            </a>
-            <a class="recipe-catalog-card has-plate" href="recipes/black-russian-bagels.html">
-              <div class="catalog-image"><img src="assets/illustrations/bagel-plate.png" alt="Field guide style illustration of a sourdough bagel"></div>
-              <div class="catalog-copy"><span class="catalog-tag">Bagels</span><h3>Black Russian Bagels</h3><p>Makes about 12 | Bake 425°F for 20 to 22 minutes</p><div class="tag-row"><span>Retest needed</span></div><span class="catalog-link">Open recipe</span></div>
-            </a>
-          </div>
-        </section>
-
-        <section class="catalog-group" id="buns-rolls">
-          <div class="catalog-group-heading"><p class="eyebrow">Buns &amp; Rolls</p><h2>Soft structure for burgers, sandwiches, and tear-apart situations.</h2></div>
-          <div class="recipe-catalog-grid two-card-grid">
-            <a class="recipe-catalog-card text-only-card" href="recipes/sourdough-hamburger-buns.html">
-              <div class="catalog-image"><div class="recipe-card-placeholder"><span>Buns</span></div></div>
-              <div class="catalog-copy"><span class="catalog-tag">Buns &amp; Rolls</span><h3>Sourdough Hamburger Buns</h3><p>Makes 6 buns | Bake 375°F for 25 minutes</p><div class="tag-row"><span>Active starter</span></div><span class="catalog-link">Open recipe</span></div>
-            </a>
-          </div>
-        </section>
-
-        <section class="catalog-group" id="breakfast">
-          <div class="catalog-group-heading"><p class="eyebrow">Breakfast</p><h2>Griddles, mornings, and things that justify maple syrup.</h2></div>
-          <div class="recipe-catalog-grid two-card-grid">
-            <a class="recipe-catalog-card text-only-card" href="recipes/sourdough-discard-pancakes.html"><div class="catalog-image"><div class="recipe-card-placeholder"><span>Pancakes</span></div></div><div class="catalog-copy"><span class="catalog-tag">Breakfast</span><h3>Sourdough Discard Pancakes</h3><p>Makes 12 pancakes | Cook medium-low</p><div class="tag-row"><span>Discard</span></div><span class="catalog-link">Open recipe</span></div></a>
-            <a class="recipe-catalog-card text-only-card" href="recipes/sourdough-english-muffins.html"><div class="catalog-image"><div class="recipe-card-placeholder"><span>Muffins</span></div></div><div class="catalog-copy"><span class="catalog-tag">Breakfast</span><h3>Sourdough English Muffins</h3><p>Makes 10 | Cook low, covered, 4 minutes per side</p><div class="tag-row"><span>Active starter</span></div><span class="catalog-link">Open recipe</span></div></a>
-          </div>
-        </section>
-
-        <section class="catalog-group" id="sweet-treats">
-          <div class="catalog-group-heading"><p class="eyebrow">Sweet Treats</p><h2>Soft doughs, spirals, and dessert-adjacent excuses.</h2></div>
-          <div class="recipe-catalog-grid two-card-grid">
-            <a class="recipe-catalog-card has-plate" href="recipes/soft-and-gooey-sourdough-cinnamon-rolls.html"><div class="catalog-image"><img src="assets/illustrations/cinnamon-roll-plate.png" alt="Field guide style illustration of a cinnamon roll"></div><div class="catalog-copy"><span class="catalog-tag">Sweet Treats</span><h3>Soft and Gooey Sourdough Cinnamon Rolls</h3><p>Makes 8 rolls | Bake 350°F for 35 to 40 minutes</p><div class="tag-row"><span>Active starter</span></div><span class="catalog-link">Open recipe</span></div></a>
-          </div>
-        </section>
-
-        <section class="catalog-group" id="salty-snacks">
-          <div class="catalog-group-heading"><p class="eyebrow">Salty Snacks</p><h2>Crackers, pretzels, and other highly defensible side quests.</h2></div>
-          <div class="recipe-catalog-grid two-card-grid">
-            <a class="recipe-catalog-card text-only-card" href="recipes/sourdough-cheez-it-crackers.html"><div class="catalog-image"><div class="recipe-card-placeholder"><span>Crackers</span></div></div><div class="catalog-copy"><span class="catalog-tag">Salty Snacks</span><h3>Sourdough Cheez-It Crackers</h3><p>Makes 6 servings | Bake 350°F for 15 to 18 minutes</p><div class="tag-row"><span>Discard</span></div><span class="catalog-link">Open recipe</span></div></a>
-            <a class="recipe-catalog-card text-only-card" href="recipes/pretzel-bites-with-sourdough-discard.html"><div class="catalog-image"><div class="recipe-card-placeholder"><span>Pretzel</span></div></div><div class="catalog-copy"><span class="catalog-tag">Salty Snacks</span><h3>Pretzel Bites with Sourdough Discard</h3><p>Makes 32 bites | Bake 500°F for 8 to 10 minutes</p><div class="tag-row"><span>Discard</span></div><span class="catalog-link">Open recipe</span></div></a>
-          </div>
-        </section>
-
-        <section class="catalog-group" id="discard">
-          <div class="catalog-group-heading"><p class="eyebrow">Discard</p><h2>Cross-listed recipes that use discard instead of active starter.</h2></div>
-          <div class="recipe-catalog-grid three-card-grid">
-            <a class="recipe-catalog-card text-only-card" href="recipes/sourdough-discard-pancakes.html"><div class="catalog-image"><div class="recipe-card-placeholder"><span>Pancakes</span></div></div><div class="catalog-copy"><span class="catalog-tag">Breakfast</span><h3>Sourdough Discard Pancakes</h3><p>Makes 12 pancakes | Cook medium-low</p><div class="tag-row"><span>Discard</span></div><span class="catalog-link">Open recipe</span></div></a>
-            <a class="recipe-catalog-card text-only-card" href="recipes/sourdough-cheez-it-crackers.html"><div class="catalog-image"><div class="recipe-card-placeholder"><span>Crackers</span></div></div><div class="catalog-copy"><span class="catalog-tag">Salty Snacks</span><h3>Sourdough Cheez-It Crackers</h3><p>Makes 6 servings | Bake 350°F for 15 to 18 minutes</p><div class="tag-row"><span>Discard</span></div><span class="catalog-link">Open recipe</span></div></a>
-            <a class="recipe-catalog-card text-only-card" href="recipes/pretzel-bites-with-sourdough-discard.html"><div class="catalog-image"><div class="recipe-card-placeholder"><span>Pretzel</span></div></div><div class="catalog-copy"><span class="catalog-tag">Salty Snacks</span><h3>Pretzel Bites with Sourdough Discard</h3><p>Makes 32 bites | Bake 500°F for 8 to 10 minutes</p><div class="tag-row"><span>Discard</span></div><span class="catalog-link">Open recipe</span></div></a>
-          </div>
-        </section>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer"><div class="wrap footer-wrap"><p>The Sourdough Field Guide, a practical sourdough project.</p><p>No ads. No novella before the recipe. Revolutionary stuff.</p></div></footer>
-  <script src="script.js"></script>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap header-wrap">
+<a aria-label="The Sourdough Field Guide home" class="brand" href="index.html">
+<img alt="SFG monogram logo" class="brand-mark-image" src="assets/logo-mark-sfg.png"/>
+<span class="brand-text">The Sourdough Field Guide</span>
+</a>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle" type="button">Menu</button>
+<nav aria-label="Primary navigation" class="site-nav">
+<a class="" href="index.html">Home</a>
+<a class="" href="basics.html">Get Startered</a>
+<a class="" href="schedule.html">Timing</a>
+<a class="" href="calculator.html">Calculators</a>
+<a class="active" href="recipes.html">Recipes</a>
+<a class="" href="submit.html">Submit Recipe</a>
+<a class="" href="troubleshooting.html">What Had Happened Was...</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="section page-hero">
+<div class="wrap narrow page-intro">
+<p class="eyebrow">Recipes</p>
+<h1 class="page-title">Field plates from the kitchen</h1>
+<p>Browse the catalog, open the long-form field guide entry, or switch to the quick recipe when it is time to actually bake.</p>
+<div class="button-row page-button-row"><a class="button secondary" href="submit.html">Submit a recipe</a></div>
+<nav aria-label="Recipe categories" class="category-jump-list">
+<a href="#loaves">Loaves</a>
+<a href="#bagels">Bagels</a>
+<a href="#buns-rolls">Buns &amp; Rolls</a>
+<a href="#breakfast">Breakfast</a>
+<a href="#sweet-treats">Sweet Treats</a>
+<a href="#salty-snacks">Salty Snacks</a>
+<a href="#discard">Discard</a>
+</nav>
+</div>
+</section>
+<section class="section first-section">
+<div class="wrap recipe-catalog-sections">
+<section class="catalog-group" id="loaves">
+<div class="catalog-group-heading"><p class="eyebrow">Loaves</p><h2>Bread structure, steam, and crust.</h2></div>
+<div class="recipe-catalog-grid two-card-grid">
+<a class="recipe-catalog-card has-plate" href="recipes/classic-rustic-sourdough-bread.html">
+<div class="catalog-image"><img alt="Field guide style illustration of a rustic sourdough loaf" src="assets/illustrations/loaf-plate.png"/></div>
+<div class="catalog-copy"><span class="catalog-tag">Loaves</span><h3>Classic Rustic Sourdough Bread</h3><p>Makes 1 loaf | Bake 500°F covered, then 450°F uncovered</p><div class="tag-row"><span>Active starter</span></div><span class="catalog-link">Open recipe</span></div>
+</a>
+<a class="recipe-catalog-card text-only-card" href="recipes/sourdough-bread-bowls.html">
+<div class="catalog-image"><div class="recipe-card-placeholder"><span>Bowls</span></div></div>
+<div class="catalog-copy"><span class="catalog-tag">Loaves</span><h3>Sourdough Bread Bowls</h3><p>Makes 5 to 6 bowls | Bake 450°F for 25 to 30 minutes</p><div class="tag-row"><span>Active starter</span></div><span class="catalog-link">Open recipe</span></div>
+</a>
+</div>
+</section>
+<section class="catalog-group" id="bagels">
+<div class="catalog-group-heading"><p class="eyebrow">Bagels</p><h2>Boiled, baked, chewy.</h2></div>
+<div class="recipe-catalog-grid two-card-grid">
+<a class="recipe-catalog-card text-only-card" href="recipes/sourdough-bagels.html">
+<div class="catalog-image"><div class="recipe-card-placeholder"><span>Bagels</span></div></div>
+<div class="catalog-copy"><span class="catalog-tag">Bagels</span><h3>Sourdough Bagels</h3><p>Makes 8 | Bake 425°F for 25 to 28 minutes</p><div class="tag-row"><span>Active starter</span></div><span class="catalog-link">Open recipe</span></div>
+</a>
+<a class="recipe-catalog-card has-plate" href="recipes/black-russian-bagels.html">
+<div class="catalog-image"><img alt="Field guide style illustration of a sourdough bagel" src="assets/illustrations/bagel-plate.png"/></div>
+<div class="catalog-copy"><span class="catalog-tag">Bagels</span><h3>Black Russian Bagels</h3><p>Makes about 12 | Bake 425°F for 20 to 22 minutes</p><div class="tag-row"><span>Retest needed</span></div><span class="catalog-link">Open recipe</span></div>
+</a>
+</div>
+</section>
+<section class="catalog-group" id="buns-rolls">
+<div class="catalog-group-heading"><p class="eyebrow">Buns &amp; Rolls</p><h2>Soft structure for burgers, sandwiches, and tear-apart situations.</h2></div>
+<div class="recipe-catalog-grid two-card-grid">
+<a class="recipe-catalog-card text-only-card" href="recipes/sourdough-hamburger-buns.html">
+<div class="catalog-image"><div class="recipe-card-placeholder"><span>Buns</span></div></div>
+<div class="catalog-copy"><span class="catalog-tag">Buns &amp; Rolls</span><h3>Sourdough Hamburger Buns</h3><p>Makes 6 buns | Bake 375°F for 25 minutes</p><div class="tag-row"><span>Active starter</span></div><span class="catalog-link">Open recipe</span></div>
+</a>
+</div>
+</section>
+<section class="catalog-group" id="breakfast">
+<div class="catalog-group-heading"><p class="eyebrow">Breakfast</p><h2>Griddles, mornings, and things that justify maple syrup.</h2></div>
+<div class="recipe-catalog-grid two-card-grid">
+<a class="recipe-catalog-card text-only-card" href="recipes/sourdough-discard-pancakes.html"><div class="catalog-image"><div class="recipe-card-placeholder"><span>Pancakes</span></div></div><div class="catalog-copy"><span class="catalog-tag">Breakfast</span><h3>Sourdough Discard Pancakes</h3><p>Makes 12 pancakes | Cook medium-low</p><div class="tag-row"><span>Discard</span></div><span class="catalog-link">Open recipe</span></div></a>
+<a class="recipe-catalog-card text-only-card" href="recipes/sourdough-english-muffins.html"><div class="catalog-image"><div class="recipe-card-placeholder"><span>Muffins</span></div></div><div class="catalog-copy"><span class="catalog-tag">Breakfast</span><h3>Sourdough English Muffins</h3><p>Makes 10 | Cook low, covered, 4 minutes per side</p><div class="tag-row"><span>Active starter</span></div><span class="catalog-link">Open recipe</span></div></a>
+</div>
+</section>
+<section class="catalog-group" id="sweet-treats">
+<div class="catalog-group-heading"><p class="eyebrow">Sweet Treats</p><h2>Soft doughs, spirals, and dessert-adjacent excuses.</h2></div>
+<div class="recipe-catalog-grid two-card-grid">
+<a class="recipe-catalog-card has-plate" href="recipes/soft-and-gooey-sourdough-cinnamon-rolls.html"><div class="catalog-image"><img alt="Field guide style illustration of a cinnamon roll" src="assets/illustrations/cinnamon-roll-plate.png"/></div><div class="catalog-copy"><span class="catalog-tag">Sweet Treats</span><h3>Soft and Gooey Sourdough Cinnamon Rolls</h3><p>Makes 8 rolls | Bake 350°F for 35 to 40 minutes</p><div class="tag-row"><span>Active starter</span></div><span class="catalog-link">Open recipe</span></div></a>
+</div>
+</section>
+<section class="catalog-group" id="salty-snacks">
+<div class="catalog-group-heading"><p class="eyebrow">Salty Snacks</p><h2>Crackers, pretzels, and other highly defensible side quests.</h2></div>
+<div class="recipe-catalog-grid two-card-grid">
+<a class="recipe-catalog-card text-only-card" href="recipes/sourdough-cheez-it-crackers.html"><div class="catalog-image"><div class="recipe-card-placeholder"><span>Crackers</span></div></div><div class="catalog-copy"><span class="catalog-tag">Salty Snacks</span><h3>Sourdough Cheez-It Crackers</h3><p>Makes 6 servings | Bake 350°F for 15 to 18 minutes</p><div class="tag-row"><span>Discard</span></div><span class="catalog-link">Open recipe</span></div></a>
+<a class="recipe-catalog-card text-only-card" href="recipes/pretzel-bites-with-sourdough-discard.html"><div class="catalog-image"><div class="recipe-card-placeholder"><span>Pretzel</span></div></div><div class="catalog-copy"><span class="catalog-tag">Salty Snacks</span><h3>Pretzel Bites with Sourdough Discard</h3><p>Makes 32 bites | Bake 500°F for 8 to 10 minutes</p><div class="tag-row"><span>Discard</span></div><span class="catalog-link">Open recipe</span></div></a>
+</div>
+</section>
+<section class="catalog-group" id="discard">
+<div class="catalog-group-heading"><p class="eyebrow">Discard</p><h2>Cross-listed recipes that use discard instead of active starter.</h2></div>
+<div class="recipe-catalog-grid three-card-grid">
+<a class="recipe-catalog-card text-only-card" href="recipes/sourdough-discard-pancakes.html"><div class="catalog-image"><div class="recipe-card-placeholder"><span>Pancakes</span></div></div><div class="catalog-copy"><span class="catalog-tag">Breakfast</span><h3>Sourdough Discard Pancakes</h3><p>Makes 12 pancakes | Cook medium-low</p><div class="tag-row"><span>Discard</span></div><span class="catalog-link">Open recipe</span></div></a>
+<a class="recipe-catalog-card text-only-card" href="recipes/sourdough-cheez-it-crackers.html"><div class="catalog-image"><div class="recipe-card-placeholder"><span>Crackers</span></div></div><div class="catalog-copy"><span class="catalog-tag">Salty Snacks</span><h3>Sourdough Cheez-It Crackers</h3><p>Makes 6 servings | Bake 350°F for 15 to 18 minutes</p><div class="tag-row"><span>Discard</span></div><span class="catalog-link">Open recipe</span></div></a>
+<a class="recipe-catalog-card text-only-card" href="recipes/pretzel-bites-with-sourdough-discard.html"><div class="catalog-image"><div class="recipe-card-placeholder"><span>Pretzel</span></div></div><div class="catalog-copy"><span class="catalog-tag">Salty Snacks</span><h3>Pretzel Bites with Sourdough Discard</h3><p>Makes 32 bites | Bake 500°F for 8 to 10 minutes</p><div class="tag-row"><span>Discard</span></div><span class="catalog-link">Open recipe</span></div></a>
+</div>
+</section>
+</div>
+</section>
+</main>
+<footer class="site-footer"><div class="wrap footer-wrap"><p>The Sourdough Field Guide, a practical sourdough project.</p><p>No ads. No novella before the recipe. Revolutionary stuff.</p></div></footer>
+<script src="script.js"></script>
 </body>
 </html>

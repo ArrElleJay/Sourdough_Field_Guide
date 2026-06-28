@@ -1,192 +1,169 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sourdough Hamburger Buns | The Sourdough Field Guide</title>
-  <meta name="description" content="Makes 6 buns | Bake 375°F for 25 minutes | Rise about 6 hours plus 1 to 2 hours">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Sourdough Hamburger Buns | The Sourdough Field Guide</title>
+<meta content="Makes 6 buns | Bake 375°F for 25 minutes | Rise about 6 hours plus 1 to 2 hours" name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
 
-  <style>
-    .plan-only{display:none}
-    body.baking-plan-mode .recipe-sections > section:not(.baking-plan),
-    body.baking-plan-mode .recipe-sections > .notes{display:none}
-    body.baking-plan-mode .baking-plan{display:block}
-    .plan-block{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:#fffdf8;margin:0 0 14px}
-    .plan-block h4{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--navy);margin:0 0 10px;font-size:1rem}
-    .plan-checklist{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-    .plan-checklist li{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start}
-    .plan-checklist .box{width:18px;height:18px;border:2px solid var(--navy);border-radius:4px;margin-top:2px;background:#fff}
-    @media print{
-      body.print-baking-plan .recipe-sections > section:not(.baking-plan),
-      body.print-baking-plan .recipe-sections > .notes{display:none!important}
-      body.print-baking-plan .baking-plan{display:block!important}
-      body.print-baking-plan .recipe-page-top h2{font-size:22pt!important}
-      body.print-baking-plan .plan-block{break-inside:avoid;border:1px solid #999;background:#fff;padding:10px 12px;margin-bottom:10px}
-      body.print-baking-plan .plan-checklist{gap:7px}
-      body.print-baking-plan .plan-checklist .box{border-color:#000}
-    }
-  </style>
 </head>
 <body class="page-recipes">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap header-wrap">
-      <a class="brand" href="../index.html" aria-label="The Sourdough Field Guide home">
-        <img class="brand-mark-image" src="../assets/logo-mark-sfg.png" alt="SFG monogram logo">
-        <span class="brand-text">The Sourdough Field Guide</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="../index.html" class="">Home</a>
-        <a href="../basics.html" class="">Get Startered</a>
-        <a href="../schedule.html" class="">Schedules</a>
-        <a href="../calculator.html" class="">Calculators</a>
-        <a href="../recipes.html" class="active">Recipes</a>
-        <a href="../submit.html" class="">Submit Recipe</a>
-        <a href="../troubleshooting.html" class="">Troubleshooting</a>
-      </nav>
-    </div>
-  </header>
-  <main id="main">
-
-    <section class="section page-hero recipe-page-hero">
-      <div class="wrap narrow page-intro">
-        <p class="eyebrow">Recipe</p>
-        <h1 class="page-title">Sourdough Hamburger Buns</h1>
-        <p>Makes 6 buns | Bake 375°F for 25 minutes | Rise about 6 hours plus 1 to 2 hours</p>
-      </div>
-    </section>
-
-    <section class="section first-section">
-      <div class="wrap recipe-page-wrap">
-        <article class="recipe-detail recipe-page-detail">
-          <div class="recipe-page-top">
-            <div>
-              <h2>Sourdough Hamburger Buns</h2>
-              <p class="recipe-meta">Makes 6 buns | Bake 375°F for 25 minutes | Rise about 6 hours plus 1 to 2 hours</p>
-              <div class="recipe-actions">
-                <button class="ghost-button" type="button" id="toggleCard">Quick recipe version</button>
-                <button class="ghost-button" type="button" id="togglePlan">Baking plan</button>
-                <button class="ghost-button" type="button" onclick="window.print()">Print recipe</button>
-                <button class="ghost-button" type="button" id="printPlan">Print baking plan</button>
-                <a class="ghost-button link-button" href="../recipes.html">Back to recipes</a>
-              </div>
-            </div>
-          </div>
-          <div class="recipe-sections">
-            <section class="full-only"><h3>Field note</h3>
-              <p>These are soft sourdough buns with enough structure to hold a burger without turning into a sponge. The dough is straightforward, but it needs time to rise properly.</p>
-              <p>The original recipe builds a little more starter than needed because some sticks to the jar. Practical and mildly irritating, which is most of sourdough.</p>
-            </section>
-            <section><h3>Ingredients</h3>
-              <table class="ingredient-table"><thead><tr><th>Amount</th><th>Ingredient</th></tr></thead><tbody>
-                <tr><td>Starter build</td><td>10g unfed starter + 25g all-purpose flour + 25g water, to yield about 60g active starter</td></tr>
-                <tr><td>50g</td><td>active sourdough starter</td></tr>
-                <tr><td>360g</td><td>all-purpose flour</td></tr>
-                <tr><td>240g</td><td>water</td></tr>
-                <tr><td>30g</td><td>honey</td></tr>
-                <tr><td>10g</td><td>salt</td></tr>
-                <tr><td>1 egg + 1 tbsp water</td><td>egg wash</td></tr>
-                <tr><td>optional</td><td>sesame seeds</td></tr>
-              </tbody></table>
-            </section>
-            <section class="full-only"><h3>Instructions</h3>
-              <ol class="steps">
-                <li><strong>Build the starter.</strong> Mix the starter build ingredients in a clean jar. Loosely cover and let rise until doubled and active. You will use 50g in the dough.</li>
-                <li><strong>Mix the dough.</strong> Add the active starter, flour, water, honey, and salt to a large bowl. Mix until there are no dry bits left in the bowl.</li>
-                <li><strong>Rest 30 minutes.</strong> Cover and let the dough rest on the counter for 30 minutes.</li>
-                <li><strong>Stretch and fold 1.</strong> Wet your hand, pick up one side of the dough, stretch it up, and fold it over itself. Turn the bowl and repeat until you have gone around the dough.</li>
-                <li><strong>Rest 30 minutes.</strong> Cover the bowl and let the dough rest.</li>
-                <li><strong>Stretch and fold 2.</strong> Repeat the stretch and fold process.</li>
-                <li><strong>Rest 30 minutes.</strong> Cover and rest again.</li>
-                <li><strong>Stretch and fold 3.</strong> Repeat the final set of stretch and folds. The dough should feel stronger and smoother.</li>
-                <li><strong>First rise.</strong> Cover and let the dough rise until doubled. At about 72°F, plan on roughly 6 hours, but use the dough as the guide.</li>
-                <li><strong>Optional fridge hold.</strong> After the first rise, you can refrigerate the dough for up to 2 days, or continue shaping right away.</li>
-                <li><strong>Shape.</strong> Turn the dough onto a floured surface. Divide into 6 equal pieces, about 112 to 115g each. Shape each piece into a ball and place on a parchment-lined baking sheet.</li>
-                <li><strong>Second rise.</strong> Cover and let rise until puffy, about 1 to 2 hours.</li>
-                <li><strong>Bake.</strong> Preheat the oven to 375°F. Brush the buns with egg wash, sprinkle with sesame seeds if using, and bake about 25 minutes until golden.</li>
-                <li><strong>Cool.</strong> Cool before slicing so the crumb can set.</li>
-              </ol>
-            </section>
-            <section class="full-only"><h3>How to tell it is ready</h3>
-              <ol class="steps">
-                <li><strong>Starter</strong> doubled and active before mixing.</li>
-                <li><strong>First rise</strong> dough is doubled.</li>
-                <li><strong>Second rise</strong> buns look puffy and expanded.</li>
-                <li><strong>Bake</strong> tops are golden and buns feel set, not doughy.</li>
-              </ol>
-            </section>
-            <section class="card-only"><h3>Quick recipe version</h3>
-              <ol class="steps">
-                <li>Build active starter and use 50g.</li>
-                <li>Mix dough. Rest 30 minutes.</li>
-                <li>Do 3 stretch and folds, 30 minutes apart.</li>
-                <li>Rise until doubled, about 6 hours at 72°F.</li>
-                <li>Divide into 6 buns. Proof 1 to 2 hours until puffy.</li>
-                <li>Egg wash and bake 375°F for about 25 minutes.</li>
-              </ol>
-            </section>
-            <section class="baking-plan plan-only"><h3>Baking plan checklist</h3>
-              <p class="recipe-meta">A same-day bun plan based on the recipe: starter build, dough rest, 3 stretch-and-fold sets, first rise, shape, second rise, bake.</p>
-              <div class="plan-block">
-                <h4>Morning, build the starter</h4>
-                <ol class="plan-checklist">
-                  <li><span class="box"></span><span><strong>Feed starter.</strong> Mix 10g unfed starter, 25g flour, and 25g water to make about 60g active starter.</span></li>
-                  <li><span class="box"></span><span><strong>Let rise.</strong> Cover loosely and let rise until doubled and active. You will use 50g in the dough.</span></li>
-                </ol>
-              </div>
-              <div class="plan-block">
-                <h4>Late morning or midday, mix and strengthen</h4>
-                <ol class="plan-checklist">
-                  <li><span class="box"></span><span><strong>Mix dough.</strong> Combine 50g active starter, flour, water, honey, and salt until no dry bits remain.</span></li>
-                  <li><span class="box"></span><span><strong>Rest 30 minutes.</strong> Cover and leave the dough alone.</span></li>
-                  <li><span class="box"></span><span><strong>Stretch and fold 1.</strong> Stretch one side up and fold it over itself, turning the bowl as you go.</span></li>
-                  <li><span class="box"></span><span><strong>Rest 30 minutes.</strong></span></li>
-                  <li><span class="box"></span><span><strong>Stretch and fold 2.</strong> Repeat the stretch-and-fold set.</span></li>
-                  <li><span class="box"></span><span><strong>Rest 30 minutes.</strong></span></li>
-                  <li><span class="box"></span><span><strong>Stretch and fold 3.</strong> Repeat the final stretch-and-fold set.</span></li>
-                </ol>
-              </div>
-              <div class="plan-block">
-                <h4>Afternoon, rise and shape</h4>
-                <ol class="plan-checklist">
-                  <li><span class="box"></span><span><strong>First rise.</strong> Cover and let rise until doubled. At about 72°F, plan on roughly 6 hours.</span></li>
-                  <li><span class="box"></span><span><strong>Optional fridge hold.</strong> After the first rise, refrigerate up to 2 days if you are not baking right away.</span></li>
-                  <li><span class="box"></span><span><strong>Divide.</strong> Cut into 6 pieces, about 112 to 115g each.</span></li>
-                  <li><span class="box"></span><span><strong>Shape buns.</strong> Shape each piece into a ball and place on a parchment-lined baking sheet.</span></li>
-                  <li><span class="box"></span><span><strong>Second rise 1 to 2 hours.</strong> Cover and let the buns get puffy.</span></li>
-                </ol>
-              </div>
-              <div class="plan-block">
-                <h4>Bake</h4>
-                <ol class="plan-checklist">
-                  <li><span class="box"></span><span><strong>Preheat oven.</strong> Heat to 375°F.</span></li>
-                  <li><span class="box"></span><span><strong>Egg wash.</strong> Brush with egg wash and add sesame seeds if using.</span></li>
-                  <li><span class="box"></span><span><strong>Bake 25 minutes.</strong> Bake until golden and set.</span></li>
-                  <li><span class="box"></span><span><strong>Cool before slicing.</strong></span></li>
-                </ol>
-              </div>
-            </section>
-
-            <section class="notes"><strong>Notes:</strong> After the first rise, dough can be refrigerated up to 2 days.</section>
-
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <div class="wrap footer-wrap">
-      <p>The Sourdough Field Guide, a practical sourdough project.</p>
-      <p>No ads. No novellas.</p>
-    </div>
-  </footer>
-  <script src="../script.js"></script>
-  <script>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap header-wrap">
+<a aria-label="The Sourdough Field Guide home" class="brand" href="../index.html">
+<img alt="SFG monogram logo" class="brand-mark-image" src="../assets/logo-mark-sfg.png"/>
+<span class="brand-text">The Sourdough Field Guide</span>
+</a>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle" type="button">Menu</button>
+<nav aria-label="Primary navigation" class="site-nav">
+<a class="" href="../index.html">Home</a>
+<a class="" href="../basics.html">Get Startered</a>
+<a class="" href="../schedule.html">Timing</a>
+<a class="" href="../calculator.html">Calculators</a>
+<a class="active" href="../recipes.html">Recipes</a>
+<a class="" href="../submit.html">Submit Recipe</a>
+<a class="" href="../troubleshooting.html">What Had Happened Was...</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="section page-hero recipe-page-hero">
+<div class="wrap narrow page-intro">
+<p class="eyebrow">Recipe</p>
+<h1 class="page-title">Sourdough Hamburger Buns</h1>
+<p>Makes 6 buns | Bake 375°F for 25 minutes | Rise about 6 hours plus 1 to 2 hours</p>
+</div>
+</section>
+<section class="section first-section">
+<div class="wrap recipe-page-wrap">
+<article class="recipe-detail recipe-page-detail">
+<div class="recipe-page-top">
+<div>
+<h2>Sourdough Hamburger Buns</h2>
+<p class="recipe-meta">Makes 6 buns | Bake 375°F for 25 minutes | Rise about 6 hours plus 1 to 2 hours</p>
+<div class="recipe-actions">
+<button class="ghost-button" id="toggleCard" type="button">Quick recipe version</button>
+<button class="ghost-button" id="togglePlan" type="button">Baking plan</button>
+<button class="ghost-button" onclick="window.print()" type="button">Print recipe</button>
+<button class="ghost-button" id="printPlan" type="button">Print baking plan</button>
+<a class="ghost-button link-button" href="../recipes.html">Back to recipes</a>
+</div>
+</div>
+</div>
+<div class="recipe-sections">
+<section class="full-only"><h3>Field note</h3>
+<p>These are soft sourdough buns with enough structure to hold a burger without turning into a sponge. The dough is straightforward, but it needs time to rise properly.</p>
+<p>The original recipe builds a little more starter than needed because some sticks to the jar. Practical and mildly irritating, which is most of sourdough.</p>
+</section>
+<section><h3>Ingredients</h3>
+<table class="ingredient-table"><thead><tr><th>Amount</th><th>Ingredient</th></tr></thead><tbody>
+<tr><td>Starter build</td><td>10g unfed starter + 25g all-purpose flour + 25g water, to yield about 60g active starter</td></tr>
+<tr><td>50g</td><td>active sourdough starter</td></tr>
+<tr><td>360g</td><td>all-purpose flour</td></tr>
+<tr><td>240g</td><td>water</td></tr>
+<tr><td>30g</td><td>honey</td></tr>
+<tr><td>10g</td><td>salt</td></tr>
+<tr><td>1 egg + 1 tbsp water</td><td>egg wash</td></tr>
+<tr><td>optional</td><td>sesame seeds</td></tr>
+</tbody></table>
+</section>
+<section class="full-only"><h3>Instructions</h3>
+<ol class="steps">
+<li><strong>Build the starter.</strong> Mix the starter build ingredients in a clean jar. Loosely cover and let rise until doubled and active. You will use 50g in the dough.</li>
+<li><strong>Mix the dough.</strong> Add the active starter, flour, water, honey, and salt to a large bowl. Mix until there are no dry bits left in the bowl.</li>
+<li><strong>Rest 30 minutes.</strong> Cover and let the dough rest on the counter for 30 minutes.</li>
+<li><strong>Stretch and fold 1.</strong> Wet your hand, pick up one side of the dough, stretch it up, and fold it over itself. Turn the bowl and repeat until you have gone around the dough.</li>
+<li><strong>Rest 30 minutes.</strong> Cover the bowl and let the dough rest.</li>
+<li><strong>Stretch and fold 2.</strong> Repeat the stretch and fold process.</li>
+<li><strong>Rest 30 minutes.</strong> Cover and rest again.</li>
+<li><strong>Stretch and fold 3.</strong> Repeat the final set of stretch and folds. The dough should feel stronger and smoother.</li>
+<li><strong>First rise.</strong> Cover and let the dough rise until doubled. At about 72°F, plan on roughly 6 hours, but use the dough as the guide.</li>
+<li><strong>Optional fridge hold.</strong> After the first rise, you can refrigerate the dough for up to 2 days, or continue shaping right away.</li>
+<li><strong>Shape.</strong> Turn the dough onto a floured surface. Divide into 6 equal pieces, about 112 to 115g each. Shape each piece into a ball and place on a parchment-lined baking sheet.</li>
+<li><strong>Second rise.</strong> Cover and let rise until puffy, about 1 to 2 hours.</li>
+<li><strong>Bake.</strong> Preheat the oven to 375°F. Brush the buns with egg wash, sprinkle with sesame seeds if using, and bake about 25 minutes until golden.</li>
+<li><strong>Cool.</strong> Cool before slicing so the crumb can set.</li>
+</ol>
+</section>
+<section class="full-only"><h3>How to tell it is ready</h3>
+<ol class="steps">
+<li><strong>Starter</strong> doubled and active before mixing.</li>
+<li><strong>First rise</strong> dough is doubled.</li>
+<li><strong>Second rise</strong> buns look puffy and expanded.</li>
+<li><strong>Bake</strong> tops are golden and buns feel set, not doughy.</li>
+</ol>
+</section>
+<section class="card-only"><h3>Quick recipe version</h3>
+<ol class="steps">
+<li>Build active starter and use 50g.</li>
+<li>Mix dough. Rest 30 minutes.</li>
+<li>Do 3 stretch and folds, 30 minutes apart.</li>
+<li>Rise until doubled, about 6 hours at 72°F.</li>
+<li>Divide into 6 buns. Proof 1 to 2 hours until puffy.</li>
+<li>Egg wash and bake 375°F for about 25 minutes.</li>
+</ol>
+</section>
+<section class="baking-plan plan-only"><h3>Baking plan checklist</h3>
+<p class="recipe-meta">A same-day bun plan based on the recipe: starter build, dough rest, 3 stretch-and-fold sets, first rise, shape, second rise, bake.</p>
+<div class="plan-block">
+<h4>Morning, build the starter</h4>
+<ol class="plan-checklist">
+<li><span class="box"></span><span><strong>Feed starter.</strong> Mix 10g unfed starter, 25g flour, and 25g water to make about 60g active starter.</span></li>
+<li><span class="box"></span><span><strong>Let rise.</strong> Cover loosely and let rise until doubled and active. You will use 50g in the dough.</span></li>
+</ol>
+</div>
+<div class="plan-block">
+<h4>Late morning or midday, mix and strengthen</h4>
+<ol class="plan-checklist">
+<li><span class="box"></span><span><strong>Mix dough.</strong> Combine 50g active starter, flour, water, honey, and salt until no dry bits remain.</span></li>
+<li><span class="box"></span><span><strong>Rest 30 minutes.</strong> Cover and leave the dough alone.</span></li>
+<li><span class="box"></span><span><strong>Stretch and fold 1.</strong> Stretch one side up and fold it over itself, turning the bowl as you go.</span></li>
+<li><span class="box"></span><span><strong>Rest 30 minutes.</strong></span></li>
+<li><span class="box"></span><span><strong>Stretch and fold 2.</strong> Repeat the stretch-and-fold set.</span></li>
+<li><span class="box"></span><span><strong>Rest 30 minutes.</strong></span></li>
+<li><span class="box"></span><span><strong>Stretch and fold 3.</strong> Repeat the final stretch-and-fold set.</span></li>
+</ol>
+</div>
+<div class="plan-block">
+<h4>Afternoon, rise and shape</h4>
+<ol class="plan-checklist">
+<li><span class="box"></span><span><strong>First rise.</strong> Cover and let rise until doubled. At about 72°F, plan on roughly 6 hours.</span></li>
+<li><span class="box"></span><span><strong>Optional fridge hold.</strong> After the first rise, refrigerate up to 2 days if you are not baking right away.</span></li>
+<li><span class="box"></span><span><strong>Divide.</strong> Cut into 6 pieces, about 112 to 115g each.</span></li>
+<li><span class="box"></span><span><strong>Shape buns.</strong> Shape each piece into a ball and place on a parchment-lined baking sheet.</span></li>
+<li><span class="box"></span><span><strong>Second rise 1 to 2 hours.</strong> Cover and let the buns get puffy.</span></li>
+</ol>
+</div>
+<div class="plan-block">
+<h4>Bake</h4>
+<ol class="plan-checklist">
+<li><span class="box"></span><span><strong>Preheat oven.</strong> Heat to 375°F.</span></li>
+<li><span class="box"></span><span><strong>Egg wash.</strong> Brush with egg wash and add sesame seeds if using.</span></li>
+<li><span class="box"></span><span><strong>Bake 25 minutes.</strong> Bake until golden and set.</span></li>
+<li><span class="box"></span><span><strong>Cool before slicing.</strong></span></li>
+</ol>
+</div>
+</section>
+<section class="notes"><strong>Notes:</strong> After the first rise, dough can be refrigerated up to 2 days.</section>
+</div>
+</article>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-wrap">
+<p>The Sourdough Field Guide, a practical sourdough project.</p>
+<p>No ads. No novellas.</p>
+</div>
+</footer>
+<script src="../script.js"></script>
+<script>
     (function(){
       const planToggle = document.getElementById('togglePlan');
       const printPlan = document.getElementById('printPlan');
@@ -219,6 +196,5 @@
       }
     })();
   </script>
-
 </body>
 </html>

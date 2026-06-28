@@ -10,50 +10,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet"/>
 <link href="styles.css" rel="stylesheet"/>
-<style>
-    .page-basics main{background:linear-gradient(180deg,rgba(214,166,64,.06),rgba(251,247,238,0) 300px)}
-    .page-basics .page-hero{position:relative;overflow:hidden}
-    .page-basics .page-hero:after{content:"";position:absolute;right:max(28px,8vw);bottom:16px;width:150px;height:150px;border:1px solid rgba(214,166,64,.32);border-radius:50%;background:radial-gradient(circle at center,rgba(214,166,64,.12),transparent 60%);opacity:.45;pointer-events:none}
-    .startered-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:start}
-    .startered-main{display:grid;gap:12px}
-    .field-entry,.startered-side-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 28px rgba(13,34,56,.08)}
-    .field-entry{overflow:hidden;background:#fffdf8}
-    .startered-side-card{padding:20px;background:linear-gradient(135deg,#fffdf8,#f8f1e4)}
-    .startered-side-card h2{font-size:clamp(1.35rem,2vw,1.85rem);letter-spacing:-.02em}
-    .startered-side-card p:last-child{margin-bottom:0}
-    .accordion-entry summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;padding:20px 22px;border-left:5px solid rgba(214,166,64,.5)}
-    .accordion-entry summary::-webkit-details-marker{display:none}
-    .accordion-entry summary:after{content:"+";display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--line);border-radius:999px;background:#f6efe1;color:var(--navy);font-weight:750;font-size:1.15rem;line-height:1}
-    .accordion-entry[open] summary{border-bottom:1px solid var(--line);background:linear-gradient(135deg,#fffdf8,#fffaf0)}
-    .accordion-entry[open] summary:after{content:"−"}
-    .accordion-label{display:block;color:var(--muted);font-size:.78rem;font-weight:750;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
-    .accordion-title{display:block;font-family:"Source Serif 4",Georgia,serif;color:var(--navy);font-size:clamp(1.35rem,2.4vw,2rem);font-weight:700;line-height:1.08;letter-spacing:-.02em}
-    .accordion-content{padding:22px}
-    .accordion-content h3{font-size:1.18rem;margin-top:12px}
-    .accordion-content p:last-child,.startered-side-card p:last-child{margin-bottom:0}
-    .plain-list{padding-left:1.25rem;margin:0}
-    .plain-list li{margin-bottom:10px}
-    .startered-side{display:grid;gap:16px;position:sticky;top:92px}
-    .callout{background:#f6efe1;border:1px solid var(--line);border-radius:16px;padding:16px;color:var(--navy-2);margin:14px 0}
-    .callout strong{color:var(--navy)}
-    .term-grid,.temp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-    .term-card,.temp-card{background:#f8f1e4;border:1px solid var(--line);border-radius:16px;padding:16px}
-    .term-card h3,.temp-card h3{margin-bottom:8px}
-    .term-card p,.temp-card p{margin:0;color:var(--muted)}
-    .gear-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0}
-    .gear-strip div{background:#f6efe1;border:1px solid var(--line);border-radius:16px;padding:14px}
-    .gear-strip span{display:block;color:var(--muted);font-size:.78rem;font-weight:750;text-transform:uppercase;letter-spacing:.08em}
-    .gear-strip strong{display:block;color:var(--navy);font-size:1rem;margin-top:5px}
-    .feed-example{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
-    .feed-example div{background:#f6efe1;border:1px solid var(--line);border-radius:16px;padding:14px}
-    .feed-example span{display:block;color:var(--muted);font-size:.85rem;font-weight:750;text-transform:uppercase;letter-spacing:.08em}
-    .feed-example strong{display:block;color:var(--navy);font-size:1.15rem;margin-top:5px}
-    .startered-table{margin-top:14px;overflow-x:auto}
-    .startered-table .clean-table{font-size:.92rem}
-    .accordion-note{margin:0 0 10px;color:var(--muted);font-size:.98rem}
-    @media (max-width:850px){.startered-layout{grid-template-columns:1fr}.startered-side{position:static;order:-1}.term-grid,.feed-example,.temp-grid,.gear-strip{grid-template-columns:1fr}.page-basics .page-hero:after{display:none}.accordion-entry summary{padding:18px}.accordion-content{padding:18px}}
-    @media print{.startered-side,.site-nav,.nav-toggle,.site-footer{display:none!important}.startered-layout{display:block}.field-entry{box-shadow:none;border:0;padding:0 0 18px}.accordion-entry summary{border:0!important;padding:0 0 8px}.accordion-entry summary:after{display:none}.accordion-content{padding:0}.page-basics .page-hero:after{display:none}.page-hero{padding-bottom:20px}.section{padding:20px 0}.callout,.term-card,.feed-example div,.temp-card,.gear-strip div{border:1px solid #ccc;background:#fff}}
-  </style>
+
 </head>
 <body class="page-basics">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -87,14 +44,10 @@
 <div class="wrap startered-layout">
 <div class="startered-main">
 <details class="field-entry accordion-entry" id="what-it-is" open=""><summary><span class="accordion-summary-text"><span class="accordion-label">Starter 101</span><span class="accordion-title">What starter actually is</span></span></summary><div class="accordion-content">
-
-
 <p>A sourdough starter is flour and water that has been colonized by wild yeast and lactic acid bacteria. The yeast helps bread rise. The bacteria help create acidity and flavor. That is the whole system. Useful, alive, and much less mysterious once you know what you are looking at.</p>
 <p>Most recipes on this site assume a <strong>100% hydration starter</strong>, which means equal weights of flour and water. Not equal cups. Equal grams. Cups are too inconsistent for starter math.</p>
 </div></details>
 <details class="field-entry accordion-entry" id="start-a-starter" open=""><summary><span class="accordion-summary-text"><span class="accordion-label">Start a Starter</span><span class="accordion-title">Starting a starter from scratch</span></span></summary><div class="accordion-content">
-
-
 <p>A new starter is just flour, water, and time. You are creating a small culture and feeding it until it becomes predictable. Predictable matters more than dramatic bubbles on day two.</p>
 <div class="callout"><strong>Reality check:</strong> most new starters take about <strong>7 to 14 days</strong> before they are reliable enough for bread. Some take longer. Early activity does not automatically mean it is ready.</div>
 <h3>Basic starter build</h3>
@@ -119,8 +72,6 @@
 <p>Once the starter is rising predictably, stop treating it like a science fair project. Keep a smaller amount, feed it on the counter if you bake often, or store it in the fridge if you bake less often.</p>
 </div></details>
 <details class="field-entry accordion-entry" id="feeding"><summary><span class="accordion-summary-text"><span class="accordion-label">Feeding</span><span class="accordion-title">What feeding means</span></span></summary><div class="accordion-content">
-
-
 <p>Feeding starter means keeping some starter and adding fresh flour and water. The old starter is the seed. The new flour and water are the food.</p>
 <div aria-label="Starter feeding example" class="feed-example">
 <div><span>Starter</span><strong>20g</strong></div>
@@ -131,8 +82,6 @@
 <div class="callout"><strong>Maintenance feed:</strong> the routine feed that keeps your starter alive. <strong>Baking feed:</strong> the bigger, timed feed that gives you enough active starter for a recipe plus some left over to keep.</div>
 </div></details>
 <details class="field-entry accordion-entry" id="ratios"><summary><span class="accordion-summary-text"><span class="accordion-label">Ratios</span><span class="accordion-title">Ratios control timing and flavor</span></span></summary><div class="accordion-content">
-
-
 <p>A smaller feed, like 1:1:1, gives the starter less fresh food, so it peaks faster and tends to be more acid-forward. A larger feed, like 1:5:5 or 1:10:10, gives it more fresh food, so it usually takes longer to peak and tends to taste milder.</p>
 <p>The timing below is a practical estimate based on the calculator presets. Your actual starter can run faster or slower depending on room temperature, flour, and starter strength.</p>
 <div class="ratio-table-wrap startered-table">
@@ -144,8 +93,6 @@
 </div>
 </div></details>
 <details class="field-entry accordion-entry" id="hydration"><summary><span class="accordion-summary-text"><span class="accordion-label">Hydration</span><span class="accordion-title">Hydration is just water math</span></span></summary><div class="accordion-content">
-
-
 <p>Hydration means how much water is in the dough compared with the flour. It is written as a percentage because bakers like making normal things sound like tax forms.</p>
 <div class="callout"><strong>The basic formula:</strong> water weight divided by flour weight, then multiplied by 100. So 350g water and 500g flour is 70% hydration.</div>
 <h3>Starter hydration</h3>
@@ -163,8 +110,6 @@
 <div class="callout"><strong>Adjustment rule:</strong> change water in small amounts, usually 5g to 15g at a time, and write it down. Random splashing is not a system.</div>
 </div></details>
 <details class="field-entry accordion-entry" id="active-vs-discard"><summary><span class="accordion-summary-text"><span class="accordion-label">Active vs discard</span><span class="accordion-title">Use the right version of the goo</span></span></summary><div class="accordion-content">
-
-
 <div class="term-grid">
 <div class="term-card">
 <h3>Active starter</h3>
@@ -178,8 +123,6 @@
 <p>If a recipe says <strong>active starter</strong>, do not casually swap in flat discard. Active starter and discard do different jobs.</p>
 </div></details>
 <details class="field-entry accordion-entry" id="peak"><summary><span class="accordion-summary-text"><span class="accordion-label">Peak</span><span class="accordion-title">Peak is the useful window</span></span></summary><div class="accordion-content">
-
-
 <p>Peak is when your starter has risen as high as it is going to rise before it starts sinking back down. For bread, that is usually the best time to mix it into dough because the starter is strong and active.</p>
 <ul class="plain-list">
 <li><strong>Before peak:</strong> it is still rising and may not be fully ready.</li>
@@ -189,8 +132,6 @@
 <div class="callout"><strong>Use the starter, not the clock, as the truth.</strong> The clock gives you a plan. The jar tells you what actually happened.</div>
 </div></details>
 <details class="field-entry accordion-entry" id="temperature"><summary><span class="accordion-summary-text"><span class="accordion-label">Temperature</span><span class="accordion-title">Temperature is the schedule boss</span></span></summary><div class="accordion-content">
-
-
 <p>Starter and dough move faster when they are warm and slower when they are cool. That is why sourdough timing is always an estimate. The recipe can give you a plan, but the room gets a vote.</p>
 <div aria-label="Useful temperature tools" class="gear-strip">
 <div><span>Starter planning</span><strong>about 70°F</strong></div>
@@ -216,8 +157,6 @@
 </ul>
 </div></details>
 <details class="field-entry accordion-entry" id="storage"><summary><span class="accordion-summary-text"><span class="accordion-label">Storage</span><span class="accordion-title">Counter or fridge?</span></span></summary><div class="accordion-content">
-
-
 <p>If you bake often, keeping a small starter on the counter makes sense. Feed it regularly and keep the amount small so you are not creating a discard swamp.</p>
 <p>If you bake less often, keep it in the fridge. Cold slows fermentation, which means less feeding and less waste. When you want to bake, pull it out, feed it, and give it time to become active again. A neglected fridge starter may need more than one feeding before it is ready to do actual work.</p>
 <ul class="plain-list">
@@ -227,8 +166,6 @@
 </ul>
 </div></details>
 <details class="field-entry accordion-entry" id="things-that-change-it"><summary><span class="accordion-summary-text"><span class="accordion-label">Variables</span><span class="accordion-title">Things that change the plan</span></span></summary><div class="accordion-content">
-
-
 <p>Sourdough timing is not one clean little number. It changes because the starter is alive and your kitchen conditions matter.</p>
 <ul class="plain-list">
 <li><strong>Warm room:</strong> faster fermentation.</li>
@@ -240,8 +177,6 @@
 </ul>
 </div></details>
 <details class="field-entry accordion-entry" id="common-sense"><summary><span class="accordion-summary-text"><span class="accordion-label">Common sense rules</span><span class="accordion-title">Starter care without making it complicated</span></span></summary><div class="accordion-content">
-
-
 <ul class="plain-list">
 <li>Use grams. A scale is more consistent than measuring cups.</li>
 <li>Keep less starter. You can always build more when you need it.</li>
@@ -253,7 +188,6 @@
 </div></details>
 </div>
 <aside aria-label="Get Startered quick links" class="startered-side"><div class="startered-side-card"><h2>How to use this page</h2><p>Click a topic when you need it. Leave the rest closed. Starter does not get extra credit for making you read everything at once.</p></div>
-
 <div class="startered-side-card">
 <h2>Field note</h2>
 <p>For maintenance, keep it small. For baking, build what you need. The calculator handles the math so you do not have to.</p>

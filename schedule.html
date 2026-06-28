@@ -1,158 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Sourdough Field Guide | Schedules</title>
-  <meta name="description" content="Simple sourdough timing guidance, printable baking plans, and a same-day bread emergency checklist.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .schedule-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:24px}
-    .schedule-card{background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:22px}
-    .schedule-card h2,.schedule-card h3{margin-bottom:8px}
-    .schedule-card p{color:var(--muted);margin-bottom:12px}
-    .schedule-card ul{margin:10px 0 0;padding-left:20px;color:var(--navy-2)}
-    .schedule-card li{margin:6px 0}
-    .wide-card{grid-column:1/-1}
-    .schedule-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-    .emergency-panel{background:var(--paper);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:24px;margin-top:26px}
-    .emergency-panel.hidden{display:none}
-    .schedule-summary{display:grid;gap:5px;margin:0 0 18px;color:var(--navy-2)}
-    .schedule-summary strong{color:var(--navy)}
-    .check-timeline{display:grid;gap:10px;margin:18px 0 0}
-    .check-row{display:grid;grid-template-columns:34px 170px 1fr;gap:12px;align-items:start;background:#fbf7ee;border:1px solid var(--line);border-radius:16px;padding:14px}
-    .check-row input{width:20px;height:20px;margin-top:2px;accent-color:var(--navy)}
-    .check-time{font-weight:750;color:var(--navy)}
-    .check-task strong{display:block;color:var(--navy);margin-bottom:2px}
-    .check-task span{display:block;color:var(--muted)}
-    .plain-note{background:#f6efe1;border:1px solid var(--line);border-radius:18px;padding:16px 18px;color:var(--navy-2);margin-top:16px}
-    @media (max-width:850px){.schedule-grid{grid-template-columns:1fr}.check-row{grid-template-columns:30px 1fr}.check-time,.check-task{grid-column:2}}
-    @media print{
-      body{background:#fff;color:#000;font-size:11pt}.site-header,.page-hero,.schedule-grid,.site-footer,.nav-toggle,.site-nav,.schedule-actions .secondary,.plain-note.no-print{display:none!important}
-      .section{padding:0}.wrap{width:100%;margin:0}.emergency-panel{display:block!important;box-shadow:none;border:0;padding:0;margin:0}.emergency-panel.hidden{display:none!important}
-      .emergency-panel h2{font-size:22pt;color:#000;margin-bottom:8px}.schedule-summary{font-size:10.5pt;color:#000;margin-bottom:12px}.check-timeline{gap:6px}
-      .check-row{break-inside:avoid;grid-template-columns:28px 145px 1fr;background:#fff;border:1px solid #999;border-radius:0;padding:8px}.check-row input{appearance:none;width:16px;height:16px;border:1px solid #000;margin:2px 0 0}.check-time,.check-task strong{color:#000}.check-task span{color:#000}
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>The Sourdough Field Guide | Schedules</title>
+<meta content="Simple sourdough timing guidance, printable baking plans, and a same-day bread emergency checklist." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+
 </head>
 <body class="page-schedule">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap header-wrap">
-      <a class="brand" href="index.html" aria-label="The Sourdough Field Guide home">
-        <img class="brand-mark-image" src="assets/logo-mark-sfg.png" alt="SFG monogram logo">
-        <span class="brand-text">The Sourdough Field Guide</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="basics.html">Get Startered</a>
-        <a href="schedule.html" class="active">Timing</a>
-        <a href="calculator.html">Calculators</a>
-        <a href="recipes.html">Recipes</a>
-        <a href="submit.html">Submit Recipe</a>
-        <a href="troubleshooting.html">What Had Happened Was...</a>
-      </nav>
-    </div>
-  </header>
-  <main id="main">
-    <section class="section page-hero">
-      <div class="wrap narrow page-intro">
-        <p class="eyebrow">Timing</p>
-        <h1 class="page-title">Timing help without pretending dough owns a watch.</h1>
-        <p>Recipe-specific baking plans now live inside each recipe. Open a recipe and use <strong>Print Baking Plan</strong> when you want the checklist version. This page is for general rhythm, timing choices, and bread emergencies.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="recipes.html">Browse recipes</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section panel-section first-section">
-      <div class="wrap">
-        <div class="schedule-grid">
-          <article class="schedule-card wide-card">
-            <p class="eyebrow">How to use this</p>
-            <h2>Recipe plans live with the recipes.</h2>
-            <p>Each recipe has its own baking plan because each recipe behaves differently. A loaf, a cinnamon roll, a bagel, and a cracker should not be forced into the same timeline.</p>
-            <ul>
-              <li>Use the recipe page when you need the actual ingredients and method.</li>
-              <li>Use <strong>Quick recipe version</strong> when you want the short kitchen view.</li>
-              <li>Use <strong>Baking plan</strong> when you want the printable checklist for your counter.</li>
-            </ul>
-          </article>
-
-          <article class="schedule-card">
-            <p class="eyebrow">Standard loaf rhythm</p>
-            <h3>For a normal active-starter loaf</h3>
-            <ul>
-              <li>Feed starter the night before or early morning, depending on ratio and room temperature.</li>
-              <li>Mix when the starter is active and predictable.</li>
-              <li>Rest 30 minutes after mixing.</li>
-              <li>Do stretch and folds on the recipe schedule.</li>
-              <li>Bulk until the dough has clearly risen and feels alive.</li>
-              <li>Shape, proof, bake, then cool before slicing.</li>
-            </ul>
-          </article>
-
-          <article class="schedule-card">
-            <p class="eyebrow">Overnight rhythm</p>
-            <h3>For less babysitting</h3>
-            <ul>
-              <li>Feed starter during the day.</li>
-              <li>Mix dough in the evening.</li>
-              <li>Use the fridge when the dough needs to wait for you.</li>
-              <li>Bake the next morning or later the next day, depending on the recipe.</li>
-            </ul>
-          </article>
-
-          <article class="schedule-card">
-            <p class="eyebrow">Fridge holds</p>
-            <h3>The fridge is a pause button, mostly.</h3>
-            <p>Cold slows fermentation. It does not erase it. Use the fridge when the dough is ready but you are not, or when a recipe specifically calls for an overnight hold.</p>
-          </article>
-
-          <article class="schedule-card">
-            <p class="eyebrow">Temperature</p>
-            <h3>Warm moves faster. Cool moves slower.</h3>
-            <p>Timing changes with room temperature, starter strength, flour, hydration, and how warm the dough is after mixing. Use the clock as a plan, then let the dough have the final word.</p>
-          </article>
-
-          <article class="schedule-card wide-card">
-            <p class="eyebrow">Same-day backup plan</p>
-            <h2>Bread emergency</h2>
-            <p>This is the compressed same-day loaf plan. It assumes a strong starter, a warm starter feed, warm bulk fermentation, and the goal of getting bread out of the oven around 3:00–3:30 PM so it can cool for a normal dinner.</p>
-            <div class="schedule-actions">
-              <button class="button primary" type="button" id="showEmergency">Show bread emergency checklist</button>
-              <button class="button secondary" type="button" id="printEmergency">Print checklist</button>
-            </div>
-            <div class="plain-note no-print"><strong>Reality check:</strong> this is a rescue plan, not the best possible loaf. If the starter is sluggish or the dough is not moving, dinner bread becomes later bread.</div>
-          </article>
-        </div>
-
-        <div class="emergency-panel hidden" id="emergencyPanel" aria-live="polite">
-          <p class="eyebrow">Printable Checklist</p>
-          <h2>Bread Emergency Timeline</h2>
-          <div class="schedule-summary">
-            <div><strong>Goal:</strong> same-day loaf out of the oven around 3:00–3:30 PM</div>
-            <div><strong>Starter build:</strong> 1:1:1, kept warm to speed the rise</div>
-            <div><strong>Bulk strategy:</strong> warm bulk ferment, compressed timing, watch the dough closely</div>
-          </div>
-          <div class="check-timeline" id="emergencyRows"></div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <div class="wrap footer-wrap">
-      <p>The Sourdough Field Guide, a practical sourdough project.</p>
-      <p>No ads. No novellas.</p>
-    </div>
-  </footer>
-  <script src="script.js"></script>
-  <script>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap header-wrap">
+<a aria-label="The Sourdough Field Guide home" class="brand" href="index.html">
+<img alt="SFG monogram logo" class="brand-mark-image" src="assets/logo-mark-sfg.png"/>
+<span class="brand-text">The Sourdough Field Guide</span>
+</a>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle" type="button">Menu</button>
+<nav aria-label="Primary navigation" class="site-nav">
+<a href="index.html">Home</a>
+<a href="basics.html">Get Startered</a>
+<a class="active" href="schedule.html">Timing</a>
+<a href="calculator.html">Calculators</a>
+<a href="recipes.html">Recipes</a>
+<a href="submit.html">Submit Recipe</a>
+<a href="troubleshooting.html">What Had Happened Was...</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="section page-hero">
+<div class="wrap narrow page-intro">
+<p class="eyebrow">Timing</p>
+<h1 class="page-title">Timing help without pretending dough owns a watch.</h1>
+<p>Recipe-specific baking plans now live inside each recipe. Open a recipe and use <strong>Print Baking Plan</strong> when you want the checklist version. This page is for general rhythm, timing choices, and bread emergencies.</p>
+<div class="hero-actions">
+<a class="button primary" href="recipes.html">Browse recipes</a>
+</div>
+</div>
+</section>
+<section class="section panel-section first-section">
+<div class="wrap">
+<div class="schedule-grid">
+<article class="schedule-card wide-card">
+<p class="eyebrow">How to use this</p>
+<h2>Recipe plans live with the recipes.</h2>
+<p>Each recipe has its own baking plan because each recipe behaves differently. A loaf, a cinnamon roll, a bagel, and a cracker should not be forced into the same timeline.</p>
+<ul>
+<li>Use the recipe page when you need the actual ingredients and method.</li>
+<li>Use <strong>Quick recipe version</strong> when you want the short kitchen view.</li>
+<li>Use <strong>Baking plan</strong> when you want the printable checklist for your counter.</li>
+</ul>
+</article>
+<article class="schedule-card">
+<p class="eyebrow">Standard loaf rhythm</p>
+<h3>For a normal active-starter loaf</h3>
+<ul>
+<li>Feed starter the night before or early morning, depending on ratio and room temperature.</li>
+<li>Mix when the starter is active and predictable.</li>
+<li>Rest 30 minutes after mixing.</li>
+<li>Do stretch and folds on the recipe schedule.</li>
+<li>Bulk until the dough has clearly risen and feels alive.</li>
+<li>Shape, proof, bake, then cool before slicing.</li>
+</ul>
+</article>
+<article class="schedule-card">
+<p class="eyebrow">Overnight rhythm</p>
+<h3>For less babysitting</h3>
+<ul>
+<li>Feed starter during the day.</li>
+<li>Mix dough in the evening.</li>
+<li>Use the fridge when the dough needs to wait for you.</li>
+<li>Bake the next morning or later the next day, depending on the recipe.</li>
+</ul>
+</article>
+<article class="schedule-card">
+<p class="eyebrow">Fridge holds</p>
+<h3>The fridge is a pause button, mostly.</h3>
+<p>Cold slows fermentation. It does not erase it. Use the fridge when the dough is ready but you are not, or when a recipe specifically calls for an overnight hold.</p>
+</article>
+<article class="schedule-card">
+<p class="eyebrow">Temperature</p>
+<h3>Warm moves faster. Cool moves slower.</h3>
+<p>Timing changes with room temperature, starter strength, flour, hydration, and how warm the dough is after mixing. Use the clock as a plan, then let the dough have the final word.</p>
+</article>
+<article class="schedule-card wide-card">
+<p class="eyebrow">Same-day backup plan</p>
+<h2>Bread emergency</h2>
+<p>This is the compressed same-day loaf plan. It assumes a strong starter, a warm starter feed, warm bulk fermentation, and the goal of getting bread out of the oven around 3:00–3:30 PM so it can cool for a normal dinner.</p>
+<div class="schedule-actions">
+<button class="button primary" id="showEmergency" type="button">Show bread emergency checklist</button>
+<button class="button secondary" id="printEmergency" type="button">Print checklist</button>
+</div>
+<div class="plain-note no-print"><strong>Reality check:</strong> this is a rescue plan, not the best possible loaf. If the starter is sluggish or the dough is not moving, dinner bread becomes later bread.</div>
+</article>
+</div>
+<div aria-live="polite" class="emergency-panel hidden" id="emergencyPanel">
+<p class="eyebrow">Printable Checklist</p>
+<h2>Bread Emergency Timeline</h2>
+<div class="schedule-summary">
+<div><strong>Goal:</strong> same-day loaf out of the oven around 3:00–3:30 PM</div>
+<div><strong>Starter build:</strong> 1:1:1, kept warm to speed the rise</div>
+<div><strong>Bulk strategy:</strong> warm bulk ferment, compressed timing, watch the dough closely</div>
+</div>
+<div class="check-timeline" id="emergencyRows"></div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-wrap">
+<p>The Sourdough Field Guide, a practical sourdough project.</p>
+<p>No ads. No novellas.</p>
+</div>
+</footer>
+<script src="script.js"></script>
+<script>
     const emergencySteps = [
       ["7:00 AM", "Feed starter 1:1:1", "Use equal parts starter, flour, and water. Keep it warm so it peaks faster."],
       ["10:15 AM", "Check starter", "Look for an active starter that has risen predictably. If it is sluggish, this plan slides later."],

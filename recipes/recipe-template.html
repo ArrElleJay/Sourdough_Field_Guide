@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RECIPE TITLE | The Sourdough Field Guide</title>
+  <meta name="description" content="SHORT RECIPE SUMMARY">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="page-recipes">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-wrap">
+      <a class="brand" href="../index.html" aria-label="The Sourdough Field Guide home">
+        <img class="brand-mark-image" src="../assets/logo-mark-sfg.png" alt="SFG monogram logo">
+        <span class="brand-text">The Sourdough Field Guide</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../index.html">Home</a>
+        <a href="../basics.html">Get Startered</a>
+        <a href="../schedule.html">Timing</a>
+        <a href="../calculator.html">Calculators</a>
+        <a href="../recipes.html" class="active">Recipes</a>
+        <a href="../submit.html">Submit Recipe</a>
+        <a href="../troubleshooting.html">What Had Happened Was...</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section page-hero recipe-page-hero">
+      <div class="wrap narrow page-intro">
+        <p class="eyebrow">Recipe</p>
+        <h1 class="page-title">RECIPE TITLE</h1>
+        <p>YIELD | STARTER AMOUNT | TIMING SUMMARY</p>
+      </div>
+    </section>
+
+    <section class="section first-section">
+      <div class="wrap recipe-page-wrap">
+        <article class="recipe-detail recipe-page-detail">
+          <div class="recipe-page-top">
+            <div>
+              <h2>RECIPE TITLE</h2>
+              <p class="recipe-meta">YIELD | STARTER AMOUNT | TIMING SUMMARY</p>
+              <div class="recipe-actions">
+                <button class="ghost-button" type="button" id="toggleCard">Quick recipe version</button>
+                <button class="ghost-button" type="button" id="togglePlan">Baking plan</button>
+                <button class="ghost-button" type="button" onclick="window.print()">Print recipe</button>
+                <button class="ghost-button" type="button" id="printPlan">Print baking plan</button>
+                <a class="ghost-button link-button" href="../recipes.html">Back to recipes</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="recipe-sections">
+            <section class="full-only">
+              <h3>Field note</h3>
+              <p>SHORT PRACTICAL NOTE ABOUT THIS RECIPE.</p>
+            </section>
+
+            <section class="full-only">
+              <h3>Ingredients</h3>
+              <table class="ingredient-table">
+                <thead><tr><th>Ingredient</th><th>Amount</th></tr></thead>
+                <tbody>
+                  <tr><td>Ingredient name</td><td>Amount in grams or practical measure</td></tr>
+                </tbody>
+              </table>
+            </section>
+
+            <section class="full-only">
+              <h3>Method</h3>
+              <ol class="steps">
+                <li>Step one.</li>
+                <li>Step two.</li>
+                <li>Step three.</li>
+              </ol>
+            </section>
+
+            <section class="full-only">
+              <h3>How to tell it is ready</h3>
+              <ul class="check-list">
+                <li>Readiness cue one.</li>
+                <li>Readiness cue two.</li>
+              </ul>
+            </section>
+
+            <section class="notes full-only">
+              <h3>Notes</h3>
+              <p>Storage, substitutions, timing warnings, or other field notes.</p>
+            </section>
+
+            <section class="card-only">
+              <h3>Quick recipe version</h3>
+              <p>Condensed version for repeat baking.</p>
+              <ol class="steps">
+                <li>Short step one.</li>
+                <li>Short step two.</li>
+                <li>Short step three.</li>
+              </ol>
+            </section>
+
+            <section class="baking-plan plan-only">
+              <h3>Baking plan</h3>
+              <div class="plan-block">
+                <h4>Day 1, starter build</h4>
+                <ul class="plan-checklist">
+                  <li><span class="box"></span><span>Feed starter using the amount and ratio this recipe requires.</span></li>
+                  <li><span class="box"></span><span>Wait until starter is active, domed, and near peak.</span></li>
+                </ul>
+              </div>
+              <div class="plan-block">
+                <h4>Day 1, mix and ferment</h4>
+                <ul class="plan-checklist">
+                  <li><span class="box"></span><span>Mix dough.</span></li>
+                  <li><span class="box"></span><span>Rest, fold, and bulk ferment as needed.</span></li>
+                </ul>
+              </div>
+              <div class="plan-block">
+                <h4>Day 2, finish</h4>
+                <ul class="plan-checklist">
+                  <li><span class="box"></span><span>Shape, proof, bake, or cook according to recipe.</span></li>
+                  <li><span class="box"></span><span>Cool before cutting when applicable.</span></li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-wrap">
+      <p>The Sourdough Field Guide, a practical sourdough project.</p>
+      <p>No ads. No novellas.</p>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+  <script>
+    (function(){
+      const planToggle = document.getElementById('togglePlan');
+      const printPlan = document.getElementById('printPlan');
+      const cardToggle = document.getElementById('toggleCard');
+      function setPlanMode(on){
+        document.body.classList.toggle('baking-plan-mode', on);
+        if(on){
+          document.body.classList.remove('recipe-card-mode');
+          if(cardToggle) cardToggle.textContent = 'Quick recipe version';
+        }
+        if(planToggle) planToggle.textContent = on ? 'Show recipe' : 'Baking plan';
+      }
+      if(planToggle){
+        planToggle.addEventListener('click', function(){
+          setPlanMode(!document.body.classList.contains('baking-plan-mode'));
+        });
+      }
+      if(cardToggle){
+        cardToggle.addEventListener('click', function(){
+          document.body.classList.toggle('recipe-card-mode');
+          document.body.classList.remove('baking-plan-mode');
+          if(planToggle) planToggle.textContent = 'Baking plan';
+          cardToggle.textContent = document.body.classList.contains('recipe-card-mode') ? 'Show full recipe' : 'Quick recipe version';
+        });
+      }
+      if(printPlan){
+        printPlan.addEventListener('click', function(){
+          document.body.classList.add('print-baking-plan');
+          window.print();
+          setTimeout(function(){ document.body.classList.remove('print-baking-plan'); }, 500);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

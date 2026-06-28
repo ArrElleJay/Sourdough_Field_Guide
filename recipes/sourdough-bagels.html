@@ -1,188 +1,165 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sourdough Bagels | The Sourdough Field Guide</title>
-  <meta name="description" content="Makes 8 | Bake 425°F for 25 to 28 minutes | Ferment 8 to 12 hours plus 30 to 60 minutes">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Sourdough Bagels | The Sourdough Field Guide</title>
+<meta content="Makes 8 | Bake 425°F for 25 to 28 minutes | Ferment 8 to 12 hours plus 30 to 60 minutes" name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
 
-  <style>
-    .plan-only{display:none}
-    body.baking-plan-mode .recipe-sections > section:not(.baking-plan),
-    body.baking-plan-mode .recipe-sections > .notes{display:none}
-    body.baking-plan-mode .baking-plan{display:block}
-    .plan-block{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:#fffdf8;margin:0 0 14px}
-    .plan-block h4{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--navy);margin:0 0 10px;font-size:1rem}
-    .plan-checklist{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-    .plan-checklist li{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start}
-    .plan-checklist .box{width:18px;height:18px;border:2px solid var(--navy);border-radius:4px;margin-top:2px;background:#fff}
-    @media print{
-      body.print-baking-plan .recipe-sections > section:not(.baking-plan),
-      body.print-baking-plan .recipe-sections > .notes{display:none!important}
-      body.print-baking-plan .baking-plan{display:block!important}
-      body.print-baking-plan .recipe-page-top h2{font-size:22pt!important}
-      body.print-baking-plan .plan-block{break-inside:avoid;border:1px solid #999;background:#fff;padding:10px 12px;margin-bottom:10px}
-      body.print-baking-plan .plan-checklist{gap:7px}
-      body.print-baking-plan .plan-checklist .box{border-color:#000}
-    }
-  </style>
 </head>
 <body class="page-recipes">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap header-wrap">
-      <a class="brand" href="../index.html" aria-label="The Sourdough Field Guide home">
-        <img class="brand-mark-image" src="../assets/logo-mark-sfg.png" alt="SFG monogram logo">
-        <span class="brand-text">The Sourdough Field Guide</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="../index.html" class="">Home</a>
-        <a href="../basics.html" class="">Get Startered</a>
-        <a href="../schedule.html" class="">Schedules</a>
-        <a href="../calculator.html" class="">Calculators</a>
-        <a href="../recipes.html" class="active">Recipes</a>
-        <a href="../submit.html" class="">Submit Recipe</a>
-        <a href="../troubleshooting.html" class="">Troubleshooting</a>
-      </nav>
-    </div>
-  </header>
-  <main id="main">
-
-    <section class="section page-hero recipe-page-hero">
-      <div class="wrap narrow page-intro">
-        <p class="eyebrow">Recipe</p>
-        <h1 class="page-title">Sourdough Bagels</h1>
-        <p>Makes 8 | Bake 425°F for 25 to 28 minutes | Ferment 8 to 12 hours plus 30 to 60 minutes</p>
-      </div>
-    </section>
-
-    <section class="section first-section">
-      <div class="wrap recipe-page-wrap">
-        <article class="recipe-detail recipe-page-detail">
-          <div class="recipe-page-top">
-            <div>
-              <h2>Sourdough Bagels</h2>
-              <p class="recipe-meta">Makes 8 | Bake 425°F for 25 to 28 minutes | Ferment 8 to 12 hours plus 30 to 60 minutes</p>
-              <div class="recipe-actions">
-                <button class="ghost-button" type="button" id="toggleCard">Quick recipe version</button>
-                <button class="ghost-button" type="button" id="togglePlan">Baking plan</button>
-                <button class="ghost-button" type="button" onclick="window.print()">Print recipe</button>
-                <button class="ghost-button" type="button" id="printPlan">Print baking plan</button>
-                <a class="ghost-button link-button" href="../recipes.html">Back to recipes</a>
-              </div>
-            </div>
-          </div>
-          <div class="recipe-sections">
-            <section class="full-only"><h3>Field note</h3>
-              <p>Bagels are supposed to be stiff, chewy, and a little stubborn. This is not a soft sandwich dough. Do not panic because it feels firm. That is the point.</p>
-              <p>The overnight room-temperature fermentation gives the dough flavor and makes the morning mostly shaping, boiling, and baking.</p>
-            </section>
-            <section><h3>Ingredients</h3>
-              <table class="ingredient-table"><thead><tr><th>Amount</th><th>Ingredient</th></tr></thead><tbody>
-                <tr><td>Starter build</td><td>15g starter + 50g all-purpose flour + 50g water, to yield enough active starter</td></tr>
-                <tr><td>100g</td><td>active sourdough starter</td></tr>
-                <tr><td>255g</td><td>water</td></tr>
-                <tr><td>40g</td><td>honey or sugar</td></tr>
-                <tr><td>10g</td><td>fine sea salt</td></tr>
-                <tr><td>500g</td><td>bread flour</td></tr>
-                <tr><td>6 cups</td><td>water for boiling</td></tr>
-                <tr><td>1 tbsp</td><td>granulated sugar for boiling water</td></tr>
-                <tr><td>optional</td><td>sesame seeds, everything seasoning, poppy seeds, shredded cheese, or salt</td></tr>
-              </tbody></table>
-            </section>
-            <section class="full-only"><h3>Instructions</h3>
-              <ol class="steps">
-                <li><strong>Build the starter.</strong> About 12 hours before mixing, feed the starter so you have at least 100g active starter. Use it when doubled and active.</li>
-                <li><strong>Mix the dough.</strong> In a stand mixer bowl, stir together the starter, water, honey, and salt. Add the bread flour and bring the dough together as best you can. It will be very stiff.</li>
-                <li><strong>Knead.</strong> Mix with the dough hook on the lowest speed for 6 to 7 minutes, or knead by hand about 10 minutes.</li>
-                <li><strong>Ferment.</strong> Cover the bowl and let the dough rest at room temperature for 8 to 12 hours.</li>
-                <li><strong>Prepare the pan.</strong> Line a baking sheet with parchment paper.</li>
-                <li><strong>Divide.</strong> Turn the dough onto a clean work surface and divide into 8 equal pieces.</li>
-                <li><strong>Shape.</strong> Shape each piece into a ball. Poke a hole through the center with your thumb and gently stretch into a ring. Place on parchment.</li>
-                <li><strong>Final proof.</strong> Cover with a towel and let rise 30 to 60 minutes, until puffy.</li>
-                <li><strong>Preheat and boil.</strong> Preheat the oven to 425°F. Bring 6 cups water to a boil and add 1 tablespoon sugar.</li>
-                <li><strong>Boil.</strong> Boil bagels for 2 minutes per side, working in batches so the pot is not crowded.</li>
-                <li><strong>Top.</strong> Remove with a mesh strainer. When cool enough to handle, dip one side into toppings if using.</li>
-                <li><strong>Bake.</strong> Bake at 425°F for 25 to 28 minutes, until golden brown. Cool on a rack.</li>
-              </ol>
-            </section>
-            <section class="full-only"><h3>How to tell it is ready</h3>
-              <ol class="steps">
-                <li><strong>Dough</strong> stiff but fully mixed and kneaded.</li>
-                <li><strong>Fermentation</strong> dough has rested 8 to 12 hours and looks slightly risen.</li>
-                <li><strong>Shaped bagels</strong> puffy before boiling.</li>
-                <li><strong>Baked bagels</strong> golden and firm with a chewy crust.</li>
-              </ol>
-            </section>
-            <section class="card-only"><h3>Quick recipe version</h3>
-              <ol class="steps">
-                <li>Build active starter about 12 hours ahead.</li>
-                <li>Mix stiff dough and knead 6 to 7 minutes by mixer, or 10 minutes by hand.</li>
-                <li>Ferment 8 to 12 hours.</li>
-                <li>Divide into 8, shape rings, and proof 30 to 60 minutes.</li>
-                <li>Boil 2 minutes per side. Add toppings.</li>
-                <li>Bake 425°F for 25 to 28 minutes.</li>
-              </ol>
-            </section>
-            <section class="baking-plan plan-only"><h3>Baking plan checklist</h3>
-              <p class="recipe-meta">An overnight sourdough bagel plan: build starter, mix stiff dough, ferment overnight, shape, short proof, boil, bake.</p>
-              <div class="plan-block">
-                <h4>Day 1, morning or afternoon, build the starter</h4>
-                <ol class="plan-checklist">
-                  <li><span class="box"></span><span><strong>Feed starter.</strong> Mix 15g starter, 50g flour, and 50g water to make a little more than the 100g needed.</span></li>
-                  <li><span class="box"></span><span><strong>Let rise about 12 hours.</strong> Use when doubled and active.</span></li>
-                </ol>
-              </div>
-              <div class="plan-block">
-                <h4>Day 1, evening, mix and ferment</h4>
-                <ol class="plan-checklist">
-                  <li><span class="box"></span><span><strong>Mix dough.</strong> Stir together active starter, water, honey or sugar, and salt. Add bread flour.</span></li>
-                  <li><span class="box"></span><span><strong>Knead stiff dough.</strong> Mix 6 to 7 minutes with a dough hook, or about 10 minutes by hand.</span></li>
-                  <li><span class="box"></span><span><strong>Ferment 8 to 12 hours.</strong> Cover and leave at room temperature.</span></li>
-                </ol>
-              </div>
-              <div class="plan-block">
-                <h4>Day 2, morning, shape and proof</h4>
-                <ol class="plan-checklist">
-                  <li><span class="box"></span><span><strong>Line baking sheet.</strong> Use parchment and flour the bottoms if sticking is a problem.</span></li>
-                  <li><span class="box"></span><span><strong>Divide into 8 pieces.</strong></span></li>
-                  <li><span class="box"></span><span><strong>Shape bagels.</strong> Shape each into a ball, poke a hole through the center, and stretch into a ring.</span></li>
-                  <li><span class="box"></span><span><strong>Proof 30 to 60 minutes.</strong> Cover and let rise until puffy.</span></li>
-                </ol>
-              </div>
-              <div class="plan-block">
-                <h4>Day 2, boil and bake</h4>
-                <ol class="plan-checklist">
-                  <li><span class="box"></span><span><strong>Preheat oven.</strong> Heat to 425°F.</span></li>
-                  <li><span class="box"></span><span><strong>Boil water.</strong> Bring 6 cups water to a boil and add 1 tablespoon sugar.</span></li>
-                  <li><span class="box"></span><span><strong>Boil bagels.</strong> Boil 2 minutes per side, working in batches.</span></li>
-                  <li><span class="box"></span><span><strong>Add toppings.</strong> Dip wet bagels into toppings if using.</span></li>
-                  <li><span class="box"></span><span><strong>Bake 25 to 28 minutes.</strong> Bake until golden brown.</span></li>
-                  <li><span class="box"></span><span><strong>Cool on a rack.</strong></span></li>
-                </ol>
-              </div>
-            </section>
-
-            <section class="notes"><strong>Notes:</strong> Cinnamon raisin option: add 2 tsp cinnamon to the dry ingredients and knead in 1/2 cup raisins after kneading.</section>
-
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <div class="wrap footer-wrap">
-      <p>The Sourdough Field Guide, a practical sourdough project.</p>
-      <p>No ads. No novellas.</p>
-    </div>
-  </footer>
-  <script src="../script.js"></script>
-  <script>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap header-wrap">
+<a aria-label="The Sourdough Field Guide home" class="brand" href="../index.html">
+<img alt="SFG monogram logo" class="brand-mark-image" src="../assets/logo-mark-sfg.png"/>
+<span class="brand-text">The Sourdough Field Guide</span>
+</a>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle" type="button">Menu</button>
+<nav aria-label="Primary navigation" class="site-nav">
+<a class="" href="../index.html">Home</a>
+<a class="" href="../basics.html">Get Startered</a>
+<a class="" href="../schedule.html">Timing</a>
+<a class="" href="../calculator.html">Calculators</a>
+<a class="active" href="../recipes.html">Recipes</a>
+<a class="" href="../submit.html">Submit Recipe</a>
+<a class="" href="../troubleshooting.html">What Had Happened Was...</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="section page-hero recipe-page-hero">
+<div class="wrap narrow page-intro">
+<p class="eyebrow">Recipe</p>
+<h1 class="page-title">Sourdough Bagels</h1>
+<p>Makes 8 | Bake 425°F for 25 to 28 minutes | Ferment 8 to 12 hours plus 30 to 60 minutes</p>
+</div>
+</section>
+<section class="section first-section">
+<div class="wrap recipe-page-wrap">
+<article class="recipe-detail recipe-page-detail">
+<div class="recipe-page-top">
+<div>
+<h2>Sourdough Bagels</h2>
+<p class="recipe-meta">Makes 8 | Bake 425°F for 25 to 28 minutes | Ferment 8 to 12 hours plus 30 to 60 minutes</p>
+<div class="recipe-actions">
+<button class="ghost-button" id="toggleCard" type="button">Quick recipe version</button>
+<button class="ghost-button" id="togglePlan" type="button">Baking plan</button>
+<button class="ghost-button" onclick="window.print()" type="button">Print recipe</button>
+<button class="ghost-button" id="printPlan" type="button">Print baking plan</button>
+<a class="ghost-button link-button" href="../recipes.html">Back to recipes</a>
+</div>
+</div>
+</div>
+<div class="recipe-sections">
+<section class="full-only"><h3>Field note</h3>
+<p>Bagels are supposed to be stiff, chewy, and a little stubborn. This is not a soft sandwich dough. Do not panic because it feels firm. That is the point.</p>
+<p>The overnight room-temperature fermentation gives the dough flavor and makes the morning mostly shaping, boiling, and baking.</p>
+</section>
+<section><h3>Ingredients</h3>
+<table class="ingredient-table"><thead><tr><th>Amount</th><th>Ingredient</th></tr></thead><tbody>
+<tr><td>Starter build</td><td>15g starter + 50g all-purpose flour + 50g water, to yield enough active starter</td></tr>
+<tr><td>100g</td><td>active sourdough starter</td></tr>
+<tr><td>255g</td><td>water</td></tr>
+<tr><td>40g</td><td>honey or sugar</td></tr>
+<tr><td>10g</td><td>fine sea salt</td></tr>
+<tr><td>500g</td><td>bread flour</td></tr>
+<tr><td>6 cups</td><td>water for boiling</td></tr>
+<tr><td>1 tbsp</td><td>granulated sugar for boiling water</td></tr>
+<tr><td>optional</td><td>sesame seeds, everything seasoning, poppy seeds, shredded cheese, or salt</td></tr>
+</tbody></table>
+</section>
+<section class="full-only"><h3>Instructions</h3>
+<ol class="steps">
+<li><strong>Build the starter.</strong> About 12 hours before mixing, feed the starter so you have at least 100g active starter. Use it when doubled and active.</li>
+<li><strong>Mix the dough.</strong> In a stand mixer bowl, stir together the starter, water, honey, and salt. Add the bread flour and bring the dough together as best you can. It will be very stiff.</li>
+<li><strong>Knead.</strong> Mix with the dough hook on the lowest speed for 6 to 7 minutes, or knead by hand about 10 minutes.</li>
+<li><strong>Ferment.</strong> Cover the bowl and let the dough rest at room temperature for 8 to 12 hours.</li>
+<li><strong>Prepare the pan.</strong> Line a baking sheet with parchment paper.</li>
+<li><strong>Divide.</strong> Turn the dough onto a clean work surface and divide into 8 equal pieces.</li>
+<li><strong>Shape.</strong> Shape each piece into a ball. Poke a hole through the center with your thumb and gently stretch into a ring. Place on parchment.</li>
+<li><strong>Final proof.</strong> Cover with a towel and let rise 30 to 60 minutes, until puffy.</li>
+<li><strong>Preheat and boil.</strong> Preheat the oven to 425°F. Bring 6 cups water to a boil and add 1 tablespoon sugar.</li>
+<li><strong>Boil.</strong> Boil bagels for 2 minutes per side, working in batches so the pot is not crowded.</li>
+<li><strong>Top.</strong> Remove with a mesh strainer. When cool enough to handle, dip one side into toppings if using.</li>
+<li><strong>Bake.</strong> Bake at 425°F for 25 to 28 minutes, until golden brown. Cool on a rack.</li>
+</ol>
+</section>
+<section class="full-only"><h3>How to tell it is ready</h3>
+<ol class="steps">
+<li><strong>Dough</strong> stiff but fully mixed and kneaded.</li>
+<li><strong>Fermentation</strong> dough has rested 8 to 12 hours and looks slightly risen.</li>
+<li><strong>Shaped bagels</strong> puffy before boiling.</li>
+<li><strong>Baked bagels</strong> golden and firm with a chewy crust.</li>
+</ol>
+</section>
+<section class="card-only"><h3>Quick recipe version</h3>
+<ol class="steps">
+<li>Build active starter about 12 hours ahead.</li>
+<li>Mix stiff dough and knead 6 to 7 minutes by mixer, or 10 minutes by hand.</li>
+<li>Ferment 8 to 12 hours.</li>
+<li>Divide into 8, shape rings, and proof 30 to 60 minutes.</li>
+<li>Boil 2 minutes per side. Add toppings.</li>
+<li>Bake 425°F for 25 to 28 minutes.</li>
+</ol>
+</section>
+<section class="baking-plan plan-only"><h3>Baking plan checklist</h3>
+<p class="recipe-meta">An overnight sourdough bagel plan: build starter, mix stiff dough, ferment overnight, shape, short proof, boil, bake.</p>
+<div class="plan-block">
+<h4>Day 1, morning or afternoon, build the starter</h4>
+<ol class="plan-checklist">
+<li><span class="box"></span><span><strong>Feed starter.</strong> Mix 15g starter, 50g flour, and 50g water to make a little more than the 100g needed.</span></li>
+<li><span class="box"></span><span><strong>Let rise about 12 hours.</strong> Use when doubled and active.</span></li>
+</ol>
+</div>
+<div class="plan-block">
+<h4>Day 1, evening, mix and ferment</h4>
+<ol class="plan-checklist">
+<li><span class="box"></span><span><strong>Mix dough.</strong> Stir together active starter, water, honey or sugar, and salt. Add bread flour.</span></li>
+<li><span class="box"></span><span><strong>Knead stiff dough.</strong> Mix 6 to 7 minutes with a dough hook, or about 10 minutes by hand.</span></li>
+<li><span class="box"></span><span><strong>Ferment 8 to 12 hours.</strong> Cover and leave at room temperature.</span></li>
+</ol>
+</div>
+<div class="plan-block">
+<h4>Day 2, morning, shape and proof</h4>
+<ol class="plan-checklist">
+<li><span class="box"></span><span><strong>Line baking sheet.</strong> Use parchment and flour the bottoms if sticking is a problem.</span></li>
+<li><span class="box"></span><span><strong>Divide into 8 pieces.</strong></span></li>
+<li><span class="box"></span><span><strong>Shape bagels.</strong> Shape each into a ball, poke a hole through the center, and stretch into a ring.</span></li>
+<li><span class="box"></span><span><strong>Proof 30 to 60 minutes.</strong> Cover and let rise until puffy.</span></li>
+</ol>
+</div>
+<div class="plan-block">
+<h4>Day 2, boil and bake</h4>
+<ol class="plan-checklist">
+<li><span class="box"></span><span><strong>Preheat oven.</strong> Heat to 425°F.</span></li>
+<li><span class="box"></span><span><strong>Boil water.</strong> Bring 6 cups water to a boil and add 1 tablespoon sugar.</span></li>
+<li><span class="box"></span><span><strong>Boil bagels.</strong> Boil 2 minutes per side, working in batches.</span></li>
+<li><span class="box"></span><span><strong>Add toppings.</strong> Dip wet bagels into toppings if using.</span></li>
+<li><span class="box"></span><span><strong>Bake 25 to 28 minutes.</strong> Bake until golden brown.</span></li>
+<li><span class="box"></span><span><strong>Cool on a rack.</strong></span></li>
+</ol>
+</div>
+</section>
+<section class="notes"><strong>Notes:</strong> Cinnamon raisin option: add 2 tsp cinnamon to the dry ingredients and knead in 1/2 cup raisins after kneading.</section>
+</div>
+</article>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-wrap">
+<p>The Sourdough Field Guide, a practical sourdough project.</p>
+<p>No ads. No novellas.</p>
+</div>
+</footer>
+<script src="../script.js"></script>
+<script>
     (function(){
       const planToggle = document.getElementById('togglePlan');
       const printPlan = document.getElementById('printPlan');
@@ -215,6 +192,5 @@
       }
     })();
   </script>
-
 </body>
 </html>

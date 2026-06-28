@@ -1,175 +1,152 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sourdough Cheez-It Crackers | The Sourdough Field Guide</title>
-  <meta name="description" content="Makes 6 servings | Bake 350°F for 15 to 18 minutes | Chill 20 minutes">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Sourdough Cheez-It Crackers | The Sourdough Field Guide</title>
+<meta content="Makes 6 servings | Bake 350°F for 15 to 18 minutes | Chill 20 minutes" name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
 
-  <style>
-    .plan-only{display:none}
-    body.baking-plan-mode .recipe-sections > section:not(.baking-plan),
-    body.baking-plan-mode .recipe-sections > .notes{display:none}
-    body.baking-plan-mode .baking-plan{display:block}
-    .plan-block{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:#fffdf8;margin:0 0 14px}
-    .plan-block h4{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--navy);margin:0 0 10px;font-size:1rem}
-    .plan-checklist{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-    .plan-checklist li{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start}
-    .plan-checklist .box{width:18px;height:18px;border:2px solid var(--navy);border-radius:4px;margin-top:2px;background:#fff}
-    @media print{
-      body.print-baking-plan .recipe-sections > section:not(.baking-plan),
-      body.print-baking-plan .recipe-sections > .notes{display:none!important}
-      body.print-baking-plan .baking-plan{display:block!important}
-      body.print-baking-plan .recipe-page-top h2{font-size:22pt!important}
-      body.print-baking-plan .plan-block{break-inside:avoid;border:1px solid #999;background:#fff;padding:10px 12px;margin-bottom:10px}
-      body.print-baking-plan .plan-checklist{gap:7px}
-      body.print-baking-plan .plan-checklist .box{border-color:#000}
-    }
-  </style>
 </head>
 <body class="page-recipes">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap header-wrap">
-      <a class="brand" href="../index.html" aria-label="The Sourdough Field Guide home">
-        <img class="brand-mark-image" src="../assets/logo-mark-sfg.png" alt="SFG monogram logo">
-        <span class="brand-text">The Sourdough Field Guide</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="../index.html" class="">Home</a>
-        <a href="../basics.html" class="">Get Startered</a>
-        <a href="../schedule.html" class="">Schedules</a>
-        <a href="../calculator.html" class="">Calculators</a>
-        <a href="../recipes.html" class="active">Recipes</a>
-        <a href="../submit.html" class="">Submit Recipe</a>
-        <a href="../troubleshooting.html" class="">Troubleshooting</a>
-      </nav>
-    </div>
-  </header>
-  <main id="main">
-
-    <section class="section page-hero recipe-page-hero">
-      <div class="wrap narrow page-intro">
-        <p class="eyebrow">Recipe</p>
-        <h1 class="page-title">Sourdough Cheez-It Crackers</h1>
-        <p>Makes 6 servings | Bake 350°F for 15 to 18 minutes | Chill 20 minutes</p>
-      </div>
-    </section>
-
-    <section class="section first-section">
-      <div class="wrap recipe-page-wrap">
-        <article class="recipe-detail recipe-page-detail">
-          <div class="recipe-page-top">
-            <div>
-              <h2>Sourdough Cheez-It Crackers</h2>
-              <p class="recipe-meta">Makes 6 servings | Bake 350°F for 15 to 18 minutes | Chill 20 minutes</p>
-              <div class="recipe-actions">
-                <button class="ghost-button" type="button" id="toggleCard">Quick recipe version</button>
-                <button class="ghost-button" type="button" id="togglePlan">Baking plan</button>
-                <button class="ghost-button" type="button" onclick="window.print()">Print recipe</button>
-                <button class="ghost-button" type="button" id="printPlan">Print baking plan</button>
-                <a class="ghost-button link-button" href="../recipes.html">Back to recipes</a>
-              </div>
-            </div>
-          </div>
-          <div class="recipe-sections">
-            <section class="full-only"><h3>Field note</h3>
-              <p>These are discard crackers, which means they should be simple. Blend, chill, roll thin, bake. The important part is the rolling. Thick dough gives you cheesy tiles, not crackers.</p>
-              <p>The discard does not need to be active. Flat discard is fine here. This is snack math, not bread math.</p>
-            </section>
-            <section><h3>Ingredients</h3>
-              <table class="ingredient-table"><thead><tr><th>Amount</th><th>Ingredient</th></tr></thead><tbody>
-                <tr><td>226g</td><td>cheddar cheese, chopped</td></tr>
-                <tr><td>85g</td><td>flat sourdough discard</td></tr>
-                <tr><td>28g</td><td>unsalted butter, chopped</td></tr>
-                <tr><td>5g</td><td>ranch seasoning</td></tr>
-                <tr><td>5g</td><td>salt, or half for less salty crackers</td></tr>
-                <tr><td>65g</td><td>all-purpose flour</td></tr>
-                <tr><td>optional</td><td>flaky sea salt</td></tr>
-              </tbody></table>
-            </section>
-            <section class="full-only"><h3>Instructions</h3>
-              <ol class="steps">
-                <li><strong>Make the dough.</strong> Blend the cheddar, discard, butter, ranch seasoning, salt, and flour in a food processor until the mixture comes together as a dough.</li>
-                <li><strong>Chill.</strong> Wrap the dough and refrigerate for at least 20 minutes. This firms it up so it is easier to roll thin.</li>
-                <li><strong>Preheat.</strong> Heat the oven to 350°F.</li>
-                <li><strong>Divide and roll.</strong> Split the dough in half. Roll one half very thin on parchment or a silicone baking mat, about 1/8 inch or thinner if you can manage it.</li>
-                <li><strong>Cut.</strong> Cut into roughly 1-inch squares with a pasta cutter, bench scraper, or knife.</li>
-                <li><strong>Dock.</strong> Poke a hole in the middle of each cracker with a toothpick. This helps them bake more evenly and gives the classic cracker look.</li>
-                <li><strong>Salt.</strong> Sprinkle lightly with flaky sea salt if using. Do not separate the crackers.</li>
-                <li><strong>Bake.</strong> Move the parchment or mat to a baking sheet and bake for 15 to 18 minutes. If baking two trays, rotate them halfway through.</li>
-                <li><strong>Dry and crisp.</strong> Turn off the oven and let the crackers sit inside with the door slightly ajar. This helps drive off extra moisture so they crisp instead of staying bendy.</li>
-                <li><strong>Repeat.</strong> Roll, cut, and bake the second half of the dough.</li>
-              </ol>
-            </section>
-            <section class="full-only"><h3>How to tell it is ready</h3>
-              <ol class="steps">
-                <li><strong>Dough</strong> comes together in the food processor and is firm after chilling.</li>
-                <li><strong>Rolled dough</strong> thin enough that it feels almost too thin.</li>
-                <li><strong>Baked crackers</strong> set, lightly browned at the edges, and crisp after drying.</li>
-                <li><strong>If soft</strong> return to the turned-off oven with the door cracked to dry longer.</li>
-              </ol>
-            </section>
-            <section class="card-only"><h3>Quick recipe version</h3>
-              <ol class="steps">
-                <li>Blend cheese, discard, butter, seasoning, salt, and flour.</li>
-                <li>Chill at least 20 minutes.</li>
-                <li>Roll very thin, cut into 1-inch squares, and poke centers.</li>
-                <li>Bake 350°F for 15 to 18 minutes. Let dry in turned-off oven with door cracked.</li>
-              </ol>
-            </section>
-            <section class="baking-plan plan-only"><h3>Baking plan checklist</h3>
-              <p class="recipe-meta">A same-day discard cracker plan: mix, chill, roll thin, cut, bake, then dry in the turned-off oven.</p>
-              <div class="plan-block">
-                <h4>Mix and chill</h4>
-                <ol class="plan-checklist">
-                  <li><span class="box"></span><span><strong>Blend dough.</strong> In a food processor, blend cheddar, discard, butter, ranch seasoning, salt, and flour.</span></li>
-                  <li><span class="box"></span><span><strong>Wrap dough.</strong> Place dough in plastic wrap.</span></li>
-                  <li><span class="box"></span><span><strong>Chill at least 20 minutes.</strong> This makes rolling easier.</span></li>
-                  <li><span class="box"></span><span><strong>Preheat oven.</strong> Heat to 350°F.</span></li>
-                </ol>
-              </div>
-              <div class="plan-block">
-                <h4>Roll and cut</h4>
-                <ol class="plan-checklist">
-                  <li><span class="box"></span><span><strong>Split dough in half.</strong> Work with one half at a time.</span></li>
-                  <li><span class="box"></span><span><strong>Roll very thin.</strong> Roll on a silicone mat or parchment. Thin dough is the point.</span></li>
-                  <li><span class="box"></span><span><strong>Cut into 1-inch squares.</strong> Use a pasta cutter, bench scraper, or knife.</span></li>
-                  <li><span class="box"></span><span><strong>Poke holes.</strong> Poke the center of each cracker with a toothpick.</span></li>
-                  <li><span class="box"></span><span><strong>Add flaky salt.</strong> Sprinkle if using.</span></li>
-                </ol>
-              </div>
-              <div class="plan-block">
-                <h4>Bake and dry</h4>
-                <ol class="plan-checklist">
-                  <li><span class="box"></span><span><strong>Bake 15 to 18 minutes.</strong> Do not separate the crackers before baking.</span></li>
-                  <li><span class="box"></span><span><strong>Repeat with second half.</strong> Rotate trays if baking both together.</span></li>
-                  <li><span class="box"></span><span><strong>Dry in turned-off oven.</strong> Let crackers sit in the off oven with the door slightly ajar for extra crispness.</span></li>
-                  <li><span class="box"></span><span><strong>Cool fully.</strong></span></li>
-                </ol>
-              </div>
-            </section>
-
-            <section class="notes"><strong>Notes:</strong> Thin dough is the whole game. When it looks thin enough, make it thinner.</section>
-
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <div class="wrap footer-wrap">
-      <p>The Sourdough Field Guide, a practical sourdough project.</p>
-      <p>No ads. No novellas.</p>
-    </div>
-  </footer>
-  <script src="../script.js"></script>
-  <script>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap header-wrap">
+<a aria-label="The Sourdough Field Guide home" class="brand" href="../index.html">
+<img alt="SFG monogram logo" class="brand-mark-image" src="../assets/logo-mark-sfg.png"/>
+<span class="brand-text">The Sourdough Field Guide</span>
+</a>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle" type="button">Menu</button>
+<nav aria-label="Primary navigation" class="site-nav">
+<a class="" href="../index.html">Home</a>
+<a class="" href="../basics.html">Get Startered</a>
+<a class="" href="../schedule.html">Timing</a>
+<a class="" href="../calculator.html">Calculators</a>
+<a class="active" href="../recipes.html">Recipes</a>
+<a class="" href="../submit.html">Submit Recipe</a>
+<a class="" href="../troubleshooting.html">What Had Happened Was...</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="section page-hero recipe-page-hero">
+<div class="wrap narrow page-intro">
+<p class="eyebrow">Recipe</p>
+<h1 class="page-title">Sourdough Cheez-It Crackers</h1>
+<p>Makes 6 servings | Bake 350°F for 15 to 18 minutes | Chill 20 minutes</p>
+</div>
+</section>
+<section class="section first-section">
+<div class="wrap recipe-page-wrap">
+<article class="recipe-detail recipe-page-detail">
+<div class="recipe-page-top">
+<div>
+<h2>Sourdough Cheez-It Crackers</h2>
+<p class="recipe-meta">Makes 6 servings | Bake 350°F for 15 to 18 minutes | Chill 20 minutes</p>
+<div class="recipe-actions">
+<button class="ghost-button" id="toggleCard" type="button">Quick recipe version</button>
+<button class="ghost-button" id="togglePlan" type="button">Baking plan</button>
+<button class="ghost-button" onclick="window.print()" type="button">Print recipe</button>
+<button class="ghost-button" id="printPlan" type="button">Print baking plan</button>
+<a class="ghost-button link-button" href="../recipes.html">Back to recipes</a>
+</div>
+</div>
+</div>
+<div class="recipe-sections">
+<section class="full-only"><h3>Field note</h3>
+<p>These are discard crackers, which means they should be simple. Blend, chill, roll thin, bake. The important part is the rolling. Thick dough gives you cheesy tiles, not crackers.</p>
+<p>The discard does not need to be active. Flat discard is fine here. This is snack math, not bread math.</p>
+</section>
+<section><h3>Ingredients</h3>
+<table class="ingredient-table"><thead><tr><th>Amount</th><th>Ingredient</th></tr></thead><tbody>
+<tr><td>226g</td><td>cheddar cheese, chopped</td></tr>
+<tr><td>85g</td><td>flat sourdough discard</td></tr>
+<tr><td>28g</td><td>unsalted butter, chopped</td></tr>
+<tr><td>5g</td><td>ranch seasoning</td></tr>
+<tr><td>5g</td><td>salt, or half for less salty crackers</td></tr>
+<tr><td>65g</td><td>all-purpose flour</td></tr>
+<tr><td>optional</td><td>flaky sea salt</td></tr>
+</tbody></table>
+</section>
+<section class="full-only"><h3>Instructions</h3>
+<ol class="steps">
+<li><strong>Make the dough.</strong> Blend the cheddar, discard, butter, ranch seasoning, salt, and flour in a food processor until the mixture comes together as a dough.</li>
+<li><strong>Chill.</strong> Wrap the dough and refrigerate for at least 20 minutes. This firms it up so it is easier to roll thin.</li>
+<li><strong>Preheat.</strong> Heat the oven to 350°F.</li>
+<li><strong>Divide and roll.</strong> Split the dough in half. Roll one half very thin on parchment or a silicone baking mat, about 1/8 inch or thinner if you can manage it.</li>
+<li><strong>Cut.</strong> Cut into roughly 1-inch squares with a pasta cutter, bench scraper, or knife.</li>
+<li><strong>Dock.</strong> Poke a hole in the middle of each cracker with a toothpick. This helps them bake more evenly and gives the classic cracker look.</li>
+<li><strong>Salt.</strong> Sprinkle lightly with flaky sea salt if using. Do not separate the crackers.</li>
+<li><strong>Bake.</strong> Move the parchment or mat to a baking sheet and bake for 15 to 18 minutes. If baking two trays, rotate them halfway through.</li>
+<li><strong>Dry and crisp.</strong> Turn off the oven and let the crackers sit inside with the door slightly ajar. This helps drive off extra moisture so they crisp instead of staying bendy.</li>
+<li><strong>Repeat.</strong> Roll, cut, and bake the second half of the dough.</li>
+</ol>
+</section>
+<section class="full-only"><h3>How to tell it is ready</h3>
+<ol class="steps">
+<li><strong>Dough</strong> comes together in the food processor and is firm after chilling.</li>
+<li><strong>Rolled dough</strong> thin enough that it feels almost too thin.</li>
+<li><strong>Baked crackers</strong> set, lightly browned at the edges, and crisp after drying.</li>
+<li><strong>If soft</strong> return to the turned-off oven with the door cracked to dry longer.</li>
+</ol>
+</section>
+<section class="card-only"><h3>Quick recipe version</h3>
+<ol class="steps">
+<li>Blend cheese, discard, butter, seasoning, salt, and flour.</li>
+<li>Chill at least 20 minutes.</li>
+<li>Roll very thin, cut into 1-inch squares, and poke centers.</li>
+<li>Bake 350°F for 15 to 18 minutes. Let dry in turned-off oven with door cracked.</li>
+</ol>
+</section>
+<section class="baking-plan plan-only"><h3>Baking plan checklist</h3>
+<p class="recipe-meta">A same-day discard cracker plan: mix, chill, roll thin, cut, bake, then dry in the turned-off oven.</p>
+<div class="plan-block">
+<h4>Mix and chill</h4>
+<ol class="plan-checklist">
+<li><span class="box"></span><span><strong>Blend dough.</strong> In a food processor, blend cheddar, discard, butter, ranch seasoning, salt, and flour.</span></li>
+<li><span class="box"></span><span><strong>Wrap dough.</strong> Place dough in plastic wrap.</span></li>
+<li><span class="box"></span><span><strong>Chill at least 20 minutes.</strong> This makes rolling easier.</span></li>
+<li><span class="box"></span><span><strong>Preheat oven.</strong> Heat to 350°F.</span></li>
+</ol>
+</div>
+<div class="plan-block">
+<h4>Roll and cut</h4>
+<ol class="plan-checklist">
+<li><span class="box"></span><span><strong>Split dough in half.</strong> Work with one half at a time.</span></li>
+<li><span class="box"></span><span><strong>Roll very thin.</strong> Roll on a silicone mat or parchment. Thin dough is the point.</span></li>
+<li><span class="box"></span><span><strong>Cut into 1-inch squares.</strong> Use a pasta cutter, bench scraper, or knife.</span></li>
+<li><span class="box"></span><span><strong>Poke holes.</strong> Poke the center of each cracker with a toothpick.</span></li>
+<li><span class="box"></span><span><strong>Add flaky salt.</strong> Sprinkle if using.</span></li>
+</ol>
+</div>
+<div class="plan-block">
+<h4>Bake and dry</h4>
+<ol class="plan-checklist">
+<li><span class="box"></span><span><strong>Bake 15 to 18 minutes.</strong> Do not separate the crackers before baking.</span></li>
+<li><span class="box"></span><span><strong>Repeat with second half.</strong> Rotate trays if baking both together.</span></li>
+<li><span class="box"></span><span><strong>Dry in turned-off oven.</strong> Let crackers sit in the off oven with the door slightly ajar for extra crispness.</span></li>
+<li><span class="box"></span><span><strong>Cool fully.</strong></span></li>
+</ol>
+</div>
+</section>
+<section class="notes"><strong>Notes:</strong> Thin dough is the whole game. When it looks thin enough, make it thinner.</section>
+</div>
+</article>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-wrap">
+<p>The Sourdough Field Guide, a practical sourdough project.</p>
+<p>No ads. No novellas.</p>
+</div>
+</footer>
+<script src="../script.js"></script>
+<script>
     (function(){
       const planToggle = document.getElementById('togglePlan');
       const printPlan = document.getElementById('printPlan');
@@ -202,6 +179,5 @@
       }
     })();
   </script>
-
 </body>
 </html>

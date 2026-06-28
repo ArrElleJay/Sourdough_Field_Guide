@@ -1,180 +1,157 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pretzel Bites with Sourdough Discard | The Sourdough Field Guide</title>
-  <meta name="description" content="Makes 32 bites | Bake 500°F for 8 to 10 minutes | Rise 1 to 1 1/2 hours plus 10 to 15 minutes">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Pretzel Bites with Sourdough Discard | The Sourdough Field Guide</title>
+<meta content="Makes 32 bites | Bake 500°F for 8 to 10 minutes | Rise 1 to 1 1/2 hours plus 10 to 15 minutes" name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
 
-  <style>
-    .plan-only{display:none}
-    body.baking-plan-mode .recipe-sections > section:not(.baking-plan),
-    body.baking-plan-mode .recipe-sections > .notes{display:none}
-    body.baking-plan-mode .baking-plan{display:block}
-    .plan-block{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:#fffdf8;margin:0 0 14px}
-    .plan-block h4{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--navy);margin:0 0 10px;font-size:1rem}
-    .plan-checklist{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-    .plan-checklist li{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start}
-    .plan-checklist .box{width:18px;height:18px;border:2px solid var(--navy);border-radius:4px;margin-top:2px;background:#fff}
-    @media print{
-      body.print-baking-plan .recipe-sections > section:not(.baking-plan),
-      body.print-baking-plan .recipe-sections > .notes{display:none!important}
-      body.print-baking-plan .baking-plan{display:block!important}
-      body.print-baking-plan .recipe-page-top h2{font-size:22pt!important}
-      body.print-baking-plan .plan-block{break-inside:avoid;border:1px solid #999;background:#fff;padding:10px 12px;margin-bottom:10px}
-      body.print-baking-plan .plan-checklist{gap:7px}
-      body.print-baking-plan .plan-checklist .box{border-color:#000}
-    }
-  </style>
 </head>
 <body class="page-recipes">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap header-wrap">
-      <a class="brand" href="../index.html" aria-label="The Sourdough Field Guide home">
-        <img class="brand-mark-image" src="../assets/logo-mark-sfg.png" alt="SFG monogram logo">
-        <span class="brand-text">The Sourdough Field Guide</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="../index.html" class="">Home</a>
-        <a href="../basics.html" class="">Get Startered</a>
-        <a href="../schedule.html" class="">Schedules</a>
-        <a href="../calculator.html" class="">Calculators</a>
-        <a href="../recipes.html" class="active">Recipes</a>
-        <a href="../submit.html" class="">Submit Recipe</a>
-        <a href="../troubleshooting.html" class="">Troubleshooting</a>
-      </nav>
-    </div>
-  </header>
-  <main id="main">
-
-    <section class="section page-hero recipe-page-hero">
-      <div class="wrap narrow page-intro">
-        <p class="eyebrow">Recipe</p>
-        <h1 class="page-title">Pretzel Bites with Sourdough Discard</h1>
-        <p>Makes 32 bites | Bake 500°F for 8 to 10 minutes | Rise 1 to 1 1/2 hours plus 10 to 15 minutes</p>
-      </div>
-    </section>
-
-    <section class="section first-section">
-      <div class="wrap recipe-page-wrap">
-        <article class="recipe-detail recipe-page-detail">
-          <div class="recipe-page-top">
-            <div>
-              <h2>Pretzel Bites with Sourdough Discard</h2>
-              <p class="recipe-meta">Makes 32 bites | Bake 500°F for 8 to 10 minutes | Rise 1 to 1 1/2 hours plus 10 to 15 minutes</p>
-              <div class="recipe-actions">
-                <button class="ghost-button" type="button" id="toggleCard">Quick recipe version</button>
-                <button class="ghost-button" type="button" id="togglePlan">Baking plan</button>
-                <button class="ghost-button" type="button" onclick="window.print()">Print recipe</button>
-                <button class="ghost-button" type="button" id="printPlan">Print baking plan</button>
-                <a class="ghost-button link-button" href="../recipes.html">Back to recipes</a>
-              </div>
-            </div>
-          </div>
-          <div class="recipe-sections">
-            <section class="full-only"><h3>Field note</h3>
-              <p>These use discard plus instant yeast, so they are faster and more predictable than a naturally leavened dough. The discard adds flavor, the yeast does the scheduling. Very reasonable of it.</p>
-              <p>The baking soda wash gives the pretzel bite its pretzel personality without requiring a full boil.</p>
-            </section>
-            <section><h3>Ingredients</h3>
-              <table class="ingredient-table"><thead><tr><th>Amount</th><th>Ingredient</th></tr></thead><tbody>
-                <tr><td>145g</td><td>sourdough discard or bubbly starter</td></tr>
-                <tr><td>175g</td><td>lukewarm water</td></tr>
-                <tr><td>5g</td><td>granulated sugar</td></tr>
-                <tr><td>8g</td><td>instant yeast</td></tr>
-                <tr><td>6g</td><td>salt</td></tr>
-                <tr><td>285g</td><td>all-purpose flour, plus more for rolling</td></tr>
-                <tr><td>120g</td><td>hot water for wash</td></tr>
-                <tr><td>15g</td><td>baking soda</td></tr>
-                <tr><td>55g</td><td>unsalted butter, melted</td></tr>
-                <tr><td>optional</td><td>flaky salt, parmesan, or cinnamon sugar</td></tr>
-              </tbody></table>
-            </section>
-            <section class="full-only"><h3>Instructions</h3>
-              <ol class="steps">
-                <li><strong>Mix the dough.</strong> In a large bowl or stand mixer bowl, mix the discard, lukewarm water, sugar, yeast, salt, and flour until a dough forms.</li>
-                <li><strong>Knead.</strong> Knead by hand for 5 to 8 minutes, or in a stand mixer for about 5 minutes, until the dough becomes smooth. Add extra flour only 1 tablespoon at a time if the dough is too sticky to handle.</li>
-                <li><strong>First rise.</strong> Lightly oil a bowl, turn the dough to coat, cover, and let rise for 1 to 1 1/2 hours, until doubled.</li>
-                <li><strong>Prepare the pan.</strong> Line a baking sheet with parchment paper.</li>
-                <li><strong>Divide and cut.</strong> Turn the dough onto a lightly floured surface and divide it into 4 pieces. Roll each piece into a long strand and cut each strand into 6 to 8 bites.</li>
-                <li><strong>Make the baking soda wash.</strong> Stir the baking soda into the hot water until completely dissolved. It may bubble a little. That is fine.</li>
-                <li><strong>Coat the bites.</strong> Brush each pretzel bite with the baking soda wash, or quickly dunk each piece and place it back on the parchment.</li>
-                <li><strong>Preheat and short rise.</strong> Preheat the oven to 500°F. Let the pretzel bites rise for 10 to 15 minutes while the oven heats.</li>
-                <li><strong>Bake.</strong> Bake for 8 to 10 minutes, until the outsides are browned and crisp.</li>
-                <li><strong>Butter and finish.</strong> Brush or toss the hot bites with all of the melted butter. Add salt, parmesan, or cinnamon sugar while the butter is still wet.</li>
-              </ol>
-            </section>
-            <section class="full-only"><h3>How to tell it is ready</h3>
-              <ol class="steps">
-                <li><strong>Dough</strong> smooth, slightly tacky, and able to form a ball without leaving heavy sticky residue.</li>
-                <li><strong>First rise</strong> doubled in size.</li>
-                <li><strong>After shaping</strong> bites look slightly puffy before baking.</li>
-                <li><strong>Baked bites</strong> browned outside and cooked through inside.</li>
-              </ol>
-            </section>
-            <section class="card-only"><h3>Quick recipe version</h3>
-              <ol class="steps">
-                <li>Mix discard, water, sugar, yeast, salt, and flour.</li>
-                <li>Knead until smooth. Rise 1 to 1 1/2 hours, until doubled.</li>
-                <li>Divide into 4 strands and cut 32 bites.</li>
-                <li>Brush or dunk with baking soda wash. Rest 10 to 15 minutes.</li>
-                <li>Bake 500°F for 8 to 10 minutes. Butter and top immediately.</li>
-              </ol>
-            </section>
-            <section class="baking-plan plan-only"><h3>Baking plan checklist</h3>
-              <p class="recipe-meta">A same-day discard pretzel plan using instant yeast for the rise, then baking soda wash and a hot bake.</p>
-              <div class="plan-block">
-                <h4>Mix and rise</h4>
-                <ol class="plan-checklist">
-                  <li><span class="box"></span><span><strong>Mix dough.</strong> Combine sourdough discard, lukewarm water, sugar, instant yeast, salt, and flour.</span></li>
-                  <li><span class="box"></span><span><strong>Knead 5 to 8 minutes.</strong> Knead until the dough comes together in a smooth ball. Add flour only as needed.</span></li>
-                  <li><span class="box"></span><span><strong>Rise 1 to 1 1/2 hours.</strong> Lightly oil the bowl, cover, and let rise.</span></li>
-                </ol>
-              </div>
-              <div class="plan-block">
-                <h4>Shape and wash</h4>
-                <ol class="plan-checklist">
-                  <li><span class="box"></span><span><strong>Prepare baking sheet.</strong> Line with parchment.</span></li>
-                  <li><span class="box"></span><span><strong>Divide dough.</strong> Punch down, divide into 4 sections, roll each into a strand, and cut into 8 pieces.</span></li>
-                  <li><span class="box"></span><span><strong>Make baking soda wash.</strong> Heat 120g water until almost boiling and dissolve 15g baking soda.</span></li>
-                  <li><span class="box"></span><span><strong>Brush or dunk.</strong> Coat each pretzel bite with the baking soda wash.</span></li>
-                  <li><span class="box"></span><span><strong>Preheat oven.</strong> Heat to 500°F.</span></li>
-                  <li><span class="box"></span><span><strong>Rest 10 to 15 minutes.</strong> Let the bites rise while the oven heats.</span></li>
-                </ol>
-              </div>
-              <div class="plan-block">
-                <h4>Bake and finish</h4>
-                <ol class="plan-checklist">
-                  <li><span class="box"></span><span><strong>Bake 8 to 10 minutes.</strong> Bake until crisp and lightly browned.</span></li>
-                  <li><span class="box"></span><span><strong>Melt butter.</strong> Prepare butter and toppings while the bites bake.</span></li>
-                  <li><span class="box"></span><span><strong>Brush with butter.</strong> Use all the butter. This is not the moment for restraint.</span></li>
-                  <li><span class="box"></span><span><strong>Add toppings.</strong> Finish with salt, parmesan, or cinnamon sugar.</span></li>
-                  <li><span class="box"></span><span><strong>Eat warm.</strong></span></li>
-                </ol>
-              </div>
-            </section>
-
-            <section class="notes"><strong>Notes:</strong> It will feel like too much butter. It is not too much butter.</section>
-
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <div class="wrap footer-wrap">
-      <p>The Sourdough Field Guide, a practical sourdough project.</p>
-      <p>No ads. No novellas.</p>
-    </div>
-  </footer>
-  <script src="../script.js"></script>
-  <script>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap header-wrap">
+<a aria-label="The Sourdough Field Guide home" class="brand" href="../index.html">
+<img alt="SFG monogram logo" class="brand-mark-image" src="../assets/logo-mark-sfg.png"/>
+<span class="brand-text">The Sourdough Field Guide</span>
+</a>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle" type="button">Menu</button>
+<nav aria-label="Primary navigation" class="site-nav">
+<a class="" href="../index.html">Home</a>
+<a class="" href="../basics.html">Get Startered</a>
+<a class="" href="../schedule.html">Timing</a>
+<a class="" href="../calculator.html">Calculators</a>
+<a class="active" href="../recipes.html">Recipes</a>
+<a class="" href="../submit.html">Submit Recipe</a>
+<a class="" href="../troubleshooting.html">What Had Happened Was...</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="section page-hero recipe-page-hero">
+<div class="wrap narrow page-intro">
+<p class="eyebrow">Recipe</p>
+<h1 class="page-title">Pretzel Bites with Sourdough Discard</h1>
+<p>Makes 32 bites | Bake 500°F for 8 to 10 minutes | Rise 1 to 1 1/2 hours plus 10 to 15 minutes</p>
+</div>
+</section>
+<section class="section first-section">
+<div class="wrap recipe-page-wrap">
+<article class="recipe-detail recipe-page-detail">
+<div class="recipe-page-top">
+<div>
+<h2>Pretzel Bites with Sourdough Discard</h2>
+<p class="recipe-meta">Makes 32 bites | Bake 500°F for 8 to 10 minutes | Rise 1 to 1 1/2 hours plus 10 to 15 minutes</p>
+<div class="recipe-actions">
+<button class="ghost-button" id="toggleCard" type="button">Quick recipe version</button>
+<button class="ghost-button" id="togglePlan" type="button">Baking plan</button>
+<button class="ghost-button" onclick="window.print()" type="button">Print recipe</button>
+<button class="ghost-button" id="printPlan" type="button">Print baking plan</button>
+<a class="ghost-button link-button" href="../recipes.html">Back to recipes</a>
+</div>
+</div>
+</div>
+<div class="recipe-sections">
+<section class="full-only"><h3>Field note</h3>
+<p>These use discard plus instant yeast, so they are faster and more predictable than a naturally leavened dough. The discard adds flavor, the yeast does the scheduling. Very reasonable of it.</p>
+<p>The baking soda wash gives the pretzel bite its pretzel personality without requiring a full boil.</p>
+</section>
+<section><h3>Ingredients</h3>
+<table class="ingredient-table"><thead><tr><th>Amount</th><th>Ingredient</th></tr></thead><tbody>
+<tr><td>145g</td><td>sourdough discard or bubbly starter</td></tr>
+<tr><td>175g</td><td>lukewarm water</td></tr>
+<tr><td>5g</td><td>granulated sugar</td></tr>
+<tr><td>8g</td><td>instant yeast</td></tr>
+<tr><td>6g</td><td>salt</td></tr>
+<tr><td>285g</td><td>all-purpose flour, plus more for rolling</td></tr>
+<tr><td>120g</td><td>hot water for wash</td></tr>
+<tr><td>15g</td><td>baking soda</td></tr>
+<tr><td>55g</td><td>unsalted butter, melted</td></tr>
+<tr><td>optional</td><td>flaky salt, parmesan, or cinnamon sugar</td></tr>
+</tbody></table>
+</section>
+<section class="full-only"><h3>Instructions</h3>
+<ol class="steps">
+<li><strong>Mix the dough.</strong> In a large bowl or stand mixer bowl, mix the discard, lukewarm water, sugar, yeast, salt, and flour until a dough forms.</li>
+<li><strong>Knead.</strong> Knead by hand for 5 to 8 minutes, or in a stand mixer for about 5 minutes, until the dough becomes smooth. Add extra flour only 1 tablespoon at a time if the dough is too sticky to handle.</li>
+<li><strong>First rise.</strong> Lightly oil a bowl, turn the dough to coat, cover, and let rise for 1 to 1 1/2 hours, until doubled.</li>
+<li><strong>Prepare the pan.</strong> Line a baking sheet with parchment paper.</li>
+<li><strong>Divide and cut.</strong> Turn the dough onto a lightly floured surface and divide it into 4 pieces. Roll each piece into a long strand and cut each strand into 6 to 8 bites.</li>
+<li><strong>Make the baking soda wash.</strong> Stir the baking soda into the hot water until completely dissolved. It may bubble a little. That is fine.</li>
+<li><strong>Coat the bites.</strong> Brush each pretzel bite with the baking soda wash, or quickly dunk each piece and place it back on the parchment.</li>
+<li><strong>Preheat and short rise.</strong> Preheat the oven to 500°F. Let the pretzel bites rise for 10 to 15 minutes while the oven heats.</li>
+<li><strong>Bake.</strong> Bake for 8 to 10 minutes, until the outsides are browned and crisp.</li>
+<li><strong>Butter and finish.</strong> Brush or toss the hot bites with all of the melted butter. Add salt, parmesan, or cinnamon sugar while the butter is still wet.</li>
+</ol>
+</section>
+<section class="full-only"><h3>How to tell it is ready</h3>
+<ol class="steps">
+<li><strong>Dough</strong> smooth, slightly tacky, and able to form a ball without leaving heavy sticky residue.</li>
+<li><strong>First rise</strong> doubled in size.</li>
+<li><strong>After shaping</strong> bites look slightly puffy before baking.</li>
+<li><strong>Baked bites</strong> browned outside and cooked through inside.</li>
+</ol>
+</section>
+<section class="card-only"><h3>Quick recipe version</h3>
+<ol class="steps">
+<li>Mix discard, water, sugar, yeast, salt, and flour.</li>
+<li>Knead until smooth. Rise 1 to 1 1/2 hours, until doubled.</li>
+<li>Divide into 4 strands and cut 32 bites.</li>
+<li>Brush or dunk with baking soda wash. Rest 10 to 15 minutes.</li>
+<li>Bake 500°F for 8 to 10 minutes. Butter and top immediately.</li>
+</ol>
+</section>
+<section class="baking-plan plan-only"><h3>Baking plan checklist</h3>
+<p class="recipe-meta">A same-day discard pretzel plan using instant yeast for the rise, then baking soda wash and a hot bake.</p>
+<div class="plan-block">
+<h4>Mix and rise</h4>
+<ol class="plan-checklist">
+<li><span class="box"></span><span><strong>Mix dough.</strong> Combine sourdough discard, lukewarm water, sugar, instant yeast, salt, and flour.</span></li>
+<li><span class="box"></span><span><strong>Knead 5 to 8 minutes.</strong> Knead until the dough comes together in a smooth ball. Add flour only as needed.</span></li>
+<li><span class="box"></span><span><strong>Rise 1 to 1 1/2 hours.</strong> Lightly oil the bowl, cover, and let rise.</span></li>
+</ol>
+</div>
+<div class="plan-block">
+<h4>Shape and wash</h4>
+<ol class="plan-checklist">
+<li><span class="box"></span><span><strong>Prepare baking sheet.</strong> Line with parchment.</span></li>
+<li><span class="box"></span><span><strong>Divide dough.</strong> Punch down, divide into 4 sections, roll each into a strand, and cut into 8 pieces.</span></li>
+<li><span class="box"></span><span><strong>Make baking soda wash.</strong> Heat 120g water until almost boiling and dissolve 15g baking soda.</span></li>
+<li><span class="box"></span><span><strong>Brush or dunk.</strong> Coat each pretzel bite with the baking soda wash.</span></li>
+<li><span class="box"></span><span><strong>Preheat oven.</strong> Heat to 500°F.</span></li>
+<li><span class="box"></span><span><strong>Rest 10 to 15 minutes.</strong> Let the bites rise while the oven heats.</span></li>
+</ol>
+</div>
+<div class="plan-block">
+<h4>Bake and finish</h4>
+<ol class="plan-checklist">
+<li><span class="box"></span><span><strong>Bake 8 to 10 minutes.</strong> Bake until crisp and lightly browned.</span></li>
+<li><span class="box"></span><span><strong>Melt butter.</strong> Prepare butter and toppings while the bites bake.</span></li>
+<li><span class="box"></span><span><strong>Brush with butter.</strong> Use all the butter. This is not the moment for restraint.</span></li>
+<li><span class="box"></span><span><strong>Add toppings.</strong> Finish with salt, parmesan, or cinnamon sugar.</span></li>
+<li><span class="box"></span><span><strong>Eat warm.</strong></span></li>
+</ol>
+</div>
+</section>
+<section class="notes"><strong>Notes:</strong> It will feel like too much butter. It is not too much butter.</section>
+</div>
+</article>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-wrap">
+<p>The Sourdough Field Guide, a practical sourdough project.</p>
+<p>No ads. No novellas.</p>
+</div>
+</footer>
+<script src="../script.js"></script>
+<script>
     (function(){
       const planToggle = document.getElementById('togglePlan');
       const printPlan = document.getElementById('printPlan');
@@ -207,6 +184,5 @@
       }
     })();
   </script>
-
 </body>
 </html>
