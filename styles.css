@@ -332,3 +332,396 @@ summary{
   .site-header{background:#fff!important;border-bottom:1px solid #ccc!important;box-shadow:none!important}
   h1,h2,h3,.brand-text{color:#000!important}
 }
+
+
+/* ==========================================================================
+   STABILIZATION PASS
+   Single source of truth for navy/paper readability.
+   HTML pages should not carry page-level color styling.
+   ========================================================================== */
+
+/* Core color rules */
+:root{
+  --sfg-bg:#071827;
+  --sfg-bg-2:#081a2c;
+  --sfg-panel:#fff8ea;
+  --sfg-panel-2:#f4ead6;
+  --sfg-ink:#142033;
+  --sfg-charcoal:#1f2933;
+  --sfg-muted:#4f5f6f;
+  --sfg-cream:#fff8ea;
+  --sfg-cream-muted:#e6d9c5;
+  --sfg-brass:#b78a3b;
+  --sfg-brass-soft:#d8c7a6;
+}
+
+html,
+body{
+  background:var(--sfg-bg) !important;
+  color:var(--sfg-cream) !important;
+}
+
+/* Dark/navy areas use light readable text */
+.hero,
+.page-hero,
+main > .section,
+.panel-section,
+.first-section,
+.catalog-group,
+.recipe-catalog-sections,
+.site-footer{
+  color:var(--sfg-cream) !important;
+}
+
+.hero h1,
+.hero h2,
+.hero h3,
+.page-hero h1,
+.page-hero h2,
+.page-hero h3,
+main > .section > .wrap > h1,
+main > .section > .wrap > h2,
+main > .section > .wrap > h3,
+.page-intro h1,
+.page-intro h2,
+.page-intro h3,
+.catalog-group-heading h1,
+.catalog-group-heading h2,
+.catalog-group-heading h3{
+  color:var(--sfg-cream) !important;
+}
+
+.hero p,
+.page-hero p,
+.page-intro p,
+.compact-intro p,
+.catalog-group-heading p,
+main > .section > .wrap > p{
+  color:var(--sfg-cream-muted) !important;
+}
+
+/* Eyebrows stay brass on dark sections */
+.eyebrow,
+.catalog-tag{
+  color:var(--sfg-brass-soft) !important;
+}
+
+/* Header/nav */
+.site-header{
+  background:rgba(7,24,39,.96) !important;
+  border-bottom:1px solid rgba(183,138,59,.40) !important;
+}
+
+.brand-text,
+.site-nav a{
+  color:var(--sfg-cream) !important;
+}
+
+.site-nav a.active,
+.site-nav a:hover{
+  background:rgba(183,138,59,.20) !important;
+  color:var(--sfg-cream) !important;
+}
+
+.nav-toggle{
+  background:var(--sfg-panel) !important;
+  color:var(--sfg-ink) !important;
+  border-color:var(--sfg-brass-soft) !important;
+}
+
+/* Everything that visually sits on paper gets dark text. */
+:where(
+  .hero-card,
+  .home-logo-card,
+  .feature-card,
+  .info-card,
+  .calculator-card,
+  .ratio-table-wrap,
+  .recipe-catalog-card,
+  .catalog-copy,
+  .recipe-detail,
+  .recipe-page-detail,
+  .recipe-sections,
+  .recipe-sections section,
+  .baking-plan,
+  .plan-block,
+  .notes,
+  .plain-note,
+  .callout,
+  .feed-example,
+  .term-card,
+  .temp-card,
+  .field-entry,
+  .accordion-entry,
+  .accordion-content,
+  .startered-side-card,
+  .startered-table,
+  .gear-strip,
+  .schedule-card,
+  .schedule-summary,
+  .emergency-panel,
+  .quick-check,
+  .check-timeline,
+  .trouble-intro-card,
+  .issue-card,
+  .tool-panel,
+  .result-card,
+  .submit-form,
+  .clean-table,
+  .ingredient-table,
+  .ingredient-table-mini,
+  .box
+){
+  background-color:var(--sfg-panel) !important;
+  color:var(--sfg-ink) !important;
+}
+
+/* Force normal readable text inside paper panels. */
+:where(
+  .hero-card,
+  .home-logo-card,
+  .feature-card,
+  .info-card,
+  .calculator-card,
+  .ratio-table-wrap,
+  .recipe-catalog-card,
+  .catalog-copy,
+  .recipe-detail,
+  .recipe-page-detail,
+  .recipe-sections,
+  .recipe-sections section,
+  .baking-plan,
+  .plan-block,
+  .notes,
+  .plain-note,
+  .callout,
+  .feed-example,
+  .term-card,
+  .temp-card,
+  .field-entry,
+  .accordion-entry,
+  .accordion-content,
+  .startered-side-card,
+  .startered-table,
+  .gear-strip,
+  .schedule-card,
+  .schedule-summary,
+  .emergency-panel,
+  .quick-check,
+  .check-timeline,
+  .trouble-intro-card,
+  .issue-card,
+  .tool-panel,
+  .result-card,
+  .submit-form,
+  .clean-table,
+  .ingredient-table,
+  .ingredient-table-mini,
+  .box
+) :where(h1,h2,h3,h4,h5,h6,summary,strong,label,th){
+  color:var(--sfg-ink) !important;
+}
+
+:where(
+  .hero-card,
+  .home-logo-card,
+  .feature-card,
+  .info-card,
+  .calculator-card,
+  .ratio-table-wrap,
+  .recipe-catalog-card,
+  .catalog-copy,
+  .recipe-detail,
+  .recipe-page-detail,
+  .recipe-sections,
+  .recipe-sections section,
+  .baking-plan,
+  .plan-block,
+  .notes,
+  .plain-note,
+  .callout,
+  .feed-example,
+  .term-card,
+  .temp-card,
+  .field-entry,
+  .accordion-entry,
+  .accordion-content,
+  .startered-side-card,
+  .startered-table,
+  .gear-strip,
+  .schedule-card,
+  .schedule-summary,
+  .emergency-panel,
+  .quick-check,
+  .check-timeline,
+  .trouble-intro-card,
+  .issue-card,
+  .tool-panel,
+  .result-card,
+  .submit-form,
+  .clean-table,
+  .ingredient-table,
+  .ingredient-table-mini,
+  .box
+) :where(p,li,td,span,div,small,em){
+  color:var(--sfg-charcoal) !important;
+}
+
+/* Links and category labels inside paper panels */
+:where(
+  .hero-card,
+  .home-logo-card,
+  .feature-card,
+  .info-card,
+  .calculator-card,
+  .recipe-catalog-card,
+  .recipe-detail,
+  .recipe-page-detail,
+  .baking-plan,
+  .notes,
+  .field-entry,
+  .startered-side-card,
+  .schedule-card,
+  .trouble-intro-card,
+  .issue-card,
+  .tool-panel,
+  .submit-form
+) a:not(.button){
+  color:#8f641e !important;
+}
+
+.catalog-link,
+.text-link{
+  color:#8f641e !important;
+  font-weight:750;
+}
+
+/* Buttons: brass primary, readable secondary depending on background */
+.button.primary{
+  background:var(--sfg-brass) !important;
+  border-color:var(--sfg-brass) !important;
+  color:var(--sfg-ink) !important;
+}
+
+.button.secondary{
+  background:transparent !important;
+  border-color:var(--sfg-brass) !important;
+  color:var(--sfg-cream) !important;
+}
+
+:where(.hero-card,.home-logo-card,.feature-card,.info-card,.calculator-card,.recipe-detail,.recipe-page-detail,.submit-form) .button.secondary{
+  color:var(--sfg-ink) !important;
+}
+
+/* Inputs and forms should stay readable */
+input,
+textarea,
+select,
+.input-row{
+  background:#fffdf8 !important;
+  color:var(--sfg-ink) !important;
+  border-color:var(--sfg-brass-soft) !important;
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:#6b7280 !important;
+}
+
+/* Tables */
+table,
+thead,
+tbody,
+tr,
+td,
+th{
+  color:var(--sfg-ink) !important;
+}
+
+.clean-table th,
+.ingredient-table th,
+.ingredient-table-mini th,
+.calc-results div,
+.result-line{
+  background:var(--sfg-panel-2) !important;
+  color:var(--sfg-ink) !important;
+}
+
+/* Recipe cards and images */
+.recipe-catalog-card{
+  text-decoration:none;
+  border:1px solid rgba(183,138,59,.45) !important;
+}
+
+.catalog-image,
+.recipe-card-placeholder{
+  background:var(--sfg-panel-2) !important;
+}
+
+.tag-row span,
+.category-jump-list a,
+.recipe-meta,
+.catalog-tag{
+  color:var(--sfg-ink) !important;
+}
+
+.category-jump-list a{
+  background:var(--sfg-panel) !important;
+  border-color:var(--sfg-brass-soft) !important;
+}
+
+.category-jump-list a:hover{
+  background:var(--sfg-panel-2) !important;
+}
+
+/* Homepage specific, preserve logo-left/card grid structure */
+.home-hero-grid{
+  grid-template-columns:.9fr 1.1fr !important;
+  align-items:center;
+}
+
+.home-logo-card .hero-lockup{
+  width:100% !important;
+  max-width:440px !important;
+  margin:0 0 26px !important;
+}
+
+.home-hero-copy h1,
+.home-hero-copy .hero-copy{
+  color:var(--sfg-cream) !important;
+}
+
+/* Footer */
+.site-footer,
+.site-footer p,
+.footer-wrap,
+.footer-wrap p{
+  color:var(--sfg-cream-muted) !important;
+}
+
+/* Mobile nav */
+@media (max-width:850px){
+  .site-nav.open{
+    display:flex !important;
+  }
+  .site-nav{
+    background:var(--sfg-bg-2) !important;
+    border:1px solid rgba(183,138,59,.42) !important;
+  }
+  .home-hero-grid{
+    grid-template-columns:1fr !important;
+  }
+}
+
+/* Print should not inherit navy */
+@media print{
+  html,
+  body{
+    background:#fff !important;
+    color:#000 !important;
+  }
+  *{
+    color:#000 !important;
+    box-shadow:none !important;
+  }
+}
