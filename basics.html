@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>The Sourdough Field Guide | Get Startered</title>
+<meta content="A practical sourdough starter guide with feeding ratios, hydration, peak timing, discard basics, and low-waste starter care." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<style>
+    .page-basics main{background:linear-gradient(180deg,rgba(214,166,64,.06),rgba(251,247,238,0) 300px)}
+    .page-basics .page-hero{position:relative;overflow:hidden}
+    .page-basics .page-hero:after{content:"";position:absolute;right:max(28px,8vw);bottom:16px;width:150px;height:150px;border:1px solid rgba(214,166,64,.32);border-radius:50%;background:radial-gradient(circle at center,rgba(214,166,64,.12),transparent 60%);opacity:.45;pointer-events:none}
+    .startered-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:start}
+    .startered-main{display:grid;gap:12px}
+    .field-entry,.startered-side-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 28px rgba(13,34,56,.08)}
+    .field-entry{overflow:hidden;background:#fffdf8}
+    .startered-side-card{padding:20px;background:linear-gradient(135deg,#fffdf8,#f8f1e4)}
+    .startered-side-card h2{font-size:clamp(1.35rem,2vw,1.85rem);letter-spacing:-.02em}
+    .startered-side-card p:last-child{margin-bottom:0}
+    .accordion-entry summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;padding:20px 22px;border-left:5px solid rgba(214,166,64,.5)}
+    .accordion-entry summary::-webkit-details-marker{display:none}
+    .accordion-entry summary:after{content:"+";display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--line);border-radius:999px;background:#f6efe1;color:var(--navy);font-weight:750;font-size:1.15rem;line-height:1}
+    .accordion-entry[open] summary{border-bottom:1px solid var(--line);background:linear-gradient(135deg,#fffdf8,#fffaf0)}
+    .accordion-entry[open] summary:after{content:"−"}
+    .accordion-label{display:block;color:var(--muted);font-size:.78rem;font-weight:750;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+    .accordion-title{display:block;font-family:"Source Serif 4",Georgia,serif;color:var(--navy);font-size:clamp(1.35rem,2.4vw,2rem);font-weight:700;line-height:1.08;letter-spacing:-.02em}
+    .accordion-content{padding:22px}
+    .accordion-content h3{font-size:1.18rem;margin-top:12px}
+    .accordion-content p:last-child,.startered-side-card p:last-child{margin-bottom:0}
+    .plain-list{padding-left:1.25rem;margin:0}
+    .plain-list li{margin-bottom:10px}
+    .startered-side{display:grid;gap:16px;position:sticky;top:92px}
+    .callout{background:#f6efe1;border:1px solid var(--line);border-radius:16px;padding:16px;color:var(--navy-2);margin:14px 0}
+    .callout strong{color:var(--navy)}
+    .term-grid,.temp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .term-card,.temp-card{background:#f8f1e4;border:1px solid var(--line);border-radius:16px;padding:16px}
+    .term-card h3,.temp-card h3{margin-bottom:8px}
+    .term-card p,.temp-card p{margin:0;color:var(--muted)}
+    .gear-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0}
+    .gear-strip div{background:#f6efe1;border:1px solid var(--line);border-radius:16px;padding:14px}
+    .gear-strip span{display:block;color:var(--muted);font-size:.78rem;font-weight:750;text-transform:uppercase;letter-spacing:.08em}
+    .gear-strip strong{display:block;color:var(--navy);font-size:1rem;margin-top:5px}
+    .feed-example{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+    .feed-example div{background:#f6efe1;border:1px solid var(--line);border-radius:16px;padding:14px}
+    .feed-example span{display:block;color:var(--muted);font-size:.85rem;font-weight:750;text-transform:uppercase;letter-spacing:.08em}
+    .feed-example strong{display:block;color:var(--navy);font-size:1.15rem;margin-top:5px}
+    .startered-table{margin-top:14px;overflow-x:auto}
+    .startered-table .clean-table{font-size:.92rem}
+    .accordion-note{margin:0 0 10px;color:var(--muted);font-size:.98rem}
+    @media (max-width:850px){.startered-layout{grid-template-columns:1fr}.startered-side{position:static;order:-1}.term-grid,.feed-example,.temp-grid,.gear-strip{grid-template-columns:1fr}.page-basics .page-hero:after{display:none}.accordion-entry summary{padding:18px}.accordion-content{padding:18px}}
+    @media print{.startered-side,.site-nav,.nav-toggle,.site-footer{display:none!important}.startered-layout{display:block}.field-entry{box-shadow:none;border:0;padding:0 0 18px}.accordion-entry summary{border:0!important;padding:0 0 8px}.accordion-entry summary:after{display:none}.accordion-content{padding:0}.page-basics .page-hero:after{display:none}.page-hero{padding-bottom:20px}.section{padding:20px 0}.callout,.term-card,.feed-example div,.temp-card,.gear-strip div{border:1px solid #ccc;background:#fff}}
+  </style>
+</head>
+<body class="page-basics">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap header-wrap">
+<a aria-label="The Sourdough Field Guide home" class="brand" href="index.html">
+<img alt="SFG monogram logo" class="brand-mark-image" src="assets/logo-mark-sfg.png"/>
+<span class="brand-text">The Sourdough Field Guide</span>
+</a>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle" type="button">Menu</button>
+<nav aria-label="Primary navigation" class="site-nav">
+<a class="" href="index.html">Home</a>
+<a class="active" href="basics.html">Get Startered</a>
+<a class="" href="schedule.html">Timing</a>
+<a class="" href="calculator.html">Calculators</a>
+<a class="" href="recipes.html">Recipes</a>
+<a class="" href="submit.html">Submit Recipe</a>
+<a class="" href="troubleshooting.html">What Had Happened Was...</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="section page-hero">
+<div class="wrap narrow page-intro">
+<p class="eyebrow">Get Startered</p>
+<h1 class="page-title">Sourdough is science.<br/>Annoying, delicious science.</h1>
+<p>Starter care in plain English: how to start one, how to feed it, when to use it, and when to leave it alone.</p>
+</div>
+</section>
+<section class="section first-section">
+<div class="wrap startered-layout">
+<div class="startered-main">
+<details class="field-entry accordion-entry" id="what-it-is" open=""><summary><span class="accordion-summary-text"><span class="accordion-label">Starter 101</span><span class="accordion-title">What starter actually is</span></span></summary><div class="accordion-content">
+
+
+<p>A sourdough starter is flour and water that has been colonized by wild yeast and lactic acid bacteria. The yeast helps bread rise. The bacteria help create acidity and flavor. That is the whole system. Useful, alive, and much less mysterious once you know what you are looking at.</p>
+<p>Most recipes on this site assume a <strong>100% hydration starter</strong>, which means equal weights of flour and water. Not equal cups. Equal grams. Cups are too inconsistent for starter math.</p>
+</div></details>
+<details class="field-entry accordion-entry" id="start-a-starter" open=""><summary><span class="accordion-summary-text"><span class="accordion-label">Start a Starter</span><span class="accordion-title">Starting a starter from scratch</span></span></summary><div class="accordion-content">
+
+
+<p>A new starter is just flour, water, and time. You are creating a small culture and feeding it until it becomes predictable. Predictable matters more than dramatic bubbles on day two.</p>
+<div class="callout"><strong>Reality check:</strong> most new starters take about <strong>7 to 14 days</strong> before they are reliable enough for bread. Some take longer. Early activity does not automatically mean it is ready.</div>
+<h3>Basic starter build</h3>
+<p>Use a clean jar, a spoon, a scale, flour, and water. Whole wheat or rye can help get things moving, but regular unbleached flour can work too.</p>
+<div class="startered-table">
+<table class="clean-table">
+<thead><tr><th>Day</th><th>What to do</th><th>What to expect</th></tr></thead>
+<tbody>
+<tr><td>Day 1</td><td>Mix 25g flour and 25g water. Cover loosely.</td><td>Probably not much. That is normal.</td></tr>
+<tr><td>Days 2 to 3</td><td>Keep 25g starter. Feed 25g flour and 25g water once daily.</td><td>You may see bubbles, a quick rise, or nothing impressive.</td></tr>
+<tr><td>Days 4 to 7</td><td>Keep 25g starter. Feed 50g flour and 50g water once daily.</td><td>It may go quiet, then become more consistent. Keep going.</td></tr>
+<tr><td>Days 7 to 14</td><td>Continue daily feeds. When it rises and falls predictably after feeding, start treating it like a usable starter.</td><td>Ready means repeatable, not lucky once.</td></tr>
+</tbody>
+</table>
+</div>
+<h3>When it is ready to bake with</h3>
+<p>Your starter is ready for bread when it reliably doubles after feeding, has visible bubbles, and follows a repeatable rise-and-fall pattern. A good target is doubling within roughly 4 to 8 hours after a normal feeding at comfortable room temperature.</p>
+<p>If it only doubled once, give it more time. One good day is encouraging. A pattern is useful.</p>
+<h3>When to discard</h3>
+<p>Discard during feedings so the jar does not become an expensive flour bucket. Keep a small amount of starter, then feed that small amount with fresh flour and water. The discard can be saved for discard recipes once the starter is established, but very young discard may be harsh and unpredictable.</p>
+<h3>When to switch to maintenance</h3>
+<p>Once the starter is rising predictably, stop treating it like a science fair project. Keep a smaller amount, feed it on the counter if you bake often, or store it in the fridge if you bake less often.</p>
+</div></details>
+<details class="field-entry accordion-entry" id="feeding"><summary><span class="accordion-summary-text"><span class="accordion-label">Feeding</span><span class="accordion-title">What feeding means</span></span></summary><div class="accordion-content">
+
+
+<p>Feeding starter means keeping some starter and adding fresh flour and water. The old starter is the seed. The new flour and water are the food.</p>
+<div aria-label="Starter feeding example" class="feed-example">
+<div><span>Starter</span><strong>20g</strong></div>
+<div><span>Flour</span><strong>60g</strong></div>
+<div><span>Water</span><strong>60g</strong></div>
+</div>
+<p>That example is a <strong>1:3:3 feed</strong>: one part starter, three parts flour, three parts water. It makes about 140g total starter before normal loss from starter sticking to the jar and spoon.</p>
+<div class="callout"><strong>Maintenance feed:</strong> the routine feed that keeps your starter alive. <strong>Baking feed:</strong> the bigger, timed feed that gives you enough active starter for a recipe plus some left over to keep.</div>
+</div></details>
+<details class="field-entry accordion-entry" id="ratios"><summary><span class="accordion-summary-text"><span class="accordion-label">Ratios</span><span class="accordion-title">Ratios control timing and flavor</span></span></summary><div class="accordion-content">
+
+
+<p>A smaller feed, like 1:1:1, gives the starter less fresh food, so it peaks faster and tends to be more acid-forward. A larger feed, like 1:5:5 or 1:10:10, gives it more fresh food, so it usually takes longer to peak and tends to taste milder.</p>
+<p>The timing below is a practical estimate based on the calculator presets. Your actual starter can run faster or slower depending on room temperature, flour, and starter strength.</p>
+<div class="ratio-table-wrap startered-table">
+<h3>Starter ratio guide</h3>
+<table class="clean-table">
+<thead><tr><th>Level</th><th>Ratio</th><th>Peak estimate</th><th>Flavor</th></tr></thead>
+<tbody id="ratioTable"></tbody>
+</table>
+</div>
+</div></details>
+<details class="field-entry accordion-entry" id="hydration"><summary><span class="accordion-summary-text"><span class="accordion-label">Hydration</span><span class="accordion-title">Hydration is just water math</span></span></summary><div class="accordion-content">
+
+
+<p>Hydration means how much water is in the dough compared with the flour. It is written as a percentage because bakers like making normal things sound like tax forms.</p>
+<div class="callout"><strong>The basic formula:</strong> water weight divided by flour weight, then multiplied by 100. So 350g water and 500g flour is 70% hydration.</div>
+<h3>Starter hydration</h3>
+<p>This site assumes a <strong>100% hydration starter</strong>, which means the starter is fed equal weights flour and water. Example: 20g starter, 60g flour, and 60g water. That keeps the math predictable.</p>
+<p>If you use a stiff starter or a very liquid starter, the recipes may still work, but the dough will not behave exactly the same. Different starter hydration changes the total flour and water in the dough.</p>
+<h3>Dough hydration</h3>
+<p>Higher hydration dough has more water. It usually feels wetter, spreads more easily, and can be harder to shape. Lower hydration dough feels firmer and is usually easier to handle.</p>
+<ul class="plain-list">
+<li><strong>Lower hydration:</strong> easier handling, tighter dough, often a simpler place to start.</li>
+<li><strong>Higher hydration:</strong> wetter dough, more sticking, more folding and handling skill needed.</li>
+<li><strong>Whole grain, rye, cocoa, seeds, and some add-ins:</strong> often absorb more water, so the same hydration can feel different from one recipe to another.</li>
+</ul>
+<h3>Do not chase numbers for sport</h3>
+<p>A higher hydration number does not automatically mean better bread. It just means more water. Start with a manageable dough, learn how it behaves, then adjust from there.</p>
+<div class="callout"><strong>Adjustment rule:</strong> change water in small amounts, usually 5g to 15g at a time, and write it down. Random splashing is not a system.</div>
+</div></details>
+<details class="field-entry accordion-entry" id="active-vs-discard"><summary><span class="accordion-summary-text"><span class="accordion-label">Active vs discard</span><span class="accordion-title">Use the right version of the goo</span></span></summary><div class="accordion-content">
+
+
+<div class="term-grid">
+<div class="term-card">
+<h3>Active starter</h3>
+<p>Starter that has been fed, has risen, and is at or near peak. Use this when the starter is responsible for making dough rise.</p>
+</div>
+<div class="term-card">
+<h3>Discard</h3>
+<p>Unfed or past-peak starter removed before feeding. Use it in discard recipes for flavor, acidity, and less waste, not as your main lift unless the recipe says so.</p>
+</div>
+</div>
+<p>If a recipe says <strong>active starter</strong>, do not casually swap in flat discard. Active starter and discard do different jobs.</p>
+</div></details>
+<details class="field-entry accordion-entry" id="peak"><summary><span class="accordion-summary-text"><span class="accordion-label">Peak</span><span class="accordion-title">Peak is the useful window</span></span></summary><div class="accordion-content">
+
+
+<p>Peak is when your starter has risen as high as it is going to rise before it starts sinking back down. For bread, that is usually the best time to mix it into dough because the starter is strong and active.</p>
+<ul class="plain-list">
+<li><strong>Before peak:</strong> it is still rising and may not be fully ready.</li>
+<li><strong>At peak:</strong> it is usually bubbly, expanded, and strong enough for baking.</li>
+<li><strong>After peak:</strong> it starts collapsing. It can still be useful, but it may bring more acidity and less lift.</li>
+</ul>
+<div class="callout"><strong>Use the starter, not the clock, as the truth.</strong> The clock gives you a plan. The jar tells you what actually happened.</div>
+</div></details>
+<details class="field-entry accordion-entry" id="temperature"><summary><span class="accordion-summary-text"><span class="accordion-label">Temperature</span><span class="accordion-title">Temperature is the schedule boss</span></span></summary><div class="accordion-content">
+
+
+<p>Starter and dough move faster when they are warm and slower when they are cool. That is why sourdough timing is always an estimate. The recipe can give you a plan, but the room gets a vote.</p>
+<div aria-label="Useful temperature tools" class="gear-strip">
+<div><span>Starter planning</span><strong>about 70°F</strong></div>
+<div><span>Dough target</span><strong>75–78°F</strong></div>
+<div><span>Baked loaf</span><strong>200–210°F</strong></div>
+</div>
+<h3>Where to put starter or dough when the kitchen is cool</h3>
+<p>You are looking for gently warm, not hot. A few useful places to test:</p>
+<div class="temp-grid">
+<div class="temp-card"><h3>Top of the fridge</h3><p>Often a little warmer than the counter. Good for starter builds and slow dough.</p></div>
+<div class="temp-card"><h3>Counter over the dishwasher</h3><p>Useful after the dishwasher has run, especially if the kitchen runs cold.</p></div>
+<div class="temp-card"><h3>Warm dryer</h3><p>Use only the leftover warmth after the dryer is off. Do not run the dryer with dough in it. Bread does not need tumble dry low.</p></div>
+<div class="temp-card"><h3>Other warm spot</h3><p>Try a microwave with a mug of hot water, an oven with just the light on, or a proofing box if you have one.</p></div>
+</div>
+<div class="callout"><strong>Check the actual temperature.</strong> Warm spots can be warmer than you think. If it feels hot, it is too hot for starter or dough. Move it somewhere gentler.</div>
+<h3>Using a thermometer</h3>
+<p>A thermometer is one of the easiest ways to stop guessing. Use it to check dough temperature during fermentation and internal temperature after baking.</p>
+<ul class="plain-list">
+<li><strong>For starter:</strong> temperature helps explain timing, but readiness is still based on rise, bubbles, and a predictable peak.</li>
+<li><strong>For dough:</strong> a target dough temperature around 75–78°F keeps many basic sourdough schedules moving predictably.</li>
+<li><strong>For baked loaves:</strong> lean sourdough bread is generally done when the center is about 200–210°F and the crust is browned.</li>
+<li><strong>For enriched or specialty recipes:</strong> follow the recipe. English muffins, for example, are usually done around 200°F in the center.</li>
+</ul>
+</div></details>
+<details class="field-entry accordion-entry" id="storage"><summary><span class="accordion-summary-text"><span class="accordion-label">Storage</span><span class="accordion-title">Counter or fridge?</span></span></summary><div class="accordion-content">
+
+
+<p>If you bake often, keeping a small starter on the counter makes sense. Feed it regularly and keep the amount small so you are not creating a discard swamp.</p>
+<p>If you bake less often, keep it in the fridge. Cold slows fermentation, which means less feeding and less waste. When you want to bake, pull it out, feed it, and give it time to become active again. A neglected fridge starter may need more than one feeding before it is ready to do actual work.</p>
+<ul class="plain-list">
+<li><strong>Small counter routine:</strong> keep 10g to 20g starter, then feed equal weights flour and water for maintenance.</li>
+<li><strong>Timed baking feed:</strong> build only what the recipe needs plus the starter you want left over.</li>
+<li><strong>Fridge rule:</strong> cold starter is convenient, not instantly ready. Wake it up before asking it to raise bread.</li>
+</ul>
+</div></details>
+<details class="field-entry accordion-entry" id="things-that-change-it"><summary><span class="accordion-summary-text"><span class="accordion-label">Variables</span><span class="accordion-title">Things that change the plan</span></span></summary><div class="accordion-content">
+
+
+<p>Sourdough timing is not one clean little number. It changes because the starter is alive and your kitchen conditions matter.</p>
+<ul class="plain-list">
+<li><strong>Warm room:</strong> faster fermentation.</li>
+<li><strong>Cool room:</strong> slower fermentation.</li>
+<li><strong>Rye or whole grain flour:</strong> often more active, but also absorbs more water.</li>
+<li><strong>Sugar, honey, or fruit in dough:</strong> can speed fermentation.</li>
+<li><strong>Cinnamon, garlic, fat, and eggs:</strong> can slow fermentation.</li>
+<li><strong>Cocoa, rye, whole grains, and seeds:</strong> can absorb more water, so the dough may need hydration adjustments.</li>
+</ul>
+</div></details>
+<details class="field-entry accordion-entry" id="common-sense"><summary><span class="accordion-summary-text"><span class="accordion-label">Common sense rules</span><span class="accordion-title">Starter care without making it complicated</span></span></summary><div class="accordion-content">
+
+
+<ul class="plain-list">
+<li>Use grams. A scale is more consistent than measuring cups.</li>
+<li>Keep less starter. You can always build more when you need it.</li>
+<li>Do not use moldy starter. Pink, orange, or fuzzy growth means stop being optimistic and throw it out.</li>
+<li>Do not panic over hooch, the dark liquid that can collect on hungry starter. It usually means the starter is hungry. Stir it in or pour it off, then feed.</li>
+<li>Do not treat peak windows as law. They are estimates. Your kitchen conditions can change the timing.</li>
+<li>When testing changes, change one thing at a time. Otherwise you will not know what actually worked.</li>
+</ul>
+</div></details>
+</div>
+<aside aria-label="Get Startered quick links" class="startered-side"><div class="startered-side-card"><h2>How to use this page</h2><p>Click a topic when you need it. Leave the rest closed. Starter does not get extra credit for making you read everything at once.</p></div>
+
+<div class="startered-side-card">
+<h2>Field note</h2>
+<p>For maintenance, keep it small. For baking, build what you need. The calculator handles the math so you do not have to.</p>
+<a class="button secondary small" href="calculator.html">Use calculators</a>
+</div>
+<div class="startered-side-card">
+<h2>Default assumption</h2>
+<p>This site assumes a 100% hydration starter and practical home-kitchen timing. Temperature still has the final say.</p>
+</div>
+<div class="startered-side-card">
+<h2>Field kit</h2>
+<p>Scale, jar, thermometer, towel, and a warm-enough spot. That covers most of the starter drama.</p>
+</div>
+</aside>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="wrap footer-wrap">
+<p>The Sourdough Field Guide, a practical sourdough project.</p>
+<p>No ads. No novellas.</p>
+</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
