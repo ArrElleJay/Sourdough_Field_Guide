@@ -334,394 +334,634 @@ summary{
 }
 
 
-/* ==========================================================================
-   STABILIZATION PASS
-   Single source of truth for navy/paper readability.
-   HTML pages should not carry page-level color styling.
-   ========================================================================== */
+/* Consolidated page-specific styles moved out of HTML */
+.field-title-page{
+      background:
+        linear-gradient(180deg, rgba(255,253,248,.96), rgba(251,247,238,.98)),
+        radial-gradient(circle at 50% 0%, rgba(214,166,64,.16), transparent 38%);
+      padding:58px 0 34px;
+      border-bottom:1px solid #ded0b6;
+    }
+    .title-sheet{
+      max-width:980px;
+      margin:0 auto;
+      padding:44px clamp(22px,4vw,54px) 38px;
+      background:rgba(255,253,248,.72);
+      border:1px solid #d8c9ab;
+      box-shadow:0 24px 60px rgba(13,34,56,.10);
+      position:relative;
+    }
+    .title-sheet:before,
+    .title-sheet:after{
+      content:"";
+      position:absolute;
+      left:18px;
+      right:18px;
+      height:1px;
+      background:#e7dcc5;
+    }
+    .title-sheet:before{top:18px}
+    .title-sheet:after{bottom:18px}
+    .home-lockup{
+      display:block;
+      width:min(520px,92%);
+      height:auto;
+      margin:0 auto 26px;
+    }
+    .manual-line{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin:0 auto 24px;
+      max-width:640px;
+      color:#755b24;
+      font-size:.74rem;
+      font-weight:750;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+    .manual-line:before,
+    .manual-line:after{
+      content:"";
+      height:1px;
+      flex:1;
+      background:#d6c394;
+    }
+    .field-title-page h1{
+      max-width:760px;
+      margin:0 auto 14px;
+      text-align:center;
+      font-size:clamp(2.25rem,4.6vw,4.25rem);
+      line-height:1.02;
+      letter-spacing:-.045em;
+    }
+    .title-copy{
+      max-width:660px;
+      margin:0 auto 28px;
+      color:#34485c;
+      text-align:center;
+      font-size:1.08rem;
+      line-height:1.72;
+    }
+    .title-actions{
+      justify-content:center;
+      margin-bottom:28px;
+    }
+    .specimen-note{
+      max-width:720px;
+      margin:0 auto;
+      padding:18px 22px;
+      border-top:1px solid #ded0b6;
+      border-bottom:1px solid #ded0b6;
+      color:#46576a;
+      font-size:.98rem;
+      line-height:1.65;
+    }
+    .specimen-note strong{
+      display:inline-block;
+      margin-right:8px;
+      color:#0d2238;
+      font-size:.75rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .contents-section{
+      padding-top:46px;
+    }
+    .contents-head{
+      display:grid;
+      grid-template-columns:minmax(0,.7fr) minmax(260px,.5fr);
+      gap:28px;
+      align-items:end;
+      margin-bottom:26px;
+    }
+    .contents-head h2{
+      margin:0;
+      font-size:clamp(2rem,3.5vw,3.1rem);
+      letter-spacing:-.035em;
+    }
+    .contents-head p{
+      margin:0;
+      color:#46576a;
+      line-height:1.65;
+    }
+    .contents-list{
+      border-top:1px solid #d8c9ab;
+    }
+    .contents-item{
+      display:grid;
+      grid-template-columns:72px minmax(0,1fr) auto;
+      gap:20px;
+      align-items:baseline;
+      padding:22px 0;
+      border-bottom:1px solid #d8c9ab;
+      color:inherit;
+      text-decoration:none;
+    }
+    .contents-item:hover h3{
+      text-decoration:underline;
+      text-underline-offset:5px;
+    }
+    .contents-number{
+      color:#7d6127;
+      font-weight:750;
+      letter-spacing:.14em;
+      font-size:.8rem;
+    }
+    .contents-item h3{
+      margin:0 0 6px;
+      font-size:1.55rem;
+      letter-spacing:-.02em;
+    }
+    .contents-item p{
+      margin:0;
+      color:#46576a;
+      max-width:780px;
+      line-height:1.58;
+    }
+    .contents-arrow{
+      color:#7d6127;
+      font-weight:750;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:.76rem;
+    }
+    @media (max-width:760px){
+      .field-title-page{padding-top:34px}
+      .title-sheet{padding:34px 20px 30px}
+      .manual-line{white-space:normal;text-align:center;gap:10px}
+      .contents-head{grid-template-columns:1fr}
+      .contents-item{grid-template-columns:50px minmax(0,1fr);gap:12px}
+      .contents-arrow{display:none}
+    }
 
-/* Core color rules */
-:root{
-  --sfg-bg:#071827;
-  --sfg-bg-2:#081a2c;
-  --sfg-panel:#fff8ea;
-  --sfg-panel-2:#f4ead6;
-  --sfg-ink:#142033;
-  --sfg-charcoal:#1f2933;
-  --sfg-muted:#4f5f6f;
-  --sfg-cream:#fff8ea;
-  --sfg-cream-muted:#e6d9c5;
-  --sfg-brass:#b78a3b;
-  --sfg-brass-soft:#d8c7a6;
+.page-basics main{background:linear-gradient(180deg,rgba(214,166,64,.06),rgba(251,247,238,0) 300px)}
+    .page-basics .page-hero{position:relative;overflow:hidden}
+    .page-basics .page-hero:after{content:"";position:absolute;right:max(28px,8vw);bottom:16px;width:150px;height:150px;border:1px solid rgba(214,166,64,.32);border-radius:50%;background:radial-gradient(circle at center,rgba(214,166,64,.12),transparent 60%);opacity:.45;pointer-events:none}
+    .startered-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:start}
+    .startered-main{display:grid;gap:12px}
+    .field-entry,.startered-side-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 28px rgba(13,34,56,.08)}
+    .field-entry{overflow:hidden;background:#fffdf8}
+    .startered-side-card{padding:20px;background:linear-gradient(135deg,#fffdf8,#f8f1e4)}
+    .startered-side-card h2{font-size:clamp(1.35rem,2vw,1.85rem);letter-spacing:-.02em}
+    .startered-side-card p:last-child{margin-bottom:0}
+    .accordion-entry summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;padding:20px 22px;border-left:5px solid rgba(214,166,64,.5)}
+    .accordion-entry summary::-webkit-details-marker{display:none}
+    .accordion-entry summary:after{content:"+";display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--line);border-radius:999px;background:#f6efe1;color:var(--navy);font-weight:750;font-size:1.15rem;line-height:1}
+    .accordion-entry[open] summary{border-bottom:1px solid var(--line);background:linear-gradient(135deg,#fffdf8,#fffaf0)}
+    .accordion-entry[open] summary:after{content:"−"}
+    .accordion-label{display:block;color:var(--muted);font-size:.78rem;font-weight:750;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+    .accordion-title{display:block;font-family:"Source Serif 4",Georgia,serif;color:var(--navy);font-size:clamp(1.35rem,2.4vw,2rem);font-weight:700;line-height:1.08;letter-spacing:-.02em}
+    .accordion-content{padding:22px}
+    .accordion-content h3{font-size:1.18rem;margin-top:12px}
+    .accordion-content p:last-child,.startered-side-card p:last-child{margin-bottom:0}
+    .plain-list{padding-left:1.25rem;margin:0}
+    .plain-list li{margin-bottom:10px}
+    .startered-side{display:grid;gap:16px;position:sticky;top:92px}
+    .callout{background:#f6efe1;border:1px solid var(--line);border-radius:16px;padding:16px;color:var(--navy-2);margin:14px 0}
+    .callout strong{color:var(--navy)}
+    .term-grid,.temp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .term-card,.temp-card{background:#f8f1e4;border:1px solid var(--line);border-radius:16px;padding:16px}
+    .term-card h3,.temp-card h3{margin-bottom:8px}
+    .term-card p,.temp-card p{margin:0;color:var(--muted)}
+    .gear-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0}
+    .gear-strip div{background:#f6efe1;border:1px solid var(--line);border-radius:16px;padding:14px}
+    .gear-strip span{display:block;color:var(--muted);font-size:.78rem;font-weight:750;text-transform:uppercase;letter-spacing:.08em}
+    .gear-strip strong{display:block;color:var(--navy);font-size:1rem;margin-top:5px}
+    .feed-example{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+    .feed-example div{background:#f6efe1;border:1px solid var(--line);border-radius:16px;padding:14px}
+    .feed-example span{display:block;color:var(--muted);font-size:.85rem;font-weight:750;text-transform:uppercase;letter-spacing:.08em}
+    .feed-example strong{display:block;color:var(--navy);font-size:1.15rem;margin-top:5px}
+    .startered-table{margin-top:14px;overflow-x:auto}
+    .startered-table .clean-table{font-size:.92rem}
+    .accordion-note{margin:0 0 10px;color:var(--muted);font-size:.98rem}
+    @media (max-width:850px){.startered-layout{grid-template-columns:1fr}.startered-side{position:static;order:-1}.term-grid,.feed-example,.temp-grid,.gear-strip{grid-template-columns:1fr}.page-basics .page-hero:after{display:none}.accordion-entry summary{padding:18px}.accordion-content{padding:18px}}
+    @media print{.startered-side,.site-nav,.nav-toggle,.site-footer{display:none!important}.startered-layout{display:block}.field-entry{box-shadow:none;border:0;padding:0 0 18px}.accordion-entry summary{border:0!important;padding:0 0 8px}.accordion-entry summary:after{display:none}.accordion-content{padding:0}.page-basics .page-hero:after{display:none}.page-hero{padding-bottom:20px}.section{padding:20px 0}.callout,.term-card,.feed-example div,.temp-card,.gear-strip div{border:1px solid #ccc;background:#fff}}
+
+/* Page-only adjustment: keep recipe catalog cards smaller and consistently sized on desktop. */
+    .page-recipes .category-jump-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+    .page-recipes .category-jump-list a{text-decoration:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:8px 12px;font-weight:750;color:var(--navy);font-size:.9rem}
+    .page-recipes .category-jump-list a:hover{border-color:#cfbf9f;background:#f6efe1}
+    .page-recipes .recipe-catalog-grid,.page-recipes .two-card-grid,.page-recipes .three-card-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .page-recipes .recipe-catalog-card{border-radius:18px;box-shadow:0 10px 28px rgba(13,34,56,.10)}
+    .page-recipes .catalog-image{height:155px;overflow:hidden}
+    .page-recipes .catalog-image img{height:100%;width:100%;aspect-ratio:auto;object-fit:cover}
+    .page-recipes .recipe-card-placeholder{height:155px;aspect-ratio:auto}
+    .page-recipes .recipe-card-placeholder span{width:82px;height:82px;font-size:.68rem}
+    .page-recipes .catalog-copy{padding:14px 15px 16px;gap:6px}
+    .page-recipes .catalog-copy h3{font-size:1.22rem;line-height:1.08}
+    .page-recipes .catalog-copy p{font-size:.88rem}
+    .page-recipes .catalog-group{scroll-margin-top:100px}
+    @media (max-width:620px){
+      .page-recipes .recipe-catalog-grid,.page-recipes .two-card-grid,.page-recipes .three-card-grid{grid-template-columns:1fr}
+      .page-recipes .catalog-image,.page-recipes .recipe-card-placeholder{height:180px}
+    }
+
+.calc-hub-intro{max-width:860px}
+    .tool-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .tool-tabs a{display:inline-flex;align-items:center;text-decoration:none;color:var(--navy);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:9px 13px;font-weight:750;font-size:.92rem}
+    .tool-tabs a:hover{border-color:#cfbf9f;background:#fbf7ee}
+    .calculator-stack{display:grid;gap:28px}
+    .tool-panel{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:var(--shadow)}
+    .tool-panel-header{display:grid;gap:6px;margin-bottom:18px}
+    .tool-panel-header h2{font-size:clamp(1.65rem,3vw,2.35rem);margin:0}
+    .tool-panel-header p{margin:0;color:var(--muted);max-width:760px}
+    .calc-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.8fr);gap:22px;align-items:start}
+    .calc-form{display:grid;gap:14px}
+    .calc-form label{display:grid;gap:7px;font-weight:750;color:var(--navy)}
+    .calc-form input,.calc-form select{width:100%;border:1px solid var(--line);border-radius:14px;background:#fff;padding:12px 13px;font:inherit;color:var(--navy)}
+    .calc-form small{font-weight:500;color:var(--muted);line-height:1.35}
+    .calc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .result-card{background:#fbf7ee;border:1px solid var(--line);border-radius:20px;padding:18px;display:grid;gap:12px}
+    .result-card h3{margin:0;font-size:1.25rem}
+    .result-list{display:grid;gap:9px}
+    .result-line{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid #e7dcc7;padding-bottom:8px}
+    .result-line span{color:var(--muted)}
+    .result-line strong{white-space:nowrap;color:var(--navy)}
+    .plain-note{margin:0;color:var(--muted);font-size:.94rem;line-height:1.5}
+    .ingredient-table-mini{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+    .ingredient-table-mini th,.ingredient-table-mini td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+    .ingredient-table-mini th{background:#fbf7ee;color:var(--navy);font-size:.9rem}
+    .ingredient-table-mini tr:last-child td{border-bottom:0}
+    .ingredient-table-mini input{width:100%;border:1px solid var(--line);border-radius:10px;padding:9px;font:inherit;color:var(--navy)}
+    .source-note{margin-top:18px;background:#fff;border:1px dashed #d8c6a4;border-radius:16px;padding:14px;color:var(--muted);font-size:.94rem;line-height:1.5}
+    .source-note strong{color:var(--navy)}
+    @media (max-width:850px){.calc-grid{grid-template-columns:1fr}.calc-row{grid-template-columns:1fr}.tool-panel{padding:20px}.tool-tabs a{font-size:.88rem}}
+
+.schedule-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:24px}
+    .schedule-card{background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:22px}
+    .schedule-card h2,.schedule-card h3{margin-bottom:8px}
+    .schedule-card p{color:var(--muted);margin-bottom:12px}
+    .schedule-card ul{margin:10px 0 0;padding-left:20px;color:var(--navy-2)}
+    .schedule-card li{margin:6px 0}
+    .wide-card{grid-column:1/-1}
+    .schedule-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .emergency-panel{background:var(--paper);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:24px;margin-top:26px}
+    .emergency-panel.hidden{display:none}
+    .schedule-summary{display:grid;gap:5px;margin:0 0 18px;color:var(--navy-2)}
+    .schedule-summary strong{color:var(--navy)}
+    .check-timeline{display:grid;gap:10px;margin:18px 0 0}
+    .check-row{display:grid;grid-template-columns:34px 170px 1fr;gap:12px;align-items:start;background:#fbf7ee;border:1px solid var(--line);border-radius:16px;padding:14px}
+    .check-row input{width:20px;height:20px;margin-top:2px;accent-color:var(--navy)}
+    .check-time{font-weight:750;color:var(--navy)}
+    .check-task strong{display:block;color:var(--navy);margin-bottom:2px}
+    .check-task span{display:block;color:var(--muted)}
+    .plain-note{background:#f6efe1;border:1px solid var(--line);border-radius:18px;padding:16px 18px;color:var(--navy-2);margin-top:16px}
+    @media (max-width:850px){.schedule-grid{grid-template-columns:1fr}.check-row{grid-template-columns:30px 1fr}.check-time,.check-task{grid-column:2}}
+    @media print{
+      body{background:#fff;color:#000;font-size:11pt}.site-header,.page-hero,.schedule-grid,.site-footer,.nav-toggle,.site-nav,.schedule-actions .secondary,.plain-note.no-print{display:none!important}
+      .section{padding:0}.wrap{width:100%;margin:0}.emergency-panel{display:block!important;box-shadow:none;border:0;padding:0;margin:0}.emergency-panel.hidden{display:none!important}
+      .emergency-panel h2{font-size:22pt;color:#000;margin-bottom:8px}.schedule-summary{font-size:10.5pt;color:#000;margin-bottom:12px}.check-timeline{gap:6px}
+      .check-row{break-inside:avoid;grid-template-columns:28px 145px 1fr;background:#fff;border:1px solid #999;border-radius:0;padding:8px}.check-row input{appearance:none;width:16px;height:16px;border:1px solid #000;margin:2px 0 0}.check-time,.check-task strong{color:#000}.check-task span{color:#000}
+    }
+
+.trouble-intro-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin-top:24px}
+    .trouble-intro-card p{margin:0;color:var(--navy-2)}
+    .trouble-nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .trouble-nav a{display:inline-flex;text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;font-weight:750;color:var(--navy)}
+    .trouble-section{margin-bottom:44px}
+    .trouble-section h2{font-size:clamp(1.7rem,3vw,2.55rem)}
+    .trouble-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
+    .issue-card{background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:20px}
+    .issue-card h3{margin-bottom:12px}
+    .issue-card dl{display:grid;gap:12px;margin:0}
+    .issue-card dt{font-weight:750;color:var(--navy);margin:0}
+    .issue-card dd{margin:4px 0 0;color:var(--muted)}
+    .field-warning{background:#f6efe1;border:1px solid var(--line);border-radius:20px;padding:18px 20px;color:var(--navy-2);margin:20px 0 0}
+    .quick-check{background:var(--navy);color:#fff;border-radius:22px;padding:24px;margin-top:28px}
+    .quick-check h2,.quick-check h3{color:#fff}
+    .quick-check ul{margin-bottom:0}
+    .quick-check li{margin-bottom:8px;color:#d5dfeb}
+    @media (max-width: 760px){.trouble-grid{grid-template-columns:1fr}.trouble-intro-card{padding:20px}}
+
+.plan-only{display:none}
+    body.baking-plan-mode .recipe-sections > section:not(.baking-plan),
+    body.baking-plan-mode .recipe-sections > .notes{display:none}
+    body.baking-plan-mode .baking-plan{display:block}
+    .plan-block{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:#fffdf8;margin:0 0 14px}
+    .plan-block h4{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--navy);margin:0 0 10px;font-size:1rem}
+    .plan-checklist{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    .plan-checklist li{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start}
+    .plan-checklist .box{width:18px;height:18px;border:2px solid var(--navy);border-radius:4px;margin-top:2px;background:#fff}
+    @media print{
+      body.print-baking-plan .recipe-sections > section:not(.baking-plan),
+      body.print-baking-plan .recipe-sections > .notes{display:none!important}
+      body.print-baking-plan .baking-plan{display:block!important}
+      body.print-baking-plan .recipe-page-top h2{font-size:22pt!important}
+      body.print-baking-plan .plan-block{break-inside:avoid;border:1px solid #999;background:#fff;padding:10px 12px;margin-bottom:10px}
+      body.print-baking-plan .plan-checklist{gap:7px}
+      body.print-baking-plan .plan-checklist .box{border-color:#000}
+    }
+
+/* Final readability and centralized light-panel rules */
+.field-title-page,
+.title-sheet,
+.specimen-note,
+.contents-section,
+.contents-head,
+.contents-list,
+.contents-item,
+.field-entry,
+.startered-side-card,
+.accordion-entry,
+.accordion-content,
+.callout,
+.term-card,
+.temp-card,
+.gear-strip div,
+.feed-example div,
+.schedule-card,
+.emergency-panel,
+.check-row,
+.plain-note,
+.tool-panel,
+.result-card,
+.ingredient-table-mini,
+.source-note,
+.trouble-intro-card,
+.issue-card,
+.field-warning,
+.submit-form,
+.recipe-detail,
+.recipe-page-detail,
+.recipe-page-detail .full-only,
+.recipe-page-detail .card-only,
+.plan-block,
+.recipe-catalog-card,
+.catalog-copy,
+.recipe-card-placeholder,
+.ratio-table-wrap,
+.info-card,
+.feature-card,
+.hero-card,
+.calculator-card,
+.notes {
+  color: var(--ink);
 }
 
-html,
-body{
-  background:var(--sfg-bg) !important;
-  color:var(--sfg-cream) !important;
+.title-sheet,
+.field-entry,
+.startered-side-card,
+.accordion-entry,
+.schedule-card,
+.emergency-panel,
+.tool-panel,
+.result-card,
+.trouble-intro-card,
+.issue-card,
+.submit-form,
+.recipe-detail,
+.recipe-page-detail,
+.plan-block,
+.recipe-catalog-card,
+.ratio-table-wrap,
+.info-card,
+.feature-card,
+.hero-card,
+.calculator-card {
+  background: var(--paper);
 }
 
-/* Dark/navy areas use light readable text */
-.hero,
-.page-hero,
-main > .section,
-.panel-section,
-.first-section,
-.catalog-group,
-.recipe-catalog-sections,
-.site-footer{
-  color:var(--sfg-cream) !important;
+.field-entry p,
+.field-entry li,
+.startered-side-card p,
+.accordion-entry p,
+.accordion-entry li,
+.accordion-content p,
+.accordion-content li,
+.callout,
+.term-card p,
+.temp-card p,
+.gear-strip div,
+.feed-example div,
+.schedule-card p,
+.schedule-card li,
+.schedule-summary,
+.check-task span,
+.plain-note,
+.tool-panel p,
+.result-card p,
+.source-note,
+.trouble-intro-card p,
+.issue-card dd,
+.field-warning,
+.submit-form p,
+.recipe-detail p,
+.recipe-detail li,
+.recipe-page-detail p,
+.recipe-page-detail li,
+.recipe-meta,
+.plan-block p,
+.plan-block li,
+.catalog-copy p,
+.recipe-catalog-card p,
+.ratio-table-wrap p,
+.info-card p,
+.feature-card p,
+.hero-card p,
+.calculator-card p,
+.notes,
+.small-note {
+  color: #1f2933;
 }
 
-.hero h1,
-.hero h2,
-.hero h3,
-.page-hero h1,
-.page-hero h2,
-.page-hero h3,
-main > .section > .wrap > h1,
-main > .section > .wrap > h2,
-main > .section > .wrap > h3,
-.page-intro h1,
-.page-intro h2,
-.page-intro h3,
-.catalog-group-heading h1,
-.catalog-group-heading h2,
-.catalog-group-heading h3{
-  color:var(--sfg-cream) !important;
-}
-
-.hero p,
-.page-hero p,
-.page-intro p,
-.compact-intro p,
-.catalog-group-heading p,
-main > .section > .wrap > p{
-  color:var(--sfg-cream-muted) !important;
-}
-
-/* Eyebrows stay brass on dark sections */
-.eyebrow,
-.catalog-tag{
-  color:var(--sfg-brass-soft) !important;
-}
-
-/* Header/nav */
-.site-header{
-  background:rgba(7,24,39,.96) !important;
-  border-bottom:1px solid rgba(183,138,59,.40) !important;
-}
-
-.brand-text,
-.site-nav a{
-  color:var(--sfg-cream) !important;
-}
-
-.site-nav a.active,
-.site-nav a:hover{
-  background:rgba(183,138,59,.20) !important;
-  color:var(--sfg-cream) !important;
-}
-
-.nav-toggle{
-  background:var(--sfg-panel) !important;
-  color:var(--sfg-ink) !important;
-  border-color:var(--sfg-brass-soft) !important;
-}
-
-/* Everything that visually sits on paper gets dark text. */
-:where(
-  .hero-card,
-  .home-logo-card,
-  .feature-card,
-  .info-card,
-  .calculator-card,
-  .ratio-table-wrap,
-  .recipe-catalog-card,
-  .catalog-copy,
-  .recipe-detail,
-  .recipe-page-detail,
-  .recipe-sections,
-  .recipe-sections section,
-  .baking-plan,
-  .plan-block,
-  .notes,
-  .plain-note,
-  .callout,
-  .feed-example,
-  .term-card,
-  .temp-card,
-  .field-entry,
-  .accordion-entry,
-  .accordion-content,
-  .startered-side-card,
-  .startered-table,
-  .gear-strip,
-  .schedule-card,
-  .schedule-summary,
-  .emergency-panel,
-  .quick-check,
-  .check-timeline,
-  .trouble-intro-card,
-  .issue-card,
-  .tool-panel,
-  .result-card,
-  .submit-form,
-  .clean-table,
-  .ingredient-table,
-  .ingredient-table-mini,
-  .box
-){
-  background-color:var(--sfg-panel) !important;
-  color:var(--sfg-ink) !important;
-}
-
-/* Force normal readable text inside paper panels. */
-:where(
-  .hero-card,
-  .home-logo-card,
-  .feature-card,
-  .info-card,
-  .calculator-card,
-  .ratio-table-wrap,
-  .recipe-catalog-card,
-  .catalog-copy,
-  .recipe-detail,
-  .recipe-page-detail,
-  .recipe-sections,
-  .recipe-sections section,
-  .baking-plan,
-  .plan-block,
-  .notes,
-  .plain-note,
-  .callout,
-  .feed-example,
-  .term-card,
-  .temp-card,
-  .field-entry,
-  .accordion-entry,
-  .accordion-content,
-  .startered-side-card,
-  .startered-table,
-  .gear-strip,
-  .schedule-card,
-  .schedule-summary,
-  .emergency-panel,
-  .quick-check,
-  .check-timeline,
-  .trouble-intro-card,
-  .issue-card,
-  .tool-panel,
-  .result-card,
-  .submit-form,
-  .clean-table,
-  .ingredient-table,
-  .ingredient-table-mini,
-  .box
-) :where(h1,h2,h3,h4,h5,h6,summary,strong,label,th){
-  color:var(--sfg-ink) !important;
-}
-
-:where(
-  .hero-card,
-  .home-logo-card,
-  .feature-card,
-  .info-card,
-  .calculator-card,
-  .ratio-table-wrap,
-  .recipe-catalog-card,
-  .catalog-copy,
-  .recipe-detail,
-  .recipe-page-detail,
-  .recipe-sections,
-  .recipe-sections section,
-  .baking-plan,
-  .plan-block,
-  .notes,
-  .plain-note,
-  .callout,
-  .feed-example,
-  .term-card,
-  .temp-card,
-  .field-entry,
-  .accordion-entry,
-  .accordion-content,
-  .startered-side-card,
-  .startered-table,
-  .gear-strip,
-  .schedule-card,
-  .schedule-summary,
-  .emergency-panel,
-  .quick-check,
-  .check-timeline,
-  .trouble-intro-card,
-  .issue-card,
-  .tool-panel,
-  .result-card,
-  .submit-form,
-  .clean-table,
-  .ingredient-table,
-  .ingredient-table-mini,
-  .box
-) :where(p,li,td,span,div,small,em){
-  color:var(--sfg-charcoal) !important;
-}
-
-/* Links and category labels inside paper panels */
-:where(
-  .hero-card,
-  .home-logo-card,
-  .feature-card,
-  .info-card,
-  .calculator-card,
-  .recipe-catalog-card,
-  .recipe-detail,
-  .recipe-page-detail,
-  .baking-plan,
-  .notes,
-  .field-entry,
-  .startered-side-card,
-  .schedule-card,
-  .trouble-intro-card,
-  .issue-card,
-  .tool-panel,
-  .submit-form
-) a:not(.button){
-  color:#8f641e !important;
-}
-
+.field-entry h1,
+.field-entry h2,
+.field-entry h3,
+.startered-side-card h2,
+.startered-side-card h3,
+.accordion-title,
+.accordion-entry summary,
+.accordion-entry h2,
+.accordion-entry h3,
+.callout strong,
+.term-card h3,
+.temp-card h3,
+.gear-strip strong,
+.feed-example strong,
+.schedule-card h2,
+.schedule-card h3,
+.emergency-panel h2,
+.emergency-panel h3,
+.schedule-summary strong,
+.check-time,
+.check-task strong,
+.tool-panel h2,
+.tool-panel h3,
+.calc-form label,
+.result-line strong,
+.source-note strong,
+.trouble-intro-card h2,
+.trouble-intro-card h3,
+.issue-card h3,
+.issue-card dt,
+.field-warning strong,
+.submit-form label,
+.recipe-detail h2,
+.recipe-detail h3,
+.recipe-page-detail h2,
+.recipe-page-detail h3,
+.plan-block h4,
+.recipe-catalog-card h3,
 .catalog-link,
-.text-link{
-  color:#8f641e !important;
-  font-weight:750;
+.ratio-table-wrap h2,
+.ratio-table-wrap h3,
+.info-card h3,
+.feature-card h3,
+.hero-card h2,
+.hero-card h3,
+.calculator-card label {
+  color: var(--navy);
 }
 
-/* Buttons: brass primary, readable secondary depending on background */
-.button.primary{
-  background:var(--sfg-brass) !important;
-  border-color:var(--sfg-brass) !important;
-  color:var(--sfg-ink) !important;
-}
-
-.button.secondary{
-  background:transparent !important;
-  border-color:var(--sfg-brass) !important;
-  color:var(--sfg-cream) !important;
-}
-
-:where(.hero-card,.home-logo-card,.feature-card,.info-card,.calculator-card,.recipe-detail,.recipe-page-detail,.submit-form) .button.secondary{
-  color:var(--sfg-ink) !important;
-}
-
-/* Inputs and forms should stay readable */
-input,
-textarea,
-select,
-.input-row{
-  background:#fffdf8 !important;
-  color:var(--sfg-ink) !important;
-  border-color:var(--sfg-brass-soft) !important;
-}
-
-input::placeholder,
-textarea::placeholder{
-  color:#6b7280 !important;
-}
-
-/* Tables */
-table,
-thead,
-tbody,
-tr,
-td,
-th{
-  color:var(--sfg-ink) !important;
-}
-
-.clean-table th,
-.ingredient-table th,
-.ingredient-table-mini th,
-.calc-results div,
-.result-line{
-  background:var(--sfg-panel-2) !important;
-  color:var(--sfg-ink) !important;
-}
-
-/* Recipe cards and images */
-.recipe-catalog-card{
-  text-decoration:none;
-  border:1px solid rgba(183,138,59,.45) !important;
-}
-
-.catalog-image,
-.recipe-card-placeholder{
-  background:var(--sfg-panel-2) !important;
-}
-
+.accordion-label,
+.gear-strip span,
+.feed-example span,
+.result-line span,
+.catalog-tag,
 .tag-row span,
 .category-jump-list a,
-.recipe-meta,
-.catalog-tag{
-  color:var(--sfg-ink) !important;
+.eyebrow.kicker,
+.kicker,
+.meta {
+  color: #263448;
 }
 
-.category-jump-list a{
-  background:var(--sfg-panel) !important;
-  border-color:var(--sfg-brass-soft) !important;
-}
-
-.category-jump-list a:hover{
-  background:var(--sfg-panel-2) !important;
-}
-
-/* Homepage specific, preserve logo-left/card grid structure */
-.home-hero-grid{
-  grid-template-columns:.9fr 1.1fr !important;
-  align-items:center;
-}
-
-.home-logo-card .hero-lockup{
-  width:100% !important;
-  max-width:440px !important;
-  margin:0 0 26px !important;
-}
-
-.home-hero-copy h1,
-.home-hero-copy .hero-copy{
-  color:var(--sfg-cream) !important;
-}
-
-/* Footer */
+/* Keep text on dark panels light */
+.site-header,
 .site-footer,
+.hero,
+.page-hero,
+.quick-check {
+  color: #fff8ea;
+}
+.site-header a,
 .site-footer p,
-.footer-wrap,
-.footer-wrap p{
-  color:var(--sfg-cream-muted) !important;
+.hero p,
+.page-hero p,
+.quick-check p,
+.quick-check li {
+  color: #e6d9c5;
+}
+.page-hero h1,
+.page-hero h2,
+.hero h1,
+.hero h2,
+.quick-check h2,
+.quick-check h3 {
+  color: #fff8ea;
 }
 
-/* Mobile nav */
-@media (max-width:850px){
-  .site-nav.open{
-    display:flex !important;
-  }
-  .site-nav{
-    background:var(--sfg-bg-2) !important;
-    border:1px solid rgba(183,138,59,.42) !important;
-  }
-  .home-hero-grid{
-    grid-template-columns:1fr !important;
-  }
-}
+/* Basics accordion layout */
+.startered-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:28px;align-items:start}
+.startered-accordion{display:grid;gap:16px}
+.startered-side{display:grid;gap:18px;position:sticky;top:96px}
+.accordion-entry{overflow:hidden}
+.accordion-entry summary{list-style:none;cursor:pointer;padding:24px 64px 24px 28px;position:relative;display:block}
+.accordion-entry summary::-webkit-details-marker{display:none}
+.accordion-entry summary:after{content:"+";display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--line);border-radius:999px;background:#f6efe1;color:var(--navy);font-weight:750;font-size:1.15rem;line-height:1;position:absolute;right:28px;top:50%;transform:translateY(-50%)}
+.accordion-entry[open] summary:after{content:"–"}
+.accordion-entry[open] summary{border-bottom:1px solid var(--line);background:linear-gradient(135deg,#fffdf8,#fffaf0)}
+.accordion-content{padding:24px 28px 28px;font-size:1.02rem}
+.accordion-content p:first-child{margin-top:0}
+.accordion-label{display:block;font-size:.78rem;font-weight:750;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+.accordion-title{display:block;font-family:"Source Serif 4",Georgia,serif;font-size:clamp(1.35rem,2.4vw,2rem);font-weight:700;line-height:1.08;letter-spacing:-.02em}
+.plain-list{margin:12px 0 0;padding-left:1.2rem}.plain-list li{margin-bottom:9px}
+.term-grid,.temp-grid,.gear-strip,.feed-example{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
+.gear-strip{grid-template-columns:repeat(4,minmax(0,1fr))}
+.feed-example{grid-template-columns:repeat(3,minmax(0,1fr))}
+.callout,.term-card,.temp-card,.gear-strip div,.feed-example div{border:1px solid var(--line);border-radius:16px;padding:16px;background:#f6efe1}
+.startered-side-card{padding:20px;border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 28px rgba(13,34,56,.08)}
+.startered-side-card h2{font-size:1.7rem;margin-bottom:10px}
+.startered-side-card p{margin:0 0 14px}
 
-/* Print should not inherit navy */
+/* Recipe baking plan controls */
+.plan-only{display:none}
+body.baking-plan-mode .recipe-sections > section:not(.baking-plan),
+body.baking-plan-mode .recipe-sections > .notes{display:none}
+body.baking-plan-mode .baking-plan{display:block}
+.plan-block{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:#fffdf8;margin:0 0 14px}
+.plan-checklist{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.plan-checklist li{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start}
+.plan-checklist .box{width:18px;height:18px;border:2px solid var(--navy);border-radius:4px;margin-top:2px;background:#fff}
+
+@media (max-width:900px){.startered-layout{grid-template-columns:1fr}.startered-side{position:static}.gear-strip,.feed-example{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.accordion-entry summary{padding:20px 56px 20px 20px}.accordion-entry summary:after{right:18px}.accordion-content{padding:20px}.term-grid,.temp-grid,.gear-strip,.feed-example{grid-template-columns:1fr}}
+
 @media print{
-  html,
-  body{
-    background:#fff !important;
-    color:#000 !important;
-  }
-  *{
-    color:#000 !important;
-    box-shadow:none !important;
-  }
+  body.print-baking-plan .recipe-sections > section:not(.baking-plan),
+  body.print-baking-plan .recipe-sections > .notes{display:none!important}
+  body.print-baking-plan .baking-plan{display:block!important}
+  body.print-baking-plan .recipe-page-top h2{font-size:22pt!important}
+  body.print-baking-plan .plan-block{break-inside:avoid;border:1px solid #999;background:#fff;padding:10px 12px;margin-bottom:10px}
+  body.print-baking-plan .plan-checklist{gap:7px}
+  body.print-baking-plan .plan-checklist .box{border-color:#000}
+}
+
+
+/* ------------------------------------------------------------------
+   Stability patch, preserve card structure, fix contrast only.
+   This section intentionally changes color only, not layout.
+------------------------------------------------------------------ */
+.hero .hero-card,
+.hero .hero-card p,
+.hero .hero-card li,
+.hero .hero-card .text-link {
+  color: #1f2933;
+}
+.hero .hero-card h1,
+.hero .hero-card h2,
+.hero .hero-card h3 {
+  color: var(--navy);
+}
+.hero .hero-card .text-link {
+  color: #8f6a2f;
+}
+.page-home .compact-intro h2,
+.page-home .compact-intro .eyebrow {
+  color: #fff8ea;
+}
+.page-home .compact-intro p {
+  color: #e6d9c5;
+}
+.page-home .feature-card h3,
+.page-home .feature-card p {
+  color: inherit;
+}
+.page-home .feature-card h3 {
+  color: var(--navy);
+}
+.page-home .feature-card p {
+  color: #1f2933;
+}
+/* Light panels must stay dark even when nested inside dark sections. */
+.page-hero .tool-tabs a,
+.page-hero .category-jump-list a,
+.panel-section .schedule-card,
+.panel-section .schedule-card p,
+.panel-section .schedule-card li,
+.panel-section .plain-note,
+.first-section .tool-panel,
+.first-section .tool-panel p,
+.first-section .result-card,
+.first-section .result-card p,
+.first-section .field-entry,
+.first-section .field-entry p,
+.first-section .field-entry li,
+.first-section .startered-side-card,
+.first-section .startered-side-card p {
+  color: #1f2933;
+}
+.panel-section .schedule-card h2,
+.panel-section .schedule-card h3,
+.first-section .tool-panel h2,
+.first-section .tool-panel h3,
+.first-section .result-card h3,
+.first-section .field-entry h2,
+.first-section .field-entry h3,
+.first-section .startered-side-card h2,
+.first-section .startered-side-card h3,
+.first-section .accordion-title {
+  color: var(--navy);
 }
