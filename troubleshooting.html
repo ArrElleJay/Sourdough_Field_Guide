@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Sourdough Field Guide | What Had Happened Was...</title>
+  <meta name="description" content="Practical sourdough troubleshooting for starter, dough, proofing, baking, and recipe problems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .trouble-intro-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin-top:24px}
+    .trouble-intro-card p{margin:0;color:var(--navy-2)}
+    .trouble-nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .trouble-nav a{display:inline-flex;text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;font-weight:750;color:var(--navy)}
+    .trouble-section{margin-bottom:44px}
+    .trouble-section h2{font-size:clamp(1.7rem,3vw,2.55rem)}
+    .trouble-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
+    .issue-card{background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:20px}
+    .issue-card h3{margin-bottom:12px}
+    .issue-card dl{display:grid;gap:12px;margin:0}
+    .issue-card dt{font-weight:750;color:var(--navy);margin:0}
+    .issue-card dd{margin:4px 0 0;color:var(--muted)}
+    .field-warning{background:#f6efe1;border:1px solid var(--line);border-radius:20px;padding:18px 20px;color:var(--navy-2);margin:20px 0 0}
+    .quick-check{background:var(--navy);color:#fff;border-radius:22px;padding:24px;margin-top:28px}
+    .quick-check h2,.quick-check h3{color:#fff}
+    .quick-check ul{margin-bottom:0}
+    .quick-check li{margin-bottom:8px;color:#d5dfeb}
+    @media (max-width: 760px){.trouble-grid{grid-template-columns:1fr}.trouble-intro-card{padding:20px}}
+  </style>
+</head>
+<body class="page-troubleshooting">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-wrap">
+      <a class="brand" href="index.html" aria-label="The Sourdough Field Guide home">
+        <img class="brand-mark-image" src="assets/logo-mark-sfg.png" alt="SFG monogram logo">
+        <span class="brand-text">The Sourdough Field Guide</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="basics.html">Get Startered</a>
+        <a href="schedule.html">Timing</a>
+        <a href="calculator.html">Calculators</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="submit.html">Submit Recipe</a>
+        <a href="troubleshooting.html" class="active">What Had Happened Was...</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section page-hero">
+      <div class="wrap narrow page-intro">
+        <p class="eyebrow">What Had Happened Was...</p>
+        <h1 class="page-title">The bread did something weird.</h1>
+        <p>Start with the obvious stuff first. Temperature, timing, starter strength, and dough handling explain most sourdough drama.</p>
+        <div class="trouble-intro-card">
+          <p><strong>Use this page as a diagnosis guide, not a courtroom.</strong> One bad loaf does not mean the recipe failed, your starter is dead, or you need to buy three new tools. Check the likely causes, adjust one thing next time, and keep notes.</p>
+        </div>
+        <div class="trouble-nav" aria-label="Troubleshooting sections">
+          <a href="#starter">Starter</a>
+          <a href="#dough">Dough</a>
+          <a href="#proofing">Proofing</a>
+          <a href="#baking">Baking</a>
+          <a href="#recipe-specific">Recipe-specific</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel-section first-section">
+      <div class="wrap">
+        <div class="quick-check">
+          <h2>First, check the boring things.</h2>
+          <ul>
+            <li>Was the starter actually at peak, or just bubbly enough to lie to you?</li>
+            <li>Was the dough warm, cool, or sitting in a kitchen with opinions?</li>
+            <li>Did the dough rise because it was ready, or because the clock said it should be?</li>
+            <li>Did you change flour, hydration, temperature, add-ins, or timing?</li>
+            <li>Did you cut into the bread before it cooled? Be honest.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="starter">
+      <div class="wrap">
+        <div class="trouble-section">
+          <p class="eyebrow">Starter problems</p>
+          <h2>The jar is not cooperating.</h2>
+          <div class="trouble-grid">
+            <article class="issue-card">
+              <h3>Starter is not rising</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>It is too cool, underfed, recently neglected, or not established yet.</dd></div>
+                <div><dt>What to do now</dt><dd>Move it somewhere warmer and feed 1:1:1 for a few cycles. Mark the level on the jar so you can tell if it actually rises.</dd></div>
+                <div><dt>Next time</dt><dd>Do not ask a sluggish starter to carry a loaf. Wait until it rises predictably after feeding.</dd></div>
+              </dl>
+            </article>
+
+            <article class="issue-card">
+              <h3>Starter peaked and collapsed</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>It ate through the food and ran out of steam before you used it.</dd></div>
+                <div><dt>What to do now</dt><dd>If it only recently dropped, it may still work, but expect more sourness and less lift. For a stronger bake, feed again and use at peak.</dd></div>
+                <div><dt>Next time</dt><dd>Use a higher feeding ratio if you need a longer wait before mixing.</dd></div>
+              </dl>
+            </article>
+
+            <article class="issue-card">
+              <h3>Starter has liquid on top</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>It is hungry or has been sitting too long. The liquid is usually hooch.</dd></div>
+                <div><dt>What to do now</dt><dd>Stir it in for more sour flavor or pour it off for less. Feed normally and watch how it responds.</dd></div>
+                <div><dt>Next time</dt><dd>Feed sooner, use a larger feed, or store it in the fridge if you are not baking often.</dd></div>
+              </dl>
+            </article>
+
+            <article class="issue-card">
+              <h3>New starter bubbled, then went quiet</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>Normal early-starter behavior. The first burst does not mean it is ready.</dd></div>
+                <div><dt>What to do now</dt><dd>Keep feeding. Most new starters need days of predictable rise and fall before bread duty.</dd></div>
+                <div><dt>Next time</dt><dd>Judge by consistency, not one dramatic bubble day.</dd></div>
+              </dl>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="dough">
+      <div class="wrap">
+        <div class="trouble-section">
+          <p class="eyebrow">Dough problems</p>
+          <h2>The dough is being a problem.</h2>
+          <div class="trouble-grid">
+            <article class="issue-card">
+              <h3>Dough is too sticky</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>High hydration, warm dough, weak flour, not enough gluten development, or too much fermentation.</dd></div>
+                <div><dt>What to do now</dt><dd>Wet your hands, use a bench scraper, and give the dough time. Avoid dumping in flour unless it is truly unmanageable.</dd></div>
+                <div><dt>Next time</dt><dd>Hold back a little water, use stronger flour, or shorten warm fermentation.</dd></div>
+              </dl>
+            </article>
+
+            <article class="issue-card">
+              <h3>Dough spreads instead of holding shape</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>Weak gluten, overproofing, too much hydration, or shaping without enough tension.</dd></div>
+                <div><dt>What to do now</dt><dd>Use a tighter shape and support it in a banneton, bowl, or loaf pan if needed.</dd></div>
+                <div><dt>Next time</dt><dd>Add structure with folds, watch bulk more closely, and do not let warm dough run the whole show.</dd></div>
+              </dl>
+            </article>
+
+            <article class="issue-card">
+              <h3>Dough is not rising</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>Starter was weak, dough is too cool, salt was accidentally overmeasured, or the formula is enriched and moving slowly.</dd></div>
+                <div><dt>What to do now</dt><dd>Move it warmer and give it more time. If it has not moved at all after a long wait, the starter may not have been ready.</dd></div>
+                <div><dt>Next time</dt><dd>Use starter at peak and check dough temperature early.</dd></div>
+              </dl>
+            </article>
+
+            <article class="issue-card">
+              <h3>Dough tore during shaping</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>It was too tight, under-rested, dry on the surface, or handled too aggressively.</dd></div>
+                <div><dt>What to do now</dt><dd>Let it rest 10 minutes, then shape more gently.</dd></div>
+                <div><dt>Next time</dt><dd>Cover dough during rests and give it time to relax before final shaping.</dd></div>
+              </dl>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proofing">
+      <div class="wrap">
+        <div class="trouble-section">
+          <p class="eyebrow">Proofing problems</p>
+          <h2>The clock lied. It does that.</h2>
+          <div class="trouble-grid">
+            <article class="issue-card">
+              <h3>Dense loaf</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>Under-fermented dough, weak starter, or not enough proofing before bake.</dd></div>
+                <div><dt>What to do now</dt><dd>There is no magic after baking. Toast it, cube it, or call it rustic and move on.</dd></div>
+                <div><dt>Next time</dt><dd>Let bulk go further, use a warmer spot, and make sure your starter is reliably active.</dd></div>
+              </dl>
+            </article>
+
+            <article class="issue-card">
+              <h3>Gummy crumb</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>Underbaking, slicing too soon, under-fermentation, or too much hydration for the flour.</dd></div>
+                <div><dt>What to do now</dt><dd>Let the loaf cool fully. If it is already cut, toast slices to drive off extra moisture.</dd></div>
+                <div><dt>Next time</dt><dd>Bake to temperature, cool longer, and watch fermentation more than the clock.</dd></div>
+              </dl>
+            </article>
+
+            <article class="issue-card">
+              <h3>Huge holes with dense areas</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>Uneven shaping, trapped air pockets, or fermentation that was not balanced.</dd></div>
+                <div><dt>What to do now</dt><dd>Still edible. Probably toast-worthy.</dd></div>
+                <div><dt>Next time</dt><dd>Shape more evenly and degas giant bubbles while keeping the dough gentle.</dd></div>
+              </dl>
+            </article>
+
+            <article class="issue-card">
+              <h3>Loaf flattened after scoring</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>Overproofed dough, weak shaping, or dough that was too warm and slack.</dd></div>
+                <div><dt>What to do now</dt><dd>Bake it anyway. Flat bread is still bread.</dd></div>
+                <div><dt>Next time</dt><dd>Shorten final proof or use the fridge to firm the dough before scoring.</dd></div>
+              </dl>
+            </article>
+          </div>
+          <div class="field-warning"><strong>Useful rule:</strong> warmer dough moves faster. Cooler dough moves slower. If your kitchen is not close to the recipe’s assumed temperature, the timeline will not match perfectly.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="baking">
+      <div class="wrap">
+        <div class="trouble-section">
+          <p class="eyebrow">Baking problems</p>
+          <h2>The oven had its own agenda.</h2>
+          <div class="trouble-grid">
+            <article class="issue-card">
+              <h3>Bottom burned</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>Too much heat from the bottom, thin Dutch oven base, low oven rack, or too long on the hot surface.</dd></div>
+                <div><dt>What to do now</dt><dd>Trim the worst of it if needed. The rest is probably fine.</dd></div>
+                <div><dt>Next time</dt><dd>Move the rack higher, put a sheet pan under the Dutch oven, or remove the loaf from the Dutch oven after baking.</dd></div>
+              </dl>
+            </article>
+
+            <article class="issue-card">
+              <h3>Crust is too hard</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>Too much uncovered bake, not enough steam, or a loaf that baked too dry.</dd></div>
+                <div><dt>What to do now</dt><dd>Let it cool under a towel if you want the crust to soften slightly.</dd></div>
+                <div><dt>Next time</dt><dd>Keep the covered bake long enough, shorten the uncovered bake, or check oven temperature.</dd></div>
+              </dl>
+            </article>
+
+            <article class="issue-card">
+              <h3>Loaf is pale</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>Not enough uncovered bake, oven too cool, or dough lacking enough fermentation for browning.</dd></div>
+                <div><dt>What to do now</dt><dd>Put it back in for a few minutes if the loaf is not fully cooled and the inside is done.</dd></div>
+                <div><dt>Next time</dt><dd>Preheat fully and give the uncovered phase enough time.</dd></div>
+              </dl>
+            </article>
+
+            <article class="issue-card">
+              <h3>Loaf burst somewhere weird</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>Scoring was too shallow, skin tension was uneven, or the loaf needed a better escape route.</dd></div>
+                <div><dt>What to do now</dt><dd>Call it character.</dd></div>
+                <div><dt>Next time</dt><dd>Score decisively and shape with more even surface tension.</dd></div>
+              </dl>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="recipe-specific">
+      <div class="wrap">
+        <div class="trouble-section">
+          <p class="eyebrow">Recipe-specific problems</p>
+          <h2>Not every recipe fails the same way.</h2>
+          <div class="trouble-grid">
+            <article class="issue-card">
+              <h3>Bagels are dry or tough</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>Low hydration, over-kneading, too much whole grain/cocoa/rye without adjusting water, or boiling too long.</dd></div>
+                <div><dt>What to do now</dt><dd>They may still be excellent toasted.</dd></div>
+                <div><dt>Next time</dt><dd>Add a little water for thirsty flours and keep the boil to the recipe’s timing.</dd></div>
+              </dl>
+            </article>
+
+            <article class="issue-card">
+              <h3>Crackers are not crisp</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>Dough was rolled too thick, crackers were crowded, or they needed more drying time.</dd></div>
+                <div><dt>What to do now</dt><dd>Return them to a low oven or the turned-off oven to dry out more.</dd></div>
+                <div><dt>Next time</dt><dd>Roll thinner than you think you need to. Annoyingly thin.</dd></div>
+              </dl>
+            </article>
+
+            <article class="issue-card">
+              <h3>Cinnamon rolls did not puff</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>Cold dough, weak starter, underproofing, or enriched dough moving slower because of milk, butter, egg, and sugar.</dd></div>
+                <div><dt>What to do now</dt><dd>Give them more time somewhere warm before baking.</dd></div>
+                <div><dt>Next time</dt><dd>Plan for the second rise to take the full window, especially if the dough was chilled.</dd></div>
+              </dl>
+            </article>
+
+            <article class="issue-card">
+              <h3>English muffins are doughy inside</h3>
+              <dl>
+                <div><dt>Likely cause</dt><dd>Pan was too hot, outside browned before the center finished, or muffins were too thick.</dd></div>
+                <div><dt>What to do now</dt><dd>Split and toast them. That fixes a lot.</dd></div>
+                <div><dt>Next time</dt><dd>Cook low and covered, and check the center with a thermometer if needed.</dd></div>
+              </dl>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-wrap">
+      <p>The Sourdough Field Guide, a practical sourdough project.</p>
+      <p>No ads. No novellas.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
